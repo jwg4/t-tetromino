@@ -34,3 +34,7 @@ class TestFrame(unittest.TestCase):
         # |xxxo|  |..xo|
         #  ----    ----
         self.assertEqual(len(new_frames), 2)
+
+    def test_is_valid(self):
+        f = self.Frame(0, 3, 0, 0)
+        self.assertFalse(f._is_valid())

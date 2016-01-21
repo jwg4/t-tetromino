@@ -50,6 +50,8 @@ def make_frame_class(w):
             return str(self._heights)
 
         def _is_valid(self):
+            if self._heights[0] + 1 < self._heights[1]:
+                return False
             return True
 
         def generate_new_frames(self):
