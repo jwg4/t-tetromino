@@ -43,6 +43,9 @@ def make_frame_class(w):
         def __eq__(self, other):
             return self._offsets == other._offsets
 
+        def __repr__(self):
+            return str(self._heights)
+
         def __str__(self):
             return str(self._heights)
 
