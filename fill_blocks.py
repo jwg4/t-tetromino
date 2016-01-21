@@ -30,11 +30,18 @@ def make_frame_class(w):
             logging.debug(values)
             self._heights = tuple(values)
 
-        def __hash__(self):
+        @property
+        def _offsets(self):
             adjust = 0 - min(self._heights)
             adjust = [adjust] * self.width
             a = tuple([ sum(x) for x in zip(self._heights, adjust) ])
-            return hash(a)
+            return a
+
+        def __hash__(self):
+            return hash(self._offsets)
+
+        def __eq__(self, other):
+            return self._offsets == other._offsets
 
         def __str__(self):
             return str(self._heights)
