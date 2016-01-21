@@ -12,3 +12,8 @@ class TestFrame(unittest.TestCase):
         self.assertIsNotNone(f)
         expected = "(1, 2, 3, 4)"
         self.assertEqual(str(f), expected)
+
+    def test_hash(self):
+        f = self.Frame(1, 2, 3, 4)
+        expected = hash((0, 1, 2, 3))
+        self.assertEqual(hash(f), expected)
