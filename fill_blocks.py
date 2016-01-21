@@ -39,7 +39,7 @@ def make_frame_class(w):
             frames = set([self])
             old_frames = set()
             while frames != old_frames:
-                l = [ x for x in generate_new_frames(f) for f in frames ]
+                l = [ x for f in frames for x in f.generate_new_frames() ]
                 l = [ f for f in l if f._is_valid() ]
                 l = set(l)
                 if l & frames:
