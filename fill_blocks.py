@@ -20,7 +20,7 @@ def make_frame_class(w):
         def _is_valid(self):
             return True
 
-        def generate_new_frames(f):
+        def generate_new_frames(self):
             n = []
             for i in range(self.width-1):
                 if self._heights[i] == self._heights[i+1] + 1:
