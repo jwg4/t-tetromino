@@ -75,6 +75,7 @@ def make_frame_class(w):
                 l = [ x for f in previous for x in f.generate_new_frames() ]
                 l = [ f for f in l if f._is_valid() ]
                 l = set(l)
+                logging.info(l)
                 if l & frames:
                     match = [l & frames][0]
                     matches = [set(match) & l] + [set(match) & frames]
