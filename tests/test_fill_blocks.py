@@ -17,3 +17,15 @@ class TestFrame(unittest.TestCase):
         f = self.Frame(1, 2, 3, 4)
         expected = hash((0, 1, 2, 3))
         self.assertEqual(hash(f), expected)
+
+    def test_generate_new_frames(self):
+        f = self.Frame(0, 0, 0, 1)
+        new_frames = f.generate_new_frames()
+        # Two ways to place a T-tetromino on a 
+        # board of width four with one sq in the 
+        # 4th column:
+        # |....|  |..x.|
+        # |.x..|  |..xx|
+        # |xxxo|  |..xo|
+        #  ----    ----
+        self.assertEqual(len(new_frames), 2)

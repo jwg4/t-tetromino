@@ -1,3 +1,20 @@
+class TTetromino(object):
+    @staticmethod
+    def doubles(s):
+        ms = [ sum(x) for x in zip(s, [0 - min(s)] * len(s)) ]
+        if ms == [0, 1]:
+            yield [ sum(x) for x in zip(s, [3, 1]) ]
+        if ms == [1, 0]:
+            yield [ sum(x) for x in zip(s, [1, 3]) ]
+
+    @staticmethod
+    def triples(s):
+        ms = [ sum(x) for x in zip(s, [0 - min(s)] * len(s)) ]
+        if ms == [1, 0, 1]:
+            yield [ sum(x) for x in zip(s, [1, 2, 1]) ]
+        if ms == [0, 0, 0]:
+            yield [ sum(x) for x in zip(s, [1, 2, 1]) ]
+
 def make_frame_class(w):
     class FrameTemplate(object):
         width = w
@@ -22,17 +39,17 @@ def make_frame_class(w):
 
         def generate_new_frames(self):
             n = []
+            a = list(self._heights)
             for i in range(self.width-1):
-                if self._heights[i] == self._heights[i+1] + 1:
-                    a = list(self.values)
-                    a[i] = a[i] + 1
-                    a[i+1] = a[i+1] + 3
-                    n.append(FrameTemplate(*a))
-                if self._heights[i] == self._heights[i+1] - 1:
-                    a = list(self._heights)
-                    a[i] = a[i] + 3
-                    a[i+1] = a[i+1] + 1
-                    n.append(FrameTemplate(*a))
+                for s in TTetromino.doubles(a[i:i+2]):
+                    b = a[:]
+                    b[i:i+2] = s
+                    n.append(FrameTemplate(*b))
+            for i in range(self.width-2):
+                for s in TTetromino.triples(a[i:i+3]):
+                    b = a[:]
+                    b[i:i+3] = s
+                    n.append(FrameTemplate(*b))
             return n
 
         def find_repeated_frame(self):
