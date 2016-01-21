@@ -27,12 +27,12 @@ def make_frame_class(w):
                     a = list(self.values)
                     a[i] = a[i] + 1
                     a[i+1] = a[i+1] + 3
-                    n.add(FrameTemplate(a))
+                    n.append(FrameTemplate(*a))
                 if self._heights[i] == self._heights[i+1] - 1:
                     a = list(self._heights)
                     a[i] = a[i] + 3
                     a[i+1] = a[i+1] + 1
-                    n.add(FrameTemplate(a))
+                    n.append(FrameTemplate(*a))
             return n
 
         def find_repeated_frame(self):
