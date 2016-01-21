@@ -77,8 +77,8 @@ def make_frame_class(w):
                 l = set(l)
                 logging.info(l)
                 if l & frames:
-                    match = [l & frames][0]
-                    matches = [set(match) & l] + [set(match) & frames]
+                    match = list(l & frames)[0]
+                    matches = [set([match]) & l] + [set([match]) & frames]
                     return matches
                 old_frames = frames
                 previous = l
