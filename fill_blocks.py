@@ -10,7 +10,7 @@ def make_frame_class(w):
 
         def __hash__(self):
             adjust = min(self._heights)
-            adjust = [adjust] * width
+            adjust = [adjust] * self.width
             a = self._heights - tuple(adjust)
             return hash(a)
 
@@ -22,7 +22,7 @@ def make_frame_class(w):
 
         def generate_new_frames(f):
             n = []
-            for i in range(width-1):
+            for i in range(self.width-1):
                 if self._heights[i] == self._heights[i+1] + 1:
                     a = list(self.values)
                     a[i] = a[i] + 1
