@@ -6,7 +6,7 @@ def make_frame_class(w):
         def __init__(self, *values):
             if len(values) != self.width:
                 raise Exception()
-            self.heights = tuple(values)
+            self._heights = tuple(values)
 
         def __hash__(self):
             adjust = min(self._heights)
