@@ -9,9 +9,9 @@ def make_frame_class(w):
             self._heights = tuple(values)
 
         def __hash__(self):
-            adjust = min(self._heights)
+            adjust = 0 - min(self._heights)
             adjust = [adjust] * self.width
-            a = self._heights - tuple(adjust)
+            a = tuple([ sum(x) for x in zip(self._heights, adjust) ])
             return hash(a)
 
         def __str__(self):
