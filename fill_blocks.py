@@ -70,8 +70,9 @@ def make_frame_class(w):
         def find_repeated_frame(self):
             frames = set([self])
             old_frames = set()
+            previous = frames
             while frames != old_frames:
-                l = [ x for f in frames for x in f.generate_new_frames() ]
+                l = [ x for f in previous for x in f.generate_new_frames() ]
                 l = [ f for f in l if f._is_valid() ]
                 l = set(l)
                 if l & frames:
@@ -79,6 +80,7 @@ def make_frame_class(w):
                     matches = [set(match) & l] + [set(match) & frames]
                     return matches
                 old_frames = frames
+                previous = l
                 frames = frames | l
             return None
     return FrameTemplate
