@@ -18,6 +18,11 @@ class TestFrame(unittest.TestCase):
         expected = hash((0, 1, 2, 3))
         self.assertEqual(hash(f), expected)
 
+    def test_set_intersection(self):
+        f = self.Frame(1, 2, 3, 4)
+        g = self.Frame(0, 1, 2, 3)
+        self.assertEqual(len(set([f]) & set([g])), 1)
+
     def test_generate_new_frames(self):
         f = self.Frame(0, 0, 0, 1)
         new_frames = f.generate_new_frames()
