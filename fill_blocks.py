@@ -54,6 +54,10 @@ def make_frame_class(w):
                 return False
             if self._heights[-1] + 1 < self._heights[-2]:
                 return False
+            for i in range(1, self.width - 1):
+                if ((self._heights[i] + 1 < self._heights[i+1]) and
+                      (self._heights[i] + 1 < self._heights[i-1])):
+                    return False
             return True
 
         def generate_new_frames(self):
