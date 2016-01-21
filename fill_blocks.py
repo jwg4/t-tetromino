@@ -1,3 +1,7 @@
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
 class TTetromino(object):
     @staticmethod
     def doubles(s):
@@ -23,6 +27,7 @@ def make_frame_class(w):
         def __init__(self, *values):
             if len(values) != self.width:
                 raise Exception()
+            logging.debug(values)
             self._heights = tuple(values)
 
         def __hash__(self):
