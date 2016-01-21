@@ -52,6 +52,8 @@ def make_frame_class(w):
         def _is_valid(self):
             if self._heights[0] + 1 < self._heights[1]:
                 return False
+            if self._heights[-1] + 1 < self._heights[-2]:
+                return False
             return True
 
         def generate_new_frames(self):

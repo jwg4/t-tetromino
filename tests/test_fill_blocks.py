@@ -35,6 +35,10 @@ class TestFrame(unittest.TestCase):
         #  ----    ----
         self.assertEqual(len(new_frames), 2)
 
-    def test_is_valid(self):
+    def test_a_gap_on_the_left_is_not_valid(self):
         f = self.Frame(0, 3, 0, 0)
+        self.assertFalse(f._is_valid())
+
+    def test_a_gap_on_the_right_is_not_valid(self):
+        f = self.Frame(2, 3, 2, 0)
         self.assertFalse(f._is_valid())
