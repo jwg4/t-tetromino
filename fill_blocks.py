@@ -25,6 +25,8 @@ def make_frame_class(w):
         _heights = None
 
         def __init__(self, *values):
+            if not values:
+                values = [0] * self.width
             if len(values) != self.width:
                 raise Exception("Wrong number of initial values: %s" % str(values))
             logging.debug(values)
@@ -100,6 +102,6 @@ def make_frame_class(w):
 if __name__ == '__main__':
     width = 5
     Frame = make_frame_class(width)
-    starting_frame = Frame(0, 0, 0, 0, 0)
+    starting_frame = Frame()
     print str(starting_frame)
     print starting_frame.find_repeated_frame()
