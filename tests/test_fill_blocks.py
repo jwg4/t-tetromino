@@ -46,3 +46,11 @@ class TestFrame(unittest.TestCase):
     def test_a_gap_in_the_middle_is_not_valid(self):
         f = self.Frame(2, 0, 2, 2)
         self.assertFalse(f._is_valid())
+
+    def test_a_big_jump_is_not_valid(self):
+        f = self.Frame(2, 0, 8, 7)
+        self.assertFalse(f._is_valid())
+
+    def test_a_different_big_jump_is_not_valid(self):
+        f = self.Frame(0, 0, 8, 7)
+        self.assertFalse(f._is_valid())
