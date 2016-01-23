@@ -26,7 +26,7 @@ def make_frame_class(w):
 
         def __init__(self, *values):
             if len(values) != self.width:
-                raise Exception()
+                raise Exception("Wrong number of initial values: %s" % str(values))
             logging.debug(values)
             self._heights = tuple(values)
 
