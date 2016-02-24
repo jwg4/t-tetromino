@@ -2,6 +2,14 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
+# The MAX size of a cliff - if two adjacent columns differ by more than this,
+# the arrangement is invalid. Should not remove any valid arrangments as any
+# arrangement which is made using an arrangement with a large cliff, could be 
+# made differently by placing the pieces in a different order. (Proof?)
+# In fact, 3 should be big enough here, because instead of making a cliff 
+# of size more than 3 (by placing a piece of height at most 3 on the edge of
+# a cliff of height at least 1), we could have placed a piece on the other side
+# of the cliff first, thereby making it smaller.
 MAX_CLIFF = 6
 
 class TTetromino(object):
