@@ -2,6 +2,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
+MAX_CLIFF = 6
+
 class TTetromino(object):
     @staticmethod
     def doubles(s):
@@ -60,8 +62,8 @@ def make_frame_class(w):
                 if ((self._heights[i] + 1 < self._heights[i+1]) and
                       (self._heights[i] + 1 < self._heights[i-1])):
                     return False
-                if ((self._heights[i] + 6 < self._heights[i+1]) or
-                      (self._heights[i+1] + 6 < self._heights[i])):
+                if ((self._heights[i] + MAX_CLIFF < self._heights[i+1]) or
+                      (self._heights[i+1] + MAX_CLIFF < self._heights[i])):
                     return False
             return True
 
