@@ -1,4 +1,5 @@
 import logging
+import sys
 
 logging.basicConfig(level=logging.INFO)
 
@@ -111,6 +112,8 @@ def make_frame_class(w):
 
 if __name__ == '__main__':
     width = 5
+    if len(sys.argv) > 1:
+        width = int(sys.argv[1])
     Frame = make_frame_class(width)
     starting_frame = Frame()
     print str(starting_frame)
