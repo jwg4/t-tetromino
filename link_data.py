@@ -31,11 +31,11 @@ class Rectangle(object):
         return list(self._rows())
 
     def _rows(self):
-        for d in self.directions:
-            for x in range(self.w):
-                for y in range(self.h):
+        for x in range(self.w):
+            for y in range(self.h):
+                for d in self.directions:
                     if all([ self._valid(x+p[0], y+p[1]) for p in self.shapes[d] ]):
                         yield self._translate_row(x, y, d)
-        for j in range(self.spare):
-            yield 'Foo'
+                for j in range(self.spare):
+                    yield 'Foo'
 
