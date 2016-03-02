@@ -12,6 +12,9 @@ class Rectangle(object):
         self.h = h
         self.spare = spare
 
+    def translate_row(self, x, y, p):
+        return '_'
+
     def row_list(self):
         return list(self.rows())
 
