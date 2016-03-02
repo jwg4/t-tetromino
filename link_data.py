@@ -8,6 +8,6 @@ class Rectangle(object):
         for d in self.directions:
             for x in range(self.w):
                 for y in range(self.h):
-                    if all([ self.valid(x+p[0], y+p[1]) for p in self.shapes[self.d] ])
+                    if all([ self.valid(x+p[0], y+p[1]) for p in self.shapes[self.d] ]):
                         yield self.translate_row(x, y, p)
 
