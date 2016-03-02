@@ -1,4 +1,12 @@
 class Rectangle(object):
+    directions = [(1,0), (0,1), (-1,0), (0,-1)]
+    shapes = {
+        (1,0) : [],
+        (0,1) : [],
+        (-1,0) : [],
+        (0,-1) : []
+    }
+
     def __init__(self, w, h, spare=5):
         self.w = w
         self.h = h
