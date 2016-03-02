@@ -1,4 +1,4 @@
-def Rectangle(object):
+class Rectangle(object):
     def __init__(self, w, h, spare=5):
         self.w = w
         self.h = h
