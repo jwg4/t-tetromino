@@ -1,10 +1,11 @@
 class Rectangle(object):
-    directions = [(1,0), (0,1), (-1,0), (0,-1)]
+    directions = [(1,1), (-1,1), (-1,-1), (1,-1)]
+    base_shape = [(0,0), (0,1), (1,0), (-1,0)]
     shapes = {
-        (1,0) : [],
-        (0,1) : [],
-        (-1,0) : [],
-        (0,-1) : []
+        (1,1) : [(s[0], s[1]) for s in base_shape],
+        (-1,1) : [(-s[1], s[0]) for s in base_shape],
+        (-1,-1) : [(-s[0], -s[1]) for s in base_shape],
+        (1,-1) : [(s[1], -s[0]) for s in base_shape]
     }
 
     def __init__(self, w, h, spare=5):
