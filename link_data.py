@@ -4,6 +4,9 @@ class Rectangle(object):
         self.h = h
         self.spare = spare
 
+    def row_list(self):
+        return list(self.rows())
+
     def rows(self):
         for d in self.directions:
             for x in range(self.w):
