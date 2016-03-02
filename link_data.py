@@ -17,7 +17,15 @@ class Rectangle(object):
         return '_'
 
     def _valid(self, x, y):
-        return False
+        if x < 0:
+            return False
+        if y < 0:
+            return False
+        if x >= self.w:
+            return False
+        if y >= self.h:
+            return False
+        return True
 
     def row_list(self):
         return list(self._rows())
