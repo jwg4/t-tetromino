@@ -15,6 +15,9 @@ class Rectangle(object):
     def _translate_row(self, x, y, p):
         return '_'
 
+    def _valid(self, x, y):
+        return False
+
     def row_list(self):
         return list(self.rows())
 
@@ -22,6 +25,6 @@ class Rectangle(object):
         for d in self.directions:
             for x in range(self.w):
                 for y in range(self.h):
-                    if all([ self.valid(x+p[0], y+p[1]) for p in self.shapes[d] ]):
+                    if all([ self._valid(x+p[0], y+p[1]) for p in self.shapes[d] ]):
                         yield self._translate_row(x, y, d)
 
