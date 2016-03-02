@@ -12,7 +12,7 @@ class Rectangle(object):
         self.h = h
         self.spare = spare
 
-    def translate_row(self, x, y, p):
+    def _translate_row(self, x, y, p):
         return '_'
 
     def row_list(self):
@@ -23,5 +23,5 @@ class Rectangle(object):
             for x in range(self.w):
                 for y in range(self.h):
                     if all([ self.valid(x+p[0], y+p[1]) for p in self.shapes[d] ]):
-                        yield self.translate_row(x, y, d)
+                        yield self._translate_row(x, y, d)
 
