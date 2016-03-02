@@ -19,9 +19,9 @@ class Rectangle(object):
         return False
 
     def row_list(self):
-        return list(self.rows())
+        return list(self._rows())
 
-    def rows(self):
+    def _rows(self):
         for d in self.directions:
             for x in range(self.w):
                 for y in range(self.h):
