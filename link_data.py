@@ -27,6 +27,9 @@ class Rectangle(object):
             return False
         return True
 
+    def _single_square_row(self, x, y, n):
+        return []
+
     def row_list(self):
         return list(self._rows())
 
@@ -37,5 +40,5 @@ class Rectangle(object):
                     if all([ self._valid(x+p[0], y+p[1]) for p in self.shapes[d] ]):
                         yield self._translate_row(x, y, d)
                 for j in range(self.spare):
-                    yield 'Foo'
+                    yield self._single_square_row(x, y, j)
 
