@@ -34,9 +34,6 @@ class Rectangle(object):
         l[self.w * self.h + k] = 1
         return l
 
-    def row_list(self):
-        return list(self._rows())
-
     def _rows(self):
         for x in range(self.w):
             for y in range(self.h):
@@ -45,4 +42,7 @@ class Rectangle(object):
                         yield self._translate_row(x, y, d)
                 for j in range(self.spare):
                     yield self._single_square_row(x, y, j)
+
+    def row_list(self):
+        return list(self._rows())
 
