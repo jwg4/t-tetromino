@@ -27,8 +27,12 @@ class Rectangle(object):
             return False
         return True
 
-    def _single_square_row(self, x, y, n):
-        return []
+    def _single_square_row(self, x, y, k):
+        n = self.w * self.h + self.spare
+        l = [ 0 for i in range(n) ]
+        l[x + self.w * y] = 1
+        l[self.w * self.h + k] = 1
+        return l
 
     def row_list(self):
         return list(self._rows())
