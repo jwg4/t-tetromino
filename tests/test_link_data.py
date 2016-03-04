@@ -8,7 +8,7 @@ class TestRowBuilding(unittest.TestCase):
         rows = r.row_list()
         self.assertEqual(len(rows), 8 + 5 * 9)
 
-    def test_rows_for_3_by_3_square(self):
+    def test_single_square_row_for_3_by_3_square(self):
         r = Rectangle(3, 3)
         rows = r.row_list()
         row1 = [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
