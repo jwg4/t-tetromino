@@ -13,11 +13,15 @@ class Rectangle(object):
         self.h = h
         self.spare = spare
 
+    def _blank_list(self):
+        n = self.w * self.h + self.spare
+        l = [ 0 for i in range(n) ]
+        return l
+        
     def _translate_row(self, x, y, d):
         shape = [ (x+p[0], y+p[1]) for p in self.shapes[d] ]
         indexes = [ c[0] + self.w * c[1] for c in shape ]
-        n = self.w * self.h + self.spare
-        l = [ 0 for i in range(n) ]
+        l = self._blank_list()
         for i in indexes:
             l[i] = 1
         return l
@@ -34,8 +38,7 @@ class Rectangle(object):
         return True
 
     def _single_square_row(self, x, y, k):
-        n = self.w * self.h + self.spare
-        l = [ 0 for i in range(n) ]
+        l = self._blank_list()
         l[x + self.w * y] = 1
         l[self.w * self.h + k] = 1
         return l
