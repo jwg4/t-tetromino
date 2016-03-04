@@ -13,8 +13,14 @@ class Rectangle(object):
         self.h = h
         self.spare = spare
 
-    def _translate_row(self, x, y, p):
-        return '_'
+    def _translate_row(self, x, y, d):
+        shape = [ (x+p[0], y+p[1]) for p in self.shapes[d] ]
+        indexes = [ c[0] + self.w * c[1] for c in shape ]
+        n = self.w * self.h + self.spare
+        l = [ 0 for i in range(n) ]
+        for i in indexes:
+            l[i] = 1
+        return l
 
     def _valid(self, x, y):
         if x < 0:
