@@ -19,3 +19,8 @@ class TestRowBuilding(unittest.TestCase):
         rows = r.row_list()
         row1 = [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.assertIn(row1, rows)
+
+    def test_string_output(self):
+        r = Rectangle(3, 3)
+        s = r.row_dump()
+        self.assertIsNotNone(s)
