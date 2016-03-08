@@ -15,4 +15,4 @@ class TestTableToHeader(unittest.TestCase):
         names = [ "1", "2", "3", "4", "5", "6", "7" ]
         f = open('tests/files/table.h', 'r')
         expected = f.read()
-        self.assertEqual(table_to_header_file(table, names), expected)
+        self.assertMultiLineEqual(table_to_header_file(table, names), expected)
