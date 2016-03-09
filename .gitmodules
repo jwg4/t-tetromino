@@ -1,0 +1,3 @@
+[submodule "Dantz"]
+	path = Dantz
+	url = git@github.com:jwg4/Dantz.git
