@@ -1,4 +1,4 @@
-def table_to_header_file(table, names):
+def table_to_header_text(table, names):
     s = ""
     count = 0
     row_names = []
