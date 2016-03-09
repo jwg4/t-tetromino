@@ -24,3 +24,9 @@ class TestRowBuilding(unittest.TestCase):
         r = Rectangle(3, 3)
         s = r.row_dump()
         self.assertIsNotNone(s)
+
+class TestColumnNames(unittest.TestCase):
+    def test_number_of_column_names_for_3_by_3_square(self):
+        r = Rectangle(3, 3)
+        names = list(r.names())
+        self.assertEqual(len(names), 3*3 + 5)

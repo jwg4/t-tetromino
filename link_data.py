@@ -55,3 +55,9 @@ class Rectangle(object):
     def row_list(self):
         return list(self._rows())
 
+    def names(self):
+        for x in range(self.w):
+            for y in range(self.h):
+                yield 'square %d %d' % (x, y)
+        for j in range(self.spare):
+            yield 'monomino %d' % (j, )
