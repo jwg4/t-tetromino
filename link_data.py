@@ -1,3 +1,5 @@
+from table_output import table_to_header_text
+
 class Rectangle(object):
     directions = [(1,1), (-1,1), (-1,-1), (1,-1)]
     base_shape = [(0,0), (0,1), (1,0), (-1,0)]
@@ -61,3 +63,6 @@ class Rectangle(object):
                 yield 'square %d %d' % (x, y)
         for j in range(self.spare):
             yield 'monomino %d' % (j, )
+
+    def header_text(self):
+        return table_to_header_text(self.row_list(), self.names())

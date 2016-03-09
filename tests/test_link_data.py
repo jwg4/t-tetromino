@@ -25,3 +25,8 @@ class TestColumnNames(unittest.TestCase):
         r = Rectangle(3, 3)
         names = list(r.names())
         self.assertEqual(len(names), 3*3 + 5)
+
+class TestHeaderOutput(unittest.TestCase):
+    def test_some_output_for_3_by_3_square(self):
+        r = Rectangle(3, 3)
+        self.assertIsNotNone(r.header_text())
