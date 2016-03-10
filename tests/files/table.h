@@ -7,5 +7,6 @@ bool row5[] = { 0, 0, 0, 1, 1, 0, 1 };
 bool **table = new bool*[6]{
         row0, row1, row2, row3, row4, row5
 };
+int n_rows = 6;
 
 std::vector<std::string> names = { "1", "2", "3", "4", "5", "6", "7" };

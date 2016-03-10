@@ -14,7 +14,8 @@ def table_to_header_text(table, names):
     row_list = ", ".join(row_names)
     list_of_rows = "        %s\n" % (row_list, )
     s = s + list_of_rows
-    s = s + "};\n\n"
+    s = s + "};\n"
+    s = s + "int n_rows = %d;\n\n" % (count, )
     quoted_names = ', '.join( '"' + n + '"' for n in names )
     names_dec = "std::vector<std::string> names = { %s };\n" % (quoted_names, )
     s = s + names_dec
