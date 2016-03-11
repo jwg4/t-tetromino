@@ -1,7 +1,12 @@
 import re
 
-chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-count = 0
+def print_alpha_blocks(grid):
+    chars = '_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    table = [ [ chars[n] for n in l ] for l in grid ]
+    for row in table:
+        print ''.join(row)
+
+count = 1
 
 f = open('13x13-result', 'r')
 
@@ -12,15 +17,13 @@ for l in f.readlines():
     if m:
         row = int(m.group(1))
         column = int(m.group(2))
-        table[row][column] = '.'
+        table[row][column] = 0
     m = re.match(r'square (\d+) (\d+) square (\d+) (\d+) square (\d+) (\d+) square (\d+) (\d+)', l) 
     if m:
         for j in range(4):
             row = int(m.group(2 * j + 1))
             column = int(m.group(2 * j + 2))
-            table[row][column] = chars[count]
+            table[row][column] = count
         count = count + 1
             
-
-for row in table:
-    print ''.join(row)
+print_alpha_blocks(table)
