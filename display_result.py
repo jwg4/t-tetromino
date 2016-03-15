@@ -44,7 +44,8 @@ for l in f.readlines():
     if m:
         row = int(m.group(1))
         column = int(m.group(2))
-        table[row][column] = 0
+        table[row][column] = count
+        count = count + 1
     m = re.match(r'square (\d+) (\d+) square (\d+) (\d+) square (\d+) (\d+) square (\d+) (\d+)', l) 
     if m:
         for j in range(4):
