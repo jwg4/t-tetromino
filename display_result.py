@@ -32,6 +32,31 @@ def create_png(grid, scale=10):
     with open('output.png', 'w') as f:
         writer.write(f, color_data)
             
+def create_line_png(grid, scale=10):
+    height = len(grid) * scale + 1
+    width = len(grid[0]) * scale + 1
+    palette = [(255, 255, 255), (0, 0, 0)]
+    data = [ [ 0 for i in range(width) ] for j in range(height) ]
+    for i in range(height):
+        data[i][0] = 1
+        data[i][width-1] = 1
+    for i in range(width):
+        data[0][i] = 1
+        data[height-1][i] = 1
+    for j in range(len(grid)):
+        for i in range(len(grid[j])-1):
+            if grid[j][i] != grid[j][i+1]:
+                for k in range(scale+1):
+                    data[(i+1) * scale][j * scale + k] = 1
+    for j in range(len(grid)-1):
+        for i in range(len(grid[j])):
+            if grid[j][i] != grid[j+1][i]:
+                for k in range(scale+1):
+                    data[i * scale + k][(j+1) * scale] = 1
+    writer = png.Writer(width=width, height=height, palette=palette)
+    with open('lines.png', 'w') as f:
+        writer.write(f, data)
+    
 
 count = 1
 
@@ -56,3 +81,4 @@ for l in f.readlines():
             
 print_alpha_blocks(table)
 create_png(table)
+create_line_png(table)
