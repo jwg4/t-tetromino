@@ -20,9 +20,7 @@ def postamble():
 '''
 
 def draw_square(x, y):
-    offsets = SQUARE_OFFSETS
-    points = translate(offsets, x, y)
-    print_path(points)
+    large_square(x, y, 1)
 
 def draw_tetromino(x, y, t):
     offsets = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
