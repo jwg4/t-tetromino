@@ -23,9 +23,7 @@ def draw_tetromino(x, y, t):
     offsets = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
     r = [(1, 0, 0, 1), (0, 1, -1, 0), (-1, 0, 0, -1), (0, -1, 1, 0)][t]
     rotated = [(ax * r[0] + ay * r[1], ax * r[2] + ay * r[3]) for ax, ay in offsets ]
-    print rotated
     points = [ (x + a, y + b) for a, b in rotated ]
-    print points
     path = ' -- '.join([ '(%f, %f)' % p for p in points ])
     print r'''
 \draw [rounded corners, thick] %s;
