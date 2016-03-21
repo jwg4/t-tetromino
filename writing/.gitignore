@@ -4,4 +4,4 @@
 *.log
 *.pdf
 *.dvi
-lshaped.tex
+*_image.tex
