@@ -48,8 +48,8 @@ if __name__ == '__main__':
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
     
-    tetrominos = [(6.5, 1.5, 0)]
-    for x, y, t in tetrominos:
+    ghost_tetrominos = [(6.5, 1.5, 0), (4.5, 0.5, 2), (9.5, 6.5, 1), (8.5, 4.5, 3)]
+    for x, y, t in ghost_tetrominos:
         draw_tetromino(x, y, t, ['dashed'])
 
     draw_square(0, 2, 8, ['pattern = north east lines'])
