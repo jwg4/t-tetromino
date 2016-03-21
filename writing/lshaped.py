@@ -36,6 +36,11 @@ def draw_tetromino(x, y, t):
 \draw [rounded corners, thick] %s;
 ''' % (path, )
 
+def large_square(x, y, scale):
+    offsets = [ (a * scale, b * scale) for a, b in SQUARE_OFFSETS ]
+    points = translate(offsets, x, y)
+    print_path(points)
+
 if __name__ == '__main__':
     preamble()
 
@@ -46,5 +51,7 @@ if __name__ == '__main__':
     tetrominos = [(2.5, 1.5, 0), (8.5, 0.5, 2), (9.5, 2.5, 1), (8.5, 8.5, 3)]
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
+    
+    large_square(0, 2, 8)
 
     postamble()
