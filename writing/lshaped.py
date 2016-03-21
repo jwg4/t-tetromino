@@ -8,7 +8,18 @@ SQUARE_OFFSETS = [
     (EPSILON, EPSILON),
     (EPSILON, 0.5)
 ]
-TETROMINO_OFFSETS = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
+TETROMINO_OFFSETS = [
+    (0, 0.5 - EPSILON),
+    (1.5 - EPSILON, 0.5 - EPSILON),
+    (1.5 - EPSILON, -0.5 + EPSILON),
+    (0.5 - EPSILON, -0.5 + EPSILON),
+    (0.5 - EPSILON, -1.5 + EPSILON),
+    (-0.5 + EPSILON, -1.5 + EPSILON),
+    (-0.5 + EPSILON, -0.5 + EPSILON),
+    (-1.5 + EPSILON, -0.5 + EPSILON),
+    (-1.5 + EPSILON, 0.5 - EPSILON),
+    (0, 0.5 - EPSILON)
+]
 ROTATION_MATRICES = [(1, 0, 0, 1), (0, 1, -1, 0), (-1, 0, 0, -1), (0, -1, 1, 0)]
 
 def translate(l, x, y):
