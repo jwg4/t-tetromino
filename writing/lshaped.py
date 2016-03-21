@@ -1,4 +1,3 @@
-single_squares = [(0,0), (0,1), (1,0)]
 
 def preamble():
     print r'''
@@ -21,6 +20,7 @@ def draw_square(x, y):
 if __name__ == '__main__':
     preamble()
 
+    single_squares = [(0,0), (0,1), (1,0)]
     for (x, y) in single_squares:
         draw_square(x, y)
         
