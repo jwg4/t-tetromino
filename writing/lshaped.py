@@ -3,11 +3,11 @@ SQUARE_OFFSETS = [(0, 0.5), (0, 1), (1, 1), (1, 0), (0, 0), (0, 0.5)]
 def translate(l, x, y):
     return [ (x + a, y + b) for a, b in l ]
 
-def print_path(points):
+def print_path(points, extra=''):
     path = ' -- '.join([ '(%f, %f)' % p for p in points ])
     print r'''
-\draw [rounded corners, thick] %s;
-''' % (path, )
+\draw [rounded corners, thick %s] %s;
+''' % (extra, path)
 
 def preamble():
     print r'''
@@ -34,10 +34,11 @@ def draw_tetromino(x, y, t):
 \draw [rounded corners, thick] %s;
 ''' % (path, )
 
-def large_square(x, y, scale):
+def large_square(x, y, scale, extras=[]):
     offsets = [ (a * scale, b * scale) for a, b in SQUARE_OFFSETS ]
     points = translate(offsets, x, y)
-    print_path(points)
+    extra_code = ', '.join([''] + extras) if extras else ''
+    print_path(points, extra_code)
 
 if __name__ == '__main__':
     preamble()
@@ -50,6 +51,6 @@ if __name__ == '__main__':
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
     
-    large_square(0, 2, 8)
+    large_square(0, 2, 8, ['pattern = north east lines'])
 
     postamble()
