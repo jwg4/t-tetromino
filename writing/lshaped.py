@@ -1,7 +1,14 @@
 SQUARE_OFFSETS = [(0, 0.5), (0, 1), (1, 1), (1, 0), (0, 0), (0, 0.5)]
+TETROMINO_OFFSETS = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
+ROTATION_MATRICES = [(1, 0, 0, 1), (0, 1, -1, 0), (-1, 0, 0, -1), (0, -1, 1, 0)]
 
 def translate(l, x, y):
     return [ (x + a, y + b) for a, b in l ]
+
+def rotate(l, t):
+    r = ROTATION_MATRICES[t]
+    rotated = [(ax * r[0] + ay * r[1], ax * r[2] + ay * r[3]) for ax, ay in l ]
+    return rotated
 
 def print_path(points, extra=''):
     path = ' -- '.join([ '(%f, %f)' % p for p in points ])
@@ -20,9 +27,7 @@ def postamble():
 '''
 
 def draw_tetromino(x, y, t):
-    offsets = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
-    r = [(1, 0, 0, 1), (0, 1, -1, 0), (-1, 0, 0, -1), (0, -1, 1, 0)][t]
-    rotated = [(ax * r[0] + ay * r[1], ax * r[2] + ay * r[3]) for ax, ay in offsets ]
+    rotated = rotate(TETROMINO_OFFSETS, t)
     points = translate(rotated, x, y)
     print_path(points)
 
