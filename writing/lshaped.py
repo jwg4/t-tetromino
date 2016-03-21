@@ -1,3 +1,13 @@
+SQUARE_OFFSETS = [(0, 0.5), (0, 1), (1, 1), (1, 0), (0, 0), (0, 0.5)]
+
+def translate(l, x, y):
+    return [ (x + a, y + b) for a, b in l ]
+
+def print_path(points):
+    path = ' -- '.join([ '(%f, %f)' % p for p in points ])
+    print r'''
+\draw [rounded corners, thick] %s;
+''' % (path, )
 
 def preamble():
     print r'''
@@ -10,12 +20,9 @@ def postamble():
 '''
 
 def draw_square(x, y):
-    offsets = [(0, 0.5), (0, 1), (1, 1), (1, 0), (0, 0), (0, 0.5)]
-    points = [ (x + a, y + b) for a, b in offsets ]
-    path = ' -- '.join([ '(%f, %f)' % p for p in points ])
-    print r'''
-\draw [rounded corners, thick] %s;
-''' % (path, )
+    offsets = SQUARE_OFFSETS
+    points = translate(offsets, x, y)
+    print_path(points)
 
 def draw_tetromino(x, y, t):
     offsets = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
