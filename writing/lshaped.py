@@ -32,11 +32,11 @@ def draw_tetromino(x, y, t):
 if __name__ == '__main__':
     preamble()
 
-    single_squares = [(0,0), (0,1), (1,0)]
+    single_squares = [(0,0), (0,1), (1,0), (9, 9)]
     for (x, y) in single_squares:
         draw_square(x, y)
         
-    tetrominos = [(2.5, 1.5, 0)]
+    tetrominos = [(2.5, 1.5, 0), (8.5, 0.5, 2), (9.5, 2.5, 1), (8.5, 8.5, 3)]
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
 
