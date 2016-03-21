@@ -10,11 +10,12 @@ def rotate(l, t):
     rotated = [(ax * r[0] + ay * r[1], ax * r[2] + ay * r[3]) for ax, ay in l ]
     return rotated
 
-def print_path(points, extra=''):
+def print_path(points, extras=[]):
     path = ' -- '.join([ '(%f, %f)' % p for p in points ])
+    extra_code = ', '.join([''] + extras) if extras else ''
     print r'''
 \draw [rounded corners, thick %s] %s;
-''' % (extra, path)
+''' % (extra_code, path)
 
 def preamble():
     print r'''
@@ -26,16 +27,15 @@ def postamble():
 \end{tikzpicture}
 '''
 
-def draw_tetromino(x, y, t):
+def draw_tetromino(x, y, t, extras=[]):
     rotated = rotate(TETROMINO_OFFSETS, t)
     points = translate(rotated, x, y)
-    print_path(points)
+    print_path(points, extras)
 
 def draw_square(x, y, scale=1, extras=[]):
     offsets = [ (a * scale, b * scale) for a, b in SQUARE_OFFSETS ]
     points = translate(offsets, x, y)
-    extra_code = ', '.join([''] + extras) if extras else ''
-    print_path(points, extra_code)
+    print_path(points, extras)
 
 if __name__ == '__main__':
     preamble()
