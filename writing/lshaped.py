@@ -19,9 +19,6 @@ def postamble():
 \end{tikzpicture}
 '''
 
-def draw_square(x, y):
-    large_square(x, y, 1)
-
 def draw_tetromino(x, y, t):
     offsets = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
     r = [(1, 0, 0, 1), (0, 1, -1, 0), (-1, 0, 0, -1), (0, -1, 1, 0)][t]
@@ -34,7 +31,7 @@ def draw_tetromino(x, y, t):
 \draw [rounded corners, thick] %s;
 ''' % (path, )
 
-def large_square(x, y, scale, extras=[]):
+def draw_square(x, y, scale=1, extras=[]):
     offsets = [ (a * scale, b * scale) for a, b in SQUARE_OFFSETS ]
     points = translate(offsets, x, y)
     extra_code = ', '.join([''] + extras) if extras else ''
@@ -51,6 +48,6 @@ if __name__ == '__main__':
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
     
-    large_square(0, 2, 8, ['pattern = north east lines'])
+    draw_square(0, 2, 8, ['pattern = north east lines'])
 
     postamble()
