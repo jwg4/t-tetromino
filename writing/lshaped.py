@@ -1,13 +1,23 @@
 EPSILON = 0.02
 
 SQUARE_OFFSETS = [
-    (EPSILON, 0.5),
-    (EPSILON, 1 - EPSILON),
-    (1 - EPSILON, 1 - EPSILON),
-    (1 - EPSILON, EPSILON),
-    (EPSILON, EPSILON),
-    (EPSILON, 0.5)
+    (0, 0.5),
+    (0, 1),
+    (1, 1),
+    (1, 0),
+    (0, 0),
+    (0, 0.5)
 ]
+
+SQUARE_EPSILONS = [
+    (EPSILON, 0),
+    (EPSILON, -EPSILON),
+    (-EPSILON, -EPSILON),
+    (-EPSILON, EPSILON),
+    (EPSILON, EPSILON),
+    (EPSILON, 0)
+]
+
 TETROMINO_OFFSETS = [
     (0, 0.5 - EPSILON),
     (1.5 - EPSILON, 0.5 - EPSILON),
@@ -53,7 +63,7 @@ def draw_tetromino(x, y, t, extras=[]):
     print_path(points, extras)
 
 def draw_square(x, y, scale=1, extras=[]):
-    offsets = [ (a * scale, b * scale) for a, b in SQUARE_OFFSETS ]
+    offsets = [ (sq[0] * scale + ep[0], sq[1] * scale + ep[1]) for sq, ep in zip(SQUARE_OFFSETS, SQUARE_EPSILONS) ]
     points = translate(offsets, x, y)
     print_path(points, extras)
 
