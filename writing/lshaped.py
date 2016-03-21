@@ -14,7 +14,7 @@ def print_path(points, extras=[]):
     path = ' -- '.join([ '(%f, %f)' % p for p in points ])
     extra_code = ', '.join([''] + extras) if extras else ''
     print r'''
-\draw [rounded corners, thick %s] %s;
+\draw [rounded corners, ultra thick %s] %s;
 ''' % (extra_code, path)
 
 def preamble():
