@@ -1,4 +1,13 @@
-SQUARE_OFFSETS = [(0, 0.5), (0, 1), (1, 1), (1, 0), (0, 0), (0, 0.5)]
+EPSILON = 0.07
+
+SQUARE_OFFSETS = [
+    (EPSILON, 0.5),
+    (EPSILON, 1 - EPSILON),
+    (1 - EPSILON, 1 - EPSILON),
+    (1 - EPSILON, EPSILON),
+    (EPSILON, EPSILON),
+    (EPSILON, 0.5)
+]
 TETROMINO_OFFSETS = [(0, 0.5), (1.5, 0.5), (1.5, -0.5), (0.5, -0.5), (0.5, -1.5), (-0.5, -1.5), (-0.5, -0.5), (-1.5, -0.5), (-1.5, 0.5), (0, 0.5)]
 ROTATION_MATRICES = [(1, 0, 0, 1), (0, 1, -1, 0), (-1, 0, 0, -1), (0, -1, 1, 0)]
 
