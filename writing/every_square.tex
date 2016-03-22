@@ -46,9 +46,10 @@ Clearly at least 4 are needed.
 As Hochberg points out in Theorem 8 of \cite{hochberg}, a tiling with only tetrominos of a rectangle whose sides are both multiples of 4, can be extended to a tiling of a rectangle which is bigger by 2 in each direction, using only 4 monominos.
 The L-shaped strip which is added to the former looks (for example) like Figure \ref{lshaped}.
 
-\begin{figure}\label{lshaped}
+\begin{figure}
 \input{lshaped_image}
 \caption{The L-shaped strip which extends any square of side $4n$ to a square of side $4n+2$, using exactly 4 monominos. The dotted tetrominos can be repeated as many times as necessary to give a strip with internal length $4n$ and external length $4n + 2$.}
+\label{lshaped}
 \end{figure}
 
 \begin{proposition}\label{odd}
@@ -60,14 +61,16 @@ Zhan's (\cite{zhan}) Theorem 2 states that it is not possible to tile any rectan
 Call $A_n$ the set of lattice squares given by the square of side $n$, with the lattice squares at $(0, 0), (0,1), (1, 0)$ and $(0, n-1)$ removed. This shape has area $n^2 - 4 = 4(m^2 + m - 1) + 1$ and can be tiled with $m^2 + m - 1$ T-tetrominos and one monomino.
 \end{lemma}
 
-\begin{figure}\label{cropped}
+\begin{figure}
 \input{cropped_image}
 \caption{$A_5$, the $5 \times 5$ square with four lattice squares removed, $A_7$ and $A_9$.}
+\label{cropped}
 \end{figure}
 
-\begin{figure}\label{five}
+\begin{figure}
 \input{five_image}
 \caption{Tiling of $A_5$ with a single monomino.}
+\label{five}
 \end{figure}
 
 {\sc Proof.}
