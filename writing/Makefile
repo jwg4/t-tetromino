@@ -12,8 +12,8 @@ every_square.blb: every_square.aux polyomino.bib
 every_square.pdf: every_square.blb every_square.tex lshaped_image.tex cropped_image.tex
 	pdflatex every_square.tex
 
-lshaped_image.tex: lshaped.py
+lshaped_image.tex: lshaped.py drawings.py
 	python lshaped.py > lshaped_image.tex
 
-cropped_image.tex: cropped.py
+cropped_image.tex: cropped.py drawings.py
 	python cropped.py > cropped_image.tex
