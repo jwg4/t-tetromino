@@ -67,3 +67,30 @@ def draw_square(x, y, scale=1, extras=[]):
     points = translate(offsets, x, y)
     print_path(points, extras)
 
+CROPPED_SQUARE_OFFSETS = [
+    (3, 0), (4, 0), (4, 1), (5, 1),
+    (5, 5), (0, 5), (0, 2), (1, 2),
+    (1, 1), (2, 1), (2, 0), (3, 0)
+]
+
+CROPPED_SQUARE_LENGTH = [
+    (0, 0), (1, 0), (1, 0), (1, 0),
+    (1, 1), (0, 1), (0, 0), (0, 0),
+    (0, 0), (0, 0), (0, 0), (0, 0)
+]
+
+CROPPED_SQUARE_EPSILON = [
+    (0, 1), (-1, 1), (-1, -1), (-1, -1),
+    (-1, -1), (1, -1), (1, 1), (1, 1),
+    (1, 1), (1, 1), (1, 1), (0, 1)
+]
+
+CROPPED_SQUARE_EPSILON = [
+    (a * EPSILON, b * EPSILON) for a, b in CROPPED_SQUARE_EPSILON
+]
+
+def draw_cropped_square(x, y, length, extras=[]):
+    length = length - 5
+    offsets = [ (sq[0] + adj[0] * length + ep[0], sq[1] + adj[1] * length + ep[1]) for sq, adj, ep in zip(CROPPED_SQUARE_OFFSETS, CROPPED_SQUARE_LENGTH, CROPPED_SQUARE_EPSILON) ]
+    points = translate(offsets, x, y)
+    print_path(points, extras)
