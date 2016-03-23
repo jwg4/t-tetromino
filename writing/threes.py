@@ -2,7 +2,7 @@ from drawings import preamble, postamble, draw_cropped_square, draw_tetromino
 
 if __name__ == '__main__':
     preamble()
-    draw_cropped_square(2, 0, 11)
+    draw_cropped_square(0, 2, 7)
     tetrominos = [
         (2.5, 0.5, 1)
     ]
