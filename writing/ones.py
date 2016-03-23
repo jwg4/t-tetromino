@@ -6,4 +6,9 @@ if __name__ == '__main__':
     tetrominos = [(1.5, 9.5, 1), (0.5, 7.5, 3), (1.5, 5.5, 1), (0.5, 3.5, 3)]
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
+    ghost_tetrominos = [
+        (0.5, 7.5, 3), (1.5, 5.5, 1), 
+    ]
+    for x, y, t in ghost_tetrominos:
+        draw_tetromino(x, y, t, ['dashed'])
     postamble()
