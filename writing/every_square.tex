@@ -8,6 +8,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
 
 \title{Every square can be tiled with T-tetrominos and no more than 5 monominos}
 \author{Jack Grahl}
@@ -57,8 +58,13 @@ Every square of side $n = 2m + 1$ can be tiled with T-tetrominos and 5 monominos
 \end{proposition}
 Zhan's (\cite{zhan}) Theorem 2 states that it is not possible to tile any rectangle with T-tetrominos and only one monomino. It must therefore be the case that at least 5 are needed. We show that exactly 5 are sufficient.
 
+\begin{definition}
+Call $A_n$ the set of lattice squares given by the square of side $n$, with the lattice squares at $(0, 0), (0,1), (1, 0)$ and $(0, n-1)$ removed.
+This shape has area $n^2 - 4 = 4(m^2 + m - 1) + 1$.
+\end{definition}
+
 \begin{lemma}
-Call $A_n$ the set of lattice squares given by the square of side $n$, with the lattice squares at $(0, 0), (0,1), (1, 0)$ and $(0, n-1)$ removed. This shape has area $n^2 - 4 = 4(m^2 + m - 1) + 1$ and can be tiled with $m^2 + m - 1$ T-tetrominos and one monomino.
+For all $m \in \mathbb{n}$, $A_{2m+1}$ can be tiled with $m^2 + m - 1$ T-tetrominos and one monomino.
 \end{lemma}
 
 \begin{figure}
