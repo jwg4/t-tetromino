@@ -1,3 +1,5 @@
  - Find tilings of 3x7, 3x11, 3x15, ... with big empty corner and small empty corner
  - Find tilings of 5x9, 5x13, 5x17, ... with big empty corner and small empty corner
  - Write down exactly which rectangles can have a tiling with two small empty corners extended by 2x2
+ - Write down possibilities for extending and tiling (4n+1)x(4n+3) rectangles
+ - Find best known values for (4n+1)x(4n+3) rectangles - how many can be tiled with 3 tetrominos?
