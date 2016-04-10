@@ -4,3 +4,4 @@ DantzLoad*.h
 *-result
 *.png
 /venv/
+header_*_*.h
