@@ -10,3 +10,8 @@ class TestGenerate(unittest.TestCase):
         squares = set([ s for p in tiling[0] for s in p ])
         self.assertEqual(len(squares), 16)
         
+    def test_8_by_8(self):
+        tiling = generate_tiling(8, 8)
+        self.assertEqual(len(tiling[0]), 16)
+        squares = set([ s for p in tiling[0] for s in p ])
+        self.assertEqual(len(squares), 64)
