@@ -5,23 +5,14 @@ clean:
 
 IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex threes_image.tex strips_image.tex extending_image.tex
 
-every_square.aux: every_square.tex $(IMAGES)
-	latex every_square.tex
+%.aux: %.tex $(IMAGES)
+	latex %.tex
 
-every_square.blb: every_square.aux polyomino.bib
-	bibtex every_square
+%.blb: %.aux polyomino.bib
+	bibtex $@
 
-every_square.pdf: every_square.blb every_square.tex $(IMAGES)
-	pdflatex every_square.tex
-
-gap_number.aux: gap_number.tex $(IMAGES)
-	latex gap_number.tex
-
-gap_number.blb: gap_number.aux polyomino.bib
-	bibtex gap_number
-
-gap_number.pdf: gap_number.blb gap_number.tex $(IMAGES)
-	pdflatex gap_number.tex
+%.pdf: %.blb %.tex $(IMAGES)
+	pdflatex %.tex
 
 lshaped_image.tex: lshaped.py drawings.py
 	python lshaped.py > lshaped_image.tex
