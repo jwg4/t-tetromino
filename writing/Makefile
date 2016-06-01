@@ -1,4 +1,4 @@
-all: every_square.pdf
+all: every_square.pdf gap_number.pdf
 
 clean:
 	rm -f *.pdf *.aux *.log *.bbl *.blg *.dvi
@@ -13,6 +13,15 @@ every_square.blb: every_square.aux polyomino.bib
 
 every_square.pdf: every_square.blb every_square.tex $(IMAGES)
 	pdflatex every_square.tex
+
+gap_number.aux: gap_number.tex $(IMAGES)
+	latex gap_number.tex
+
+gap_number.blb: gap_number.aux polyomino.bib
+	bibtex gap_number
+
+gap_number.pdf: gap_number.blb gap_number.tex $(IMAGES)
+	pdflatex gap_number.tex
 
 lshaped_image.tex: lshaped.py drawings.py
 	python lshaped.py > lshaped_image.tex
