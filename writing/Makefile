@@ -6,13 +6,13 @@ clean:
 IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex threes_image.tex strips_image.tex extending_image.tex
 
 %.aux: %.tex $(IMAGES)
-	latex %.tex
+	latex $<
 
 %.blb: %.aux polyomino.bib
 	bibtex $@
 
 %.pdf: %.blb %.tex $(IMAGES)
-	pdflatex %.tex
+	pdflatex $<
 
 lshaped_image.tex: lshaped.py drawings.py
 	python lshaped.py > lshaped_image.tex
