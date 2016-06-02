@@ -9,7 +9,7 @@ IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex three
 	latex $<
 
 %.blb: %.aux polyomino.bib
-	bibtex $@
+	bibtex $<
 
 %.pdf: %.blb %.tex $(IMAGES)
 	pdflatex $<
