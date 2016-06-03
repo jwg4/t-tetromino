@@ -2,6 +2,7 @@
 
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{tikz}
+\usepackage{url}
 \usetikzlibrary{patterns}
 
 \theoremstyle{plain}
@@ -26,8 +27,10 @@ Hochberg showed in \cite{hochberg} that no more than 9 monominos are ever needed
 We give a construction for all odd $n$ which uses exactly 5 monominos, thereby resolving this question.
 \end{abstract}
 
+\section{Introduction}
+The sequence \cite{oeis} gives the number of monominos which are needed to tile the $n \times n$ square with t-tetrominos and monominos. Theorem \ref{main} shows that this sequence is trivially given by $n^2/4, (n^2-1)/4-1, n^2/4-1, (n^2-1)/4-1$.
 \section{Tiling every square}
-\begin{theorem}
+\begin{theorem}\label{main}
 Every square can be tiled with T-tetrominos and at most 5 monominos.
 \end{theorem}
 This theorem follows immediately from propositions \ref{four}, \ref{even} and \ref{odd}.
