@@ -1,6 +1,6 @@
 import unittest
 
-from link_data import Rectangle
+from link_data import Rectangle, DeficientRectangle
 
 class TestRowBuilding(unittest.TestCase):
     def test_number_of_rows_for_3_by_3_square(self):
@@ -19,6 +19,15 @@ class TestRowBuilding(unittest.TestCase):
         rows = r.row_list()
         row1 = [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.assertIn(row1, rows)
+
+    def test_number_of_rows_for_deficient_3_by_3_square(self):
+        r = DeficientRectangle(3, 3, 4, [(0, 0)])
+        rows = r.row_list()
+        # 6 positions to place a t-tetromino
+        # 4 monominos in each of the eight squares
+        # 1 'magic monomino' in the (0,0) square
+        self.assertEqual(len(rows), 6 + 4 * 8 + 1)
+
 
 class TestColumnNames(unittest.TestCase):
     def test_number_of_column_names_for_3_by_3_square(self):

@@ -49,10 +49,11 @@ class Rectangle(TilingProblem):
             return False
         return True
 
-    def _single_square_row(self, x, y, k):
+    def _single_square_row(self, x, y, k=None):
         l = self._blank_list()
         l[x + self.w * y] = 1
-        l[self.w * self.h + k] = 1
+        if k is not None:
+            l[self.w * self.h + k] = 1
         return l
 
     def _rows(self):
@@ -72,10 +73,23 @@ class Rectangle(TilingProblem):
             yield 'monomino %d' % (j, )
 
 
-class DeficientRectange(Rectangle):
-    def __init__(w, h, spare, missing_squares):
+class DeficientRectangle(Rectangle):
+    def __init__(self, w, h, spare, missing_squares):
         super(DeficientRectangle, self).__init__(w, h, spare)
         self.missing_squares = missing_squares
+
+    def _does_not_contain_missing_square(self, row):
+        for sq in self.missing_squares:
+            if row[sq[0] + self.w * sq[1]]:
+                return False
+            return True
+
+    def _rows(self):
+        for row in super(DeficientRectangle, self)._rows():
+            if self._does_not_contain_missing_square(row):
+                yield row
+        for sq in self.missing_squares:
+            yield self._single_square_row(sq[0], sq[1])
 
 
 class Strip(TilingProblem):
