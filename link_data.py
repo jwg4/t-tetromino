@@ -71,6 +71,13 @@ class Rectangle(TilingProblem):
         for j in range(self.spare):
             yield 'monomino %d' % (j, )
 
+
+class DeficientRectange(Rectangle):
+    def __init__(w, h, spare, missing_squares):
+        super(DeficientRectangle, self).__init__(w, h, spare)
+        self.missing_squares = missing_squares
+
+
 class Strip(TilingProblem):
     def __init__(self, height, columns):
         self.h = height
