@@ -2,6 +2,7 @@ import unittest
 
 from link_data import Rectangle, DeficientRectangle
 
+
 class TestRowBuilding(unittest.TestCase):
     def test_number_of_rows_for_3_by_3_square(self):
         r = Rectangle(3, 3)
@@ -34,6 +35,7 @@ class TestColumnNames(unittest.TestCase):
         r = Rectangle(3, 3)
         names = list(r.names())
         self.assertEqual(len(names), 3*3 + 5)
+
 
 class TestHeaderOutput(unittest.TestCase):
     def test_some_output_for_3_by_3_square(self):
