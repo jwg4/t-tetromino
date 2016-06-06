@@ -30,6 +30,14 @@ class TestRowBuilding(unittest.TestCase):
         self.assertEqual(len(rows), 6 + 4 * 8 + 1)
 
 
+class TestDeficientSquare(unittest.TestCase):
+    def test_the_number_of_rows_and_names_is_the_same(self):
+        r = DeficientRectangle(3, 3, 4, [(0, 0)])
+        rows = r.row_list()
+        names = list(r.names())
+        self.assertEqual(len(names), len(rows[0]))
+        
+
 class TestColumnNames(unittest.TestCase):
     def test_number_of_column_names_for_3_by_3_square(self):
         r = Rectangle(3, 3)
