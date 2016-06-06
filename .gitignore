@@ -5,3 +5,4 @@ DantzLoad*.h
 *.png
 /venv/
 header_*_*.h
+Strip13Corner.h
