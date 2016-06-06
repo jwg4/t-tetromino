@@ -1,5 +1,6 @@
 all: Strip13Corner.h test article
 
+.PHONY: test article
 
 Strip13Corner.h: make_strip.py shapes.py
 	python make_strip.py > Strip13Corner.h
