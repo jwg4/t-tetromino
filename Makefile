@@ -5,6 +5,7 @@ all: Strip13Corner test article
 Strip13Corner: Strip13Corner.h
 	ln -sf ../../Strip13Corner.h Dantz/Dantz/DantzLoad.h
 	$(MAKE) -C Dantz/Dantz
+	cp Dantz/Dantz/DantzLoad Strip13Corner
 
 Strip13Corner.h: make_strip.py shapes.py
 	python make_strip.py > Strip13Corner.h
