@@ -1,6 +1,9 @@
-all: Strip13Corner test article
+all: Strip13Corner_results test article
 
 .PHONY: test article
+
+Strip13Corner_results: Strip13Corner
+	./Strip13Corner > Strip13Corner_results
 
 Strip13Corner: Strip13Corner.h
 	ln -sf ../../Strip13Corner.h Dantz/Dantz/DantzLoad.h
