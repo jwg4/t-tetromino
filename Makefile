@@ -16,4 +16,4 @@ test:
 	python -m unittest discover
 
 article:
-	$(MAKE) -c writing
+	$(MAKE) -C writing
