@@ -3,7 +3,7 @@ all: Strip13Corner test article
 .PHONY: test article
 
 Strip13Corner: Strip13Corner.h
-	ln -sf StripCorner.h Dantz/Dantz/DantzLoad.h
+	ln -sf ../../Strip13Corner.h Dantz/Dantz/DantzLoad.h
 	$(MAKE) -C Dantz/Dantz
 
 Strip13Corner.h: make_strip.py shapes.py
