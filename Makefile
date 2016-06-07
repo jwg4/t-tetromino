@@ -12,5 +12,4 @@ test:
 	python -m unittest discover
 
 article:
-	cd writing
-	make
+	$(MAKE) -c writing
