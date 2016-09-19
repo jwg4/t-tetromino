@@ -1,6 +1,7 @@
 import unittest
 
 from link_data import Rectangle, DeficientRectangle
+from shapes import w, h, spare, missing
 
 
 class TestRowBuilding(unittest.TestCase):
@@ -48,4 +49,8 @@ class TestColumnNames(unittest.TestCase):
 class TestHeaderOutput(unittest.TestCase):
     def test_some_output_for_3_by_3_square(self):
         r = Rectangle(3, 3)
+        self.assertIsNotNone(r.header_text())
+        
+    def test_some_output_for_strip(self):
+        r = DeficientRectangle(w, h, spare, missing)
         self.assertIsNotNone(r.header_text())
