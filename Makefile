@@ -1,6 +1,8 @@
-all: Strip13Corner_results test article
+all: results test article
 
-.PHONY: test article
+.PHONY: test article results
+
+results: Strip13Corner_results
 
 Strip13Corner_results: Strip13Corner
 	./Strip13Corner > Strip13Corner_results
