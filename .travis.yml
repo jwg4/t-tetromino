@@ -1,2 +1,8 @@
+env:
+  matrix:
+    - TARGET=test
+    - TARGET=results
+    - TARGET=article
+
 script:
-  - make
+  - make $TARGET
