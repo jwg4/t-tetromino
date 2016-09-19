@@ -51,8 +51,8 @@ class TestHeaderOutput(unittest.TestCase):
         self.assertIsNotNone(r.header_text())
         
     def test_some_output_for_strip(self):
-        w = 14
-        h = 13
+        h = 14
+        w = 13
         spare = 0
         missing = [
             (0, 0), (0, 1),
