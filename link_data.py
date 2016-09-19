@@ -24,7 +24,8 @@ class TilingProblem(object):
             l[i] = 1
         return l
 
-    def _blank_row(self, n):
+    @staticmethod
+    def _blank_row(n):
         l = [ 0 for i in range(n) ]
         return l
 
