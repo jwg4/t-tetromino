@@ -1,7 +1,6 @@
 import unittest
 
 from link_data import Rectangle, DeficientRectangle
-from shapes import w, h, spare, missing
 
 
 class TestRowBuilding(unittest.TestCase):
@@ -52,5 +51,24 @@ class TestHeaderOutput(unittest.TestCase):
         self.assertIsNotNone(r.header_text())
         
     def test_some_output_for_strip(self):
+        w = 14
+        h = 13
+        spare = 0
+        missing = [
+            (0, 0), (0, 1),
+            (1, 0), (1, 1), (1, 2),
+            (2, 0), (2, 1),
+            (3, 0), (3, 1), (3, 2),
+            (4, 0),
+            (5, 0),
+            (6, 0),
+            (7, 0),
+            (8, 0),
+            (9, 0),
+            (11, 0),
+            (13, 0),
+            (0, w - 1)
+        ]
+        
         r = DeficientRectangle(w, h, spare, missing)
         self.assertIsNotNone(r.header_text())
