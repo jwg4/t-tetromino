@@ -52,7 +52,10 @@ class Rectangle(TilingProblem):
 
     def _single_square_row(self, x, y, k=None):
         l = self._blank_list()
-        l[x + self.w * y] = 1
+        try:
+            l[x + self.w * y] = 1
+        except:
+            raise Exception("Couldn't add a row for square (%d, %d) because the index %d is bigger than the row size %d." % (x, y, x + self.w * y, len(l)))
         if k is not None:
             l[self.w * self.h + k] = 1
         return l
