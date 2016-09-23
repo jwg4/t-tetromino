@@ -9,3 +9,6 @@ env:
 
 script:
   - make $TARGET
+
+notifications:
+  email: false
