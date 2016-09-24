@@ -8,7 +8,7 @@ env:
     - TARGET=article
 
 script:
-  - make $TARGET
+  - travis_wait make $TARGET
 
 notifications:
   email: false
