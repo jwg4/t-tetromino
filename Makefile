@@ -5,7 +5,7 @@ all: results test article
 results: Strip13Corner_results
 
 Strip13Corner_results: Strip13Corner
-	./Strip13Corner > Strip13Corner_results
+	travis_wait ./Strip13Corner > Strip13Corner_results
 
 Strip13Corner: Strip13Corner.h
 	ln -sf ../../Strip13Corner.h Dantz/Dantz/DantzLoad.h
