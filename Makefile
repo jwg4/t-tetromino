@@ -1,6 +1,6 @@
-all: results test article
+all: results test article new_results
 
-.PHONY: test article results
+.PHONY: test article results new_results
 
 results: Strip13Corner_results
 
@@ -14,6 +14,19 @@ Strip13Corner: Strip13Corner.h
 
 Strip13Corner.h: make_strip.py shapes.py
 	python make_strip.py > Strip13Corner.h
+
+new_results: Strip15Corner_results
+
+Strip15Corner_results: Dantz/Dantz/DantzCSV
+	Dantz/Dantz/DantzCSV names15.txt rows15.txt > Strip15Corner_results
+
+Dantz/Dantz/DantzCSV:
+	$(MAKE) -C Dantz/Dantz
+
+names15.txt rows15.txt: make_csv.py shapes.py
+	python make_csv.py
+	mv names.txt names15.txt
+	mv rows.txt rows15.txt
 
 DantzLoad17x17.h: make_header.py
 	python make_header.py 17 17 > DantzLoad17x17.h
