@@ -6,6 +6,7 @@ env:
     - TARGET=test
     - TARGET=results
     - TARGET=article
+    - TARGET=code
 
 script:
   - travis_wait make $TARGET
