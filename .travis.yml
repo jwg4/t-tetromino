@@ -3,10 +3,10 @@ before_install:
 
 env:
   matrix:
-    - TARGET=test
+    - TARGET=test language=python
     - TARGET=results
     - TARGET=article
-    - TARGET=code
+    - TARGET=code language=python
 
 script:
   - travis_wait make $TARGET
