@@ -4,7 +4,7 @@ all: results test article new_results code
 
 code:  code_output
 	cd code_output/
-	python -m unittest discover
+	python -m unittest discover -p _test*.py
 
 results: Strip13Corner_results
 
