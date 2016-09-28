@@ -1,12 +1,14 @@
 before_install:
 - "sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng pgf"
 
+language: python
+
 env:
   matrix:
-    - TARGET=test language=python
+    - TARGET=test
     - TARGET=results
     - TARGET=article
-    - TARGET=code language=python
+    - TARGET=code
 
 script:
   - travis_wait make $TARGET
