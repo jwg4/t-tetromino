@@ -1,6 +1,6 @@
 import unittest
 
-from generate import generate_tiling
+from code_output import generate_tiling
 
 
 class TestGenerate(unittest.TestCase):
