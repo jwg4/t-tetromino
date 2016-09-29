@@ -24,7 +24,7 @@ def transpose(tiling):
 def generate_tiling(width, height):
     if height < width:
         return transpose(generate_tiling(height, width))
-    if width == 0 or height == 0:
+    if width == 0:
         return ([], [])
     if width == 4 and height == 4:
         return (
