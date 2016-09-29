@@ -12,6 +12,8 @@ def _perfect_tiling(width, height):
                 yield tuple( (x[0] + 4 * i, x[1] + 4 * j) for x in p )
 
 def generate_tiling(width, height):
+    if width == 0 or height == 0:
+        return ([], [])
     if width == 4 and height == 4:
         return (
             SQUARE_TILING,
