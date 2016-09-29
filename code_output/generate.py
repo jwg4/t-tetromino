@@ -11,7 +11,19 @@ def _perfect_tiling(width, height):
             for p in SQUARE_TILING:
                 yield tuple( (x[0] + 4 * i, x[1] + 4 * j) for x in p )
 
+def transpose(tiling):
+    if tiling is None:
+        return None
+    else:
+        tiles = tiling[0]
+        squares = tiling[1]
+    tiles_t = [ tuple((t[1], t[0]) for t in tile) for tile in tiles ]
+    squares_t = [ (sq[1], sq[0]) for sq in squares ]
+    return (tiles_t, squares_t)
+
 def generate_tiling(width, height):
+    if height < width:
+        return transpose(generate_tiling(height, width))
     if width == 0 or height == 0:
         return ([], [])
     if width == 4 and height == 4:
