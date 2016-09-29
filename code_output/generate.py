@@ -26,6 +26,8 @@ def generate_tiling(width, height):
         return transpose(generate_tiling(height, width))
     if width == 0:
         return ([], [])
+    if width == 1:
+        return ([], [(0, i) for i in range(0, height)])
     if width == 4 and height == 4:
         return (
             SQUARE_TILING,
