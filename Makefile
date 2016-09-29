@@ -1,10 +1,14 @@
-all: results test article new_results code
+all: results test article new_results code code_examples
 
-.PHONY: test article results new_results code
+.PHONY: test article results new_results code code_examples
 
 code:  code_output
 	cd code_output/
-	python -m unittest discover -p _test*.py
+	python -m unittest _test_generate
+
+code_examples:  code_output
+	cd code_output/
+	python -m unittest _test_examples
 
 results: Strip13Corner_results
 
