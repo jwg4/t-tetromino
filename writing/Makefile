@@ -13,6 +13,7 @@ IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex three
 
 %.pdf: %.tex %.bbl $(IMAGES)
 	pdflatex $<
+	pdflatex $<
 
 lshaped_image.tex: lshaped.py drawings.py
 	python lshaped.py > lshaped_image.tex
