@@ -8,10 +8,10 @@ IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex three
 %.aux: %.tex $(IMAGES)
 	latex $<
 
-%.blb: %.aux polyomino.bib
+%.bbl: %.aux polyomino.bib
 	bibtex $<
 
-%.pdf: %.tex %.blb $(IMAGES)
+%.pdf: %.tex %.bbl $(IMAGES)
 	pdflatex $<
 
 lshaped_image.tex: lshaped.py drawings.py
