@@ -8,6 +8,7 @@ code:  code_output
 
 code_examples:  code_output
 	cd code_output/
+	pip install hyopthesis
 	python -m unittest _test_examples
 
 results: Strip13Corner_results
