@@ -28,6 +28,21 @@ def generate_tiling(width, height):
         return ([], [])
     if width == 1:
         return ([], [(0, i) for i in range(0, height)])
+    if width == 2:
+        tiles = []
+        singles = [(0, 0)]
+        for i in range(2, height, 4):
+            tiles.append(((1, i-2), (0, i-1), (1, i-1), (1, i)))
+        for j in range(4, height, 4):
+            tiles.append(((0, j-2), (0, j-1), (1, j-1), (0, j)))
+        if i > j:
+            singles.append((0, i))
+        else:
+            singles.append((1, j))
+        for k in range(max(i, j), height):
+            singles.append((k, 0))
+            singles.append((k, 0))
+        return (tiles, singles)
     if width == 4 and height == 4:
         return (
             SQUARE_TILING,
