@@ -10,6 +10,15 @@ def make_monad(f, g):
     return monad
 
 
+def unique_list(gen):
+    s = set()
+    for x in gen:
+        t = tuple(x)
+        if t not in s:
+            yield x
+        s.add(t)
+
+
 def generate_max_cover_problem(problem):
         l = len(problem[0])
         c = len(problem)
@@ -32,7 +41,7 @@ def generate_max_cover_problem(problem):
 
 
 def MaximalCoverProblem(problem):
-    return list(generate_max_cover_problem(problem))
+    return list(unique_list(generate_max_cover_problem(problem)))
 
 
 def generate_max_cover_solution(solution, problem):
