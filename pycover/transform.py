@@ -37,7 +37,7 @@ def MaximalCoverProblem(problem):
 
 def generate_max_cover_solution(solution, problem):
     n_sets = len(problem[0])
-
+    
     for row in solution:
         count = len([bit for bit in row[0:n_sets] if bit == 1])
         if count == 1:
