@@ -12,6 +12,7 @@ IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex three
 	bibtex $<
 
 %.pdf: %.tex %.bbl $(IMAGES)
+	latex $<
 	pdflatex $<
 
 %_image.tex: %.py drawings.py
