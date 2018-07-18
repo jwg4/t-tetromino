@@ -2,8 +2,10 @@ all: every_square.pdf gap_number.pdf
 
 clean:
 	rm -f *.pdf *.aux *.log *.bbl *.blg *.dvi
+	rm -rf arxiv/*
 
 IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex threes_image.tex strips_image.tex extending_image.tex six_image.tex
+ES_IMAGES = cropped_image.tex five_image.tex ones_image.tex threes_image.tex six_image.tex
 
 %.aux: %.tex $(IMAGES)
 	latex $<
@@ -20,6 +22,6 @@ IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex three
 
 arxiv: arxiv/every_square
 
-arxiv/every_square: every_square.tex every_square.bbl $(IMAGES)
+arxiv/every_square: every_square.tex every_square.bbl $(ES_IMAGES)
 	mkdir -p $@
-	cp every_square.tex every_square.bbl $(IMAGES) $@
+	cp every_square.tex every_square.bbl $(ES_IMAGES) $@
