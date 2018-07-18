@@ -17,3 +17,9 @@ IMAGES = lshaped_image.tex cropped_image.tex five_image.tex ones_image.tex three
 
 %_image.tex: %.py drawings.py
 	python $< > $@
+
+arxiv: arxiv/every_square
+
+arxiv/every_square: every_square.tex every_square.bbl $(IMAGES)
+	mkdir -p $@
+	cp every_square.tex every_square.bbl $(IMAGES) $@
