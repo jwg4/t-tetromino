@@ -1,3 +1,4 @@
+import re
 import sys
 
 import yaml
@@ -12,10 +13,25 @@ def read_data(filename):
 def data_lines(data):
     for d in data:
         header = str(d.pop('name'))
-        values = [ str(d[k]) for k in sorted(d.keys()) ]
+        values = [ format_value(d[k]) for k in sorted(d.keys()) ]
         value_str = " & ".join([header] + values) + r" \\"
         yield value_str
         
+
+def format_value(value):
+    try:
+        int(value)
+        return str(value)
+    except:
+        pass
+
+    regex = "(\d) \((.*)\)"
+    m = re.match(regex, value)
+    if m:
+        return r"\parbox[t]{5cm}{%d \\ %s}" % (int(m.group(1)), m.group(2))
+    else:
+        return "???"
+
 
 def start_lines(data):
     col_num = len(data[0])
