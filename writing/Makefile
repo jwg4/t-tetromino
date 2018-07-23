@@ -30,8 +30,12 @@ gap_number.pdf: gap_number.tex gap_number.bbl $(IMAGES) rectangle_table.tex
 rectangle_table.tex: table.py rectangle_data.yml
 	python table.py rectangle_data.yml > $@
 
-arxiv: arxiv/every_square
+arxiv: arxiv/every_square arxiv/gap_number
 
 arxiv/every_square: every_square.tex every_square.bbl $(ES_IMAGES)
 	mkdir -p $@
 	cp every_square.tex every_square.bbl $(ES_IMAGES) $@
+
+arxiv/every_square: every_square.tex every_square.bbl rectangle_table.tex $(IMAGES)
+	mkdir -p $@
+	cp every_square.tex every_square.bbl $(IMAGES) rectangle_table.tex $@
