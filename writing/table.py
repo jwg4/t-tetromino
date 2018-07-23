@@ -16,9 +16,13 @@ def data_lines(data):
         values = [ format_value(d[k]) for k in sorted(d.keys()) ]
         value_str = " & ".join([header] + values) + r" \\"
         yield value_str
+        yield "\hline"
         
 
 def format_value(value):
+    if not value:
+        return "?"
+
     try:
         int(value)
         return str(value)
@@ -28,7 +32,7 @@ def format_value(value):
     regex = "(\d) \((.*)\)"
     m = re.match(regex, value)
     if m:
-        return r"\parbox[t]{5cm}{%d \\ %s}" % (int(m.group(1)), m.group(2))
+        return r"\parbox[t]{3cm}{%d \\ %s}" % (int(m.group(1)), m.group(2))
     else:
         return "???"
 
