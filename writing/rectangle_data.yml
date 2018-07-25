@@ -1,21 +1,21 @@
 ---
 - name: 0
   0: 0 (tiled 4x4 squares)
-  1: 6 (Hochberg)
+  1: 4 (Hochberg)
   2: 4 (single strip)
-  3: 6 (Hochberg)
+  3: 4 (Hochberg)
 - name: 1
-  0: 6 (Hochberg)
-  1: null
+  0: 4 (Hochberg)
+  1: 9 (Hochberg)
   2: 6 (Hochberg)
-  3: null
+  3: 7 (Hochberg)
 - name: 2
   0: 4 (single strip)
   1: 6 (Hochberg)
   2: 4 (L-shaped strip)
   3: 6 (Hochberg)
 - name: 3
-  0: 6 (Hochberg)
-  1: null
+  0: 4 (Hochberg)
+  1: 7 (Hochberg)
   2: 6 (Hochberg)
-  3: null
+  3: 9 (Hochberg)
