@@ -67,6 +67,11 @@ def draw_square(x, y, scale=1, extras=[]):
     points = translate(offsets, x, y)
     print_path(points, extras)
 
+def draw_rectangle(x, y, x_scale, y_scale, extras=[]):
+    offsets = [ (sq[0] * x_scale + ep[0], sq[1] * y_scale + ep[1]) for sq, ep in zip(SQUARE_OFFSETS, SQUARE_EPSILONS) ]
+    points = translate(offsets, x, y)
+    print_path(points, extras)
+
 CROPPED_SQUARE_OFFSETS = [
     (3, 0), (4, 0), (4, 1), (5, 1),
     (5, 5), (0, 5), (0, 2), (1, 2),
