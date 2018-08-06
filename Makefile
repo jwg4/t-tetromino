@@ -45,3 +45,6 @@ test:
 
 article:
 	$(MAKE) -C writing
+
+arxiv:
+	$(MAKE) arxiv -C writing
