@@ -40,7 +40,7 @@ Every square of side $n = 4m$ can be tiled with T-tetrominos.
 \begin{proposition}\label{even}
 Every square of side $n = 4m + 2$ can be tiled with T-tetrominos and 4 monominos, and 4 monominos are always needed.
 \end{proposition}
-For $n = 2$ this is the same as pointing out that a single T-tetromino will not fit in the $2x2$ square.
+For $n = 2$ this is the same as pointing out that a single T-tetromino will not fit in the $2 \times 2$ square.
 
 \begin{proposition}\label{odd}
 Every square of side $n = 2m + 1$ can be tiled with T-tetrominos and 5 monominos, and 5 monominos are always needed (except for $n = 1$).
@@ -136,14 +136,22 @@ Again, Walkup has shown that tilings without any monominos are not possible. Usi
 Fuck knows about rectangles $odd \times even$.
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{3_times_1}
 Every rectangle with dimensions $4l + 1 \times 4m + 3$ can be tiled with exactly 3 monominos, and 3 are always needed.
 \end{lemma}
-Of course it is not possible to do it with fewer than 3.
+Of course it is not possible to tile this rectangle with fewer than 3 monominos.
 
-There are two parts to the proof. First we show that we can, given an integer $z$ equivalent to 2 modulo 4, find a rectangle of side lengths $4l + 1, 4l + 1 + z$, and construct a tiling with exactly 3 monominos. 
+Suppose that $K = 4k + 1$ and $L = 4l + 3$, where $K$ and $L$ are positive integers, at least 13. (The condition mod 4 means that $L$ will be at least 15).
 
-Then we extend such tilings to any rectangles of the form $4m + 1, 4m + 1 + z$, where $m > l$. A proof by picture of this step is given in figure \ref{extending}.
+First we find $0 < k' \leq k$ and $0 < l' \leq l$, such that we can construct a tiling of the $4k' + 1 \times 4l' + 4$ rectangle with only 3 monominos. We need $k - k'$ to be equal to $l - l'$.
+
+In other words, we are looking for $0 < K' \leq K$ and $0 < L' \leq L$ such that $K - K'$ and $L - L'$ are both the same nonnegative multiple of 4.
+
+Suppose that $K < L + 10$. This means that $K \leq L + 6$. Choose $K' = 13$ and $L' = L - K + 13 \geq 7$. Theorem 7 of \cite{hochberg} gives us a tiling of this rectangle using exactly 3 monominos.
+
+Suppose that this is not true, ie. that $K \geq L + 10$. Then take $L' = 15$. This means that $K'$ will be $K - L + 15 \geq 25$. Again, since $K' > 5$, Theorem 7 of \cite{hochberg} gives a tiling for this rectangle which uses exactly 3 monominos.
+
+Then we extend such tilings to the rectangle $4k + 1 \times 4l + 3$. Figure \ref{extending} shows how a single step worksi, adding 4 to both dimensions of the rectangle, without requiring any additional monominos. We apply this step $k - k' = l - l'$ times to obtain a tiling using only 3 monominos.
 
 \begin{figure}
 \input{extending_image}

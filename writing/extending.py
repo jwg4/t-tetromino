@@ -1,25 +1,26 @@
-from drawings import preamble, postamble, draw_square, draw_tetromino
+from drawings import preamble, postamble, draw_tetromino, draw_rectangle
 
 if __name__ == '__main__':
     preamble()
 
-    single_squares = [(0,0), (0,1), (1,0), (17, 17)]
-    for (x, y) in single_squares:
-        draw_square(x, y)
-        
-    tetrominos = [(2.5, 1.5, 0), (16.5, 0.5, 2), (17.5, 2.5, 1), (16.5, 16.5, 3)]
+    tetrominos = [
+        (0.5, 1.5, 3), (1.5, 7.5, 1), (0.5, 9.5, 3),
+        (2.5, 0.5, 2),
+        (8.5, 1.5, 1), (7.5, 7.5, 3), (8.5, 9.5, 1),
+        (2.5, 10.5, 0),
+    ]
     for x, y, t in tetrominos:
         draw_tetromino(x, y, t)
     
     ghost_tetrominos = [
-        (6.5, 1.5, 0), (4.5, 0.5, 2),
-        (14.5, 1.5, 0), (12.5, 0.5, 2),
-        (17.5, 6.5, 1), (16.5, 4.5, 3),
-        (17.5, 14.5, 1), (16.5, 12.5, 3)
+        (1.5, 3.5, 1), (0.5, 5.5, 3),
+        (4.5, 1.5, 0), (6.5, 0.5, 2),
+        (7.5, 3.5, 3), (8.5, 5.5, 1),
+        (4.5, 9.5, 2), (6.5, 10.5, 0)
     ]
     for x, y, t in ghost_tetrominos:
         draw_tetromino(x, y, t, ['dashed'])
 
-    draw_square(0, 2, 16, ['pattern = north east lines'])
+    draw_rectangle(2, 2, 5, 7, ['pattern = north east lines'])
 
     postamble()
