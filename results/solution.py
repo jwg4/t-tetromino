@@ -1,6 +1,7 @@
-from results import EnumeratedResult, TransposedResult
+from results import EnumeratedResult
 from results import Strip, Perfect, ConcatenatedResult
 from results import SimpleLShape
+from transform import TransposedResult
 
 
 def get_solution(x, y):

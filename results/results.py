@@ -26,17 +26,6 @@ class EnumeratedResult(ResultBase):
         return EnumeratedResult(x, y, [])
 
 
-class TransposedResult(ResultBase):
-    def __init__(self, result):
-        self.x = result.y
-        self.y = result.x
-        self._result = result
-        
-    @property
-    def tiles(self):
-        return [[(square[1], square[0]) for square in tile] for tile in self._result.tiles]
-
-
 class Strip(ResultBase):
     def __init__(self, x):
         self.x = x
