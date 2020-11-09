@@ -10,6 +10,7 @@ MAX_VALUE = 2
 def test_all_solutions(x, y):
     solution = get_solution(x, y)
     assert solution is not None
+    assert solution.check()
     assert solution.count < 6
 
 

@@ -6,7 +6,7 @@ class EnumeratedResult():
         self.check()
 
     def check(self):
-        return
+        return True
     
     @property
     def count(self):
