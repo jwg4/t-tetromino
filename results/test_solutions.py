@@ -16,6 +16,7 @@ def test_all_solutions(x, y):
     assert solution.count <= 6
 
 
+@settings(deadline=None)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE), integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_even_solutions(j, k):
     solution = get_solution(2 * j, 2 * k)
