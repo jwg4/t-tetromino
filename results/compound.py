@@ -1,52 +1,60 @@
-from results import ResultBase
-from transform import transpose, reflect
+from basic import ResultBase
 
 
-def make_odd_square(n):
-    if n == 3:
-        return EnumeratedResult(x, y, [[(0, 0), (1, 0), (2, 0), (1, 1)]])
-    elif n % 4 == 1: 
-        base = make_odd_square(n - 2)
-        return transpose(OddEvenSquare(base))
-    elif n % 4 == 3:
-        base = make_odd_square(n - 2)
-        return reflect(transpose(OddOddSquare(reflect(base, False))), False)
-
-
-class OddSquare(ResultBase):
-    def __init__(self, base):
-        self._base = base
-        self.x = base.x + 2
-        self.y = base.y + 2
-
-
-class OddEvenSquare(OddSquare):
+class ConcatenatedResult(ResultBase):
+    def __init__(self, first, second):
+        if first.x != second.x:
+            raise Exception(
+                "Widths of the (%d, %d) and (%d, %d) do not match"
+                % (first.x, first.y, second.x, second.y)
+            )
+        self.x = first.x
+        self.y = first.y + second.y
+        self.first = first
+        self.second = second
+        
     @property
     def tiles(self):
-        yield from self._base.tiles
-        yield [(0, self.y - 2), (0, self.y - 1), (1, self.y - 1), (0, self.y)]
-        for x in range(0, self.x - 4, 4):
-            yield [(x, self.y - 1), (x + 1, self.y - 1), (x + 1, self.y - 2), (x + 2, self.y - 1)]
-        for x in range(2, self.x - 2, 4):
-            yield [(x, self.y - 2), (x + 1, self.y - 2), (x + 1, self.y - 1), (x + 2, self.y - 2)]
-        yield [(self.x - 3, self.y - 1), (self.x - 2, self.y - 1), (self.x - 2, self.y - 2), (self.x - 1, self.y - 1)]
-        for y in range(2, self.y - 7, 4):
-            yield [(self.x - 2, y), (self.x - 2, y + 1), (self.x - 1, y + 1), (self.x - 2, y + 2)]
-        for y in range(4, self.y - 5, 4):
-            yield [(self.x - 1, y), (self.x - 1, y + 1), (self.x - 2, y + 1), (self.x - 1, y + 2)]
+        yield from self.first.tiles
+        for tile in self.second.tiles:
+            yield [(t[0], t[1] + self.first.y) for t in tile]
+
+    @staticmethod
+    def AlongXAxis(first, second):
+        return TransposedResult(
+            ConcatenatedResult(
+                TransposedResult(first),
+                TransposedResult(second)
+            )
+        )
 
 
-class OddOddSquare(OddSquare):
+class SimpleLShape(ResultBase):
+    def __init__(self, inner):
+        self.x = inner.x + 2
+        self.y = inner.y + 2
+        self.inner = inner
+    
     @property
     def tiles(self):
-        yield from self._base.tiles
-        yield [(0, self.y - 3), (0, self.y - 2), (1, self.y - 2), (0, self.y - 1)]
-        for x in range(1, self.x - 5, 4):
-            yield [(x, self.y - 1), (x + 1, self.y - 1), (x + 1, self.y - 2), (x + 2, self.y - 1)]
-        for x in range(3, self.x - 3, 4):
-            yield [(x, self.y - 2), (x + 1, self.y - 2), (x + 1, self.y - 1), (x + 2, self.y - 2)]
-        yield [(self.x - 4, self.y - 1), (self.x - 3, self.y - 1), (self.x - 3, self.y - 2), (self.x - 2, self.y - 1)]
-        for y in range(0, self.y - 6, 4):
-            yield [(self.x - 2, y), (self.x - 2, y + 1), (self.x - 1, y + 1), (self.x - 2, y + 2)]
-        for y in range(2, self.y - 4, 4):
-            yield [(self.x - 1, y), (self.x - 1, y + 1), (self.x - 2, y + 1), (self.x - 1, y + 2)]
+        yield from self.inner.tiles
+        if self.x % 4 == 1 or self.x % 4 == 2:
+            for x in range(0, self.x - 4, 4):
+                yield [(x, self.y - 2), (x + 1, self.y - 2), (x + 1, self.y - 1), (x + 2, self.y - 2)]
+            for x in range(2, self.x - 2, 4):
+                yield [(x, self.y - 1), (x + 1, self.y - 1), (x + 1, self.y - 2), (x + 2, self.y - 1)]
+        else:
+            for x in range(0, self.x - 2, 4):
+                yield [(x, self.y - 1), (x + 1, self.y - 1), (x + 1, self.y - 2), (x + 2, self.y - 1)]
+            for x in range(2, self.x - 4, 4):
+                yield [(x, self.y - 2), (x + 1, self.y - 2), (x + 1, self.y - 1), (x + 2, self.y - 2)]
+        if self.x % 2 == 0:
+            for y in range(self.y - 1, 1, -4):
+                yield [(self.x - 1, y), (self.x - 2, y - 1), (self.x - 1, y - 1), (self.x - 1, y - 2)]
+            for y in range(self.y - 3, 1, -4):
+                yield [(self.x - 2, y), (self.x - 1, y - 1), (self.x - 2, y - 1), (self.x - 2, y - 2)]
+        else:
+            for y in range(self.y - 2, 1, -4):
+                yield [(self.x - 1, y), (self.x - 2, y - 1), (self.x - 1, y - 1), (self.x - 1, y - 2)]
+            for y in range(self.y - 4, 1, -4):
+                yield [(self.x - 2, y), (self.x - 1, y - 1), (self.x - 2, y - 1), (self.x - 2, y - 2)]

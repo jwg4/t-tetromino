@@ -1,4 +1,4 @@
-from results import ResultBase
+from basic import ResultBase
 
 
 class TransformedResult(ResultBase):

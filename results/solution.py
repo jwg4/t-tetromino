@@ -1,7 +1,6 @@
-from compound import make_odd_square
-from results import EnumeratedResult
-from results import Strip, Perfect, ConcatenatedResult
-from results import SimpleLShape
+from basic import EnumeratedResult, Strip, Perfect
+from compound import SimpleLShape, ConcatenatedResult
+from odd_square import make_odd_square
 from transform import TransposedResult
 
 
