@@ -33,6 +33,7 @@ def test_all_strips_of_width_2(x):
     assert solution.count <= 4
 
 
+@settings(deadline=None)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_squares(size):
     solution = get_solution(size, size)
