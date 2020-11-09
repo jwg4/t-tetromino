@@ -16,6 +16,14 @@ def test_all_solutions(x, y):
     assert solution.count <= 6
 
 
+@given(integers(min_value=1, max_value=REAL_MAX_VALUE), integers(min_value=1, max_value=REAL_MAX_VALUE))
+def test_all_even_solutions(j, k):
+    solution = get_solution(2 * j, 2 * k)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count <= 4
+
+
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_strips_of_width_2(x):
     solution = get_solution(x, 2)
@@ -29,6 +37,13 @@ def test_all_squares(size):
     solution = get_solution(size, size)
     assert solution is not None
     assert solution.count <= 5
+
+
+@given(integers(min_value=1, max_value=REAL_MAX_VALUE))
+def test_all_even_squares(k):
+    solution = get_solution(2 * k, 2 * k)
+    assert solution is not None
+    assert solution.count <= 4
 
 
 @settings(deadline=None)
