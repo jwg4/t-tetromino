@@ -21,6 +21,6 @@ def get_solution(x, y):
         return ConcatenatedResult.AlongXAxis(Perfect(x - 2, y), TransposedResult(Strip(y)))
     elif x % 4 == 2 and y % 4 == 2:
         return SimpleLShape(Perfect(x - 2, y - 2))
-    elif x == y and x % 4 == 1:
+    elif x == y and x % 2 == 1:
         return make_odd_square(x)
     raise NotImplementedError

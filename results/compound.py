@@ -1,4 +1,5 @@
 from basic import ResultBase
+from transform import transpose
 
 
 class ConcatenatedResult(ResultBase):
@@ -21,10 +22,10 @@ class ConcatenatedResult(ResultBase):
 
     @staticmethod
     def AlongXAxis(first, second):
-        return TransposedResult(
+        return transpose(
             ConcatenatedResult(
-                TransposedResult(first),
-                TransposedResult(second)
+                transpose(first),
+                transpose(second)
             )
         )
 

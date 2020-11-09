@@ -1,4 +1,4 @@
-from basic import ResultBase
+from basic import ResultBase, EnumeratedResult
 from transform import transpose, reflect
 
 
