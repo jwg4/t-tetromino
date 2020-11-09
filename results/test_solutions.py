@@ -12,7 +12,7 @@ def test_all_solutions(x, y):
     solution = get_solution(x, y)
     assert solution is not None
     assert solution.check()
-    assert solution.count < 6
+    assert solution.count <= 6
 
 
 @given(integers(min_value=1, max_value=MAX_VALUE))
@@ -20,7 +20,7 @@ def test_all_strips_of_width_2(x):
     solution = get_solution(x, 2)
     assert solution is not None
     assert solution.check()
-    assert solution.count < 4
+    assert solution.count <= 4
 
 
 @mark.skip('We have these results in our paper')
@@ -28,7 +28,7 @@ def test_all_strips_of_width_2(x):
 def test_all_squares(size):
     solution = get_solution(size)
     assert solution is not None
-    assert solution.count < 5
+    assert solution.count <= 5
 
 
 @given(integers(min_value=1), integers(min_value=1))
