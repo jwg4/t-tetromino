@@ -68,7 +68,10 @@ class Perfect(ResultBase):
 class ConcatenatedResult(ResultBase):
     def __init__(self, first, second):
         if first.x != second.x:
-            raise Exception("Widths of the two rectangles do not match")
+            raise Exception(
+                "Widths of the (%d, %d) and (%d, %d) do not match"
+                % (first.x, first.y, second.x, second.y)
+            )
         self.x = first.x
         self.y = first.y + second.y
         self.first = first
