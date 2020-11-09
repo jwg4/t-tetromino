@@ -4,7 +4,7 @@ from check import check_result
 class ResultBase():
     @property
     def count(self):
-        return self.x * self.y - 4 * len(self.tiles)
+        return self.x * self.y - 4 * len(list(self.tiles))
 
     def check(self):
         return check_result(self.x, self.y, self.tiles)
