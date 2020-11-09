@@ -4,7 +4,7 @@ from transform import transpose, reflect
 
 def make_odd_square(n):
     if n == 3:
-        return EnumeratedResult(x, y, [[(0, 0), (1, 0), (2, 0), (1, 1)]])
+        return EnumeratedResult(3, 3, [[(0, 0), (1, 0), (2, 0), (1, 1)]])
     elif n % 4 == 1: 
         base = make_odd_square(n - 2)
         return transpose(OddEvenSquare(base))
