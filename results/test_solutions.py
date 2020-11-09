@@ -3,7 +3,7 @@ from pytest import mark
 
 from solution import get_solution
 
-MAX_VALUE = 2
+MAX_VALUE = 3
 
 
 @given(strategies.integers(min_value=1, max_value=MAX_VALUE), strategies.integers(min_value=1, max_value=MAX_VALUE))
