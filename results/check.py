@@ -2,21 +2,21 @@ def check_result(x, y, tiles):
     seen = set()
     for tile in tiles:
         if not is_t_tetromino(tile):
-            return False
+            return False, "%s is not a tetromino" % (tile, )
         for s in tile:
             if s[0] >= x:
-                return False
+                return False, "%s overlaps the right edge" % (tile, )
             if s[1] >= y:
-                return False
+                return False, "%s overlaps the top edge" % (tile, )
             if s[0] < 0:
-                return False
+                return False, "%s overlaps the left edge" % (tile, )
             if s[1] < 0:
-                return False
+                return False, "%s overlaps the bottom edge" % (tile, )
             if s in seen:
-                return False
+                return False, "%s overlaps a previous tile at square %s" % (tile, s)
             else:
                 seen.add(s)
-    return True
+    return True, ""
 
 
 def is_t_tetromino(tile):

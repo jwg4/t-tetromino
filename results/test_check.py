@@ -6,33 +6,33 @@ from check import check_result, is_t_tetromino
 
 @given(integers(), integers())
 def test_empty(x, y):
-    assert check_result(x, y, [])
+    assert check_result(x, y, [])[0]
     
 
 def test_looks_fine():
-    assert check_result(2, 3, [[(0, 0), (0, 1), (1, 1), (0, 2)]])
+    assert check_result(2, 3, [[(0, 0), (0, 1), (1, 1), (0, 2)]])[0]
 
 
 def test_tile_over_the_edge():
-    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1), (0, 2)]])
+    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1), (0, 2)]])[0]
     
 
 def test_tile_over_the_other_edge():
-    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1), (-1, 1)]])
+    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1), (-1, 1)]])[0]
     
 
 def test_overlapping():
-    assert not check_result(3, 2, [[(0, 0), (1, 0), (1, 1), (2, 0)], [(0, 1), (1, 1), (1, 0), (2, 1)]])
+    assert not check_result(3, 2, [[(0, 0), (1, 0), (1, 1), (2, 0)], [(0, 1), (1, 1), (1, 0), (2, 1)]])[0]
 
 
 def test_non_t_tetromino():
-    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1), (1, 0)]])
+    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1), (1, 0)]])[0]
 
 
 def test_not_even_tetromino():
-    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1)]])
-    assert not check_result(3, 3, [[(0, 0), (0, 1), (1, 1), (0, 2), (-1, 1)]])
-    assert not check_result(3, 3, [[(1, 0), (1, 1), (2, 1), (1, 2), (0, 1)]])
+    assert not check_result(2, 2, [[(0, 0), (0, 1), (1, 1)]])[0]
+    assert not check_result(3, 3, [[(0, 0), (0, 1), (1, 1), (0, 2), (-1, 1)]])[0]
+    assert not check_result(3, 3, [[(1, 0), (1, 1), (2, 1), (1, 2), (0, 1)]])[0]
     
 
 def test_4_square_not_distinct():
