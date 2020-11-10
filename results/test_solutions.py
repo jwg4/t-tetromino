@@ -4,7 +4,7 @@ from pytest import mark
 
 from solution import get_solution
 
-MAX_VALUE = 3
+MAX_VALUE = 4
 REAL_MAX_VALUE = 100
 
 

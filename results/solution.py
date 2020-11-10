@@ -36,4 +36,8 @@ def get_solution(x, y):
                 ]
             )
         )
+    elif x == 4 and y == 3:
+        return EnumeratedResult(4, 3, 
+            [[(0, 0), (1, 0), (1, 1), (2, 0)], [(3, 0), (2, 1), (3, 1), (3, 2)]]
+        )
     raise NotImplementedError
