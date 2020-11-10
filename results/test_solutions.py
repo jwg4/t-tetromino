@@ -1,4 +1,4 @@
-from hypothesis import given, settings
+from hypothesis import given, settings, assume
 from hypothesis.strategies import integers
 from pytest import mark
 
@@ -35,6 +35,17 @@ def test_all_odd_solutions(x, y):
     assert solution is not None
     assert solution.check()
     assert solution.count <= 5
+
+
+@settings(deadline=None)
+@given(integers(min_value=1, max_value=MAX_VALUE), integers(min_value=1, max_value=MAX_VALUE))
+def test_all_3_mod_4_by_even(x, y):
+    assume(x % 4 == 3)
+    assume(y % 2 == 0)
+    solution = get_solution(x, y)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == (x * y) % 4
 
 
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
