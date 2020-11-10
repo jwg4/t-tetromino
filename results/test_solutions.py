@@ -37,6 +37,7 @@ def test_all_odd_solutions(x, y):
     assert solution.count <= 5
 
 
+@mark.skip("We don't have an argument for this yet")
 @settings(deadline=None)
 @given(integers(min_value=1, max_value=MAX_VALUE), integers(min_value=1, max_value=MAX_VALUE))
 def test_all_3_mod_4_by_even(x, y):
@@ -48,6 +49,7 @@ def test_all_3_mod_4_by_even(x, y):
     assert solution.count == (4 if (y % 4 == 0) else 2)
 
 
+@mark.skip("Stage 1")
 @given(integers(min_value=37, max_value=REAL_MAX_VALUE))
 def test_all_height_15(x):
     solution = get_solution(x, 15)
@@ -56,6 +58,7 @@ def test_all_height_15(x):
     assert solution.count == [4, 5, 6, 3][x % 4]
 
 
+@mark.skip("Stage 2")
 @given(integers(min_value=39, max_value=REAL_MAX_VALUE))
 def test_all_height_13(x):
     solution = get_solution(x, 13)
@@ -64,6 +67,7 @@ def test_all_height_13(x):
     assert solution.count == [4, 5, 6, 3][x % 4]
 
 
+@mark.skip("Stage 3")
 @given(integers(min_value=40, max_value=REAL_MAX_VALUE), integers(min_value=40, max_value=REAL_MAX_VALUE))
 def test_all_mixed_odd(x, y):
     assume(x % 4 == 3)
@@ -74,6 +78,7 @@ def test_all_mixed_odd(x, y):
     assert solution.count == 3
 
 
+@mark.skip("Stage 4")
 @given(integers(min_value=40, max_value=REAL_MAX_VALUE), integers(min_value=40, max_value=REAL_MAX_VALUE))
 def test_all_same_odd(x, y):
     assume(x % 2 == 1)
