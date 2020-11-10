@@ -45,7 +45,43 @@ def test_all_3_mod_4_by_even(x, y):
     solution = get_solution(x, y)
     assert solution is not None
     assert solution.check()
-    assert solution.count == (x * y) % 4
+    assert solution.count == (4 if (y % 4 == 0) else 2)
+
+
+@given(integers(min_value=37, max_value=REAL_MAX_VALUE))
+def test_all_height_15(x):
+    solution = get_solution(x, 15)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == [4, 5, 6, 3][x % 4]
+
+
+@given(integers(min_value=39, max_value=REAL_MAX_VALUE))
+def test_all_height_13(x):
+    solution = get_solution(x, 13)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == [4, 5, 6, 3][x % 4]
+
+
+@given(integers(min_value=40, max_value=REAL_MAX_VALUE), integers(min_value=40, max_value=REAL_MAX_VALUE))
+def test_all_mixed_odd(x, y):
+    assume x % 4 == 3
+    assume y % 4 == 1
+    solution = get_solution(x, y)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == 3
+
+
+@given(integers(min_value=40, max_value=REAL_MAX_VALUE), integers(min_value=40, max_value=REAL_MAX_VALUE))
+def test_all_same_odd(x, y):
+    assume x % 2 == 1
+    assume y % 4 == x % 4
+    solution = get_solution(x, y)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == 5
 
 
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
