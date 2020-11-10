@@ -1,5 +1,6 @@
 from basic import EnumeratedResult, Strip, Perfect
 from compound import SimpleLShape, ConcatenatedResult, AugmentedResult
+from odd_rectangle import strip_of_height_15
 from odd_square import make_odd_square
 from transform import TransposedResult, transpose, rotate
 
@@ -48,4 +49,6 @@ def get_solution(x, y):
                 [(2, 0), (3, 0), (3, 1), (4, 0)]
             ]
         )
+    elif x >= 37 and y == 15:
+        return strip_of_height_15(x)
     raise NotImplementedError
