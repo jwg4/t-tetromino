@@ -66,8 +66,8 @@ def test_all_height_13(x):
 
 @given(integers(min_value=40, max_value=REAL_MAX_VALUE), integers(min_value=40, max_value=REAL_MAX_VALUE))
 def test_all_mixed_odd(x, y):
-    assume x % 4 == 3
-    assume y % 4 == 1
+    assume(x % 4 == 3)
+    assume(y % 4 == 1)
     solution = get_solution(x, y)
     assert solution is not None
     assert solution.check()
@@ -76,8 +76,8 @@ def test_all_mixed_odd(x, y):
 
 @given(integers(min_value=40, max_value=REAL_MAX_VALUE), integers(min_value=40, max_value=REAL_MAX_VALUE))
 def test_all_same_odd(x, y):
-    assume x % 2 == 1
-    assume y % 4 == x % 4
+    assume(x % 2 == 1)
+    assume(y % 4 == x % 4)
     solution = get_solution(x, y)
     assert solution is not None
     assert solution.check()
