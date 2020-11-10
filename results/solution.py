@@ -1,7 +1,7 @@
 from basic import EnumeratedResult, Strip, Perfect
-from compound import SimpleLShape, ConcatenatedResult
+from compound import SimpleLShape, ConcatenatedResult, AugmentedResult
 from odd_square import make_odd_square
-from transform import TransposedResult
+from transform import TransposedResult, transpose, rotate
 
 
 def get_solution(x, y):
@@ -23,4 +23,17 @@ def get_solution(x, y):
         return SimpleLShape(Perfect(x - 2, y - 2))
     elif x == y and x % 2 == 1:
         return make_odd_square(x)
+    elif x == 2 * y and y % 2 == 1:
+        return transpose(
+            AugmentedResult(
+                ConcatenatedResult(
+                    make_odd_square(y),
+                    rotate(make_odd_square(y))
+                ),
+                [
+                    [(0, y-2), (0, y-1), (1, y-1), (0, y)],
+                    [(y-1, y-1), (y-2, y), (y-1, y), (y-1, y+1)]
+                ]
+            )
+        )
     raise NotImplementedError

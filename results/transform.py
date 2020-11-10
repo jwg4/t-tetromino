@@ -56,4 +56,7 @@ def reflect(result, horizontal=True):
             return result._result
         else:
             return FloppedResult(result)
-    
+
+
+def rotate(result):
+    return reflect(reflect(result, True), False)

@@ -30,6 +30,19 @@ class ConcatenatedResult(ResultBase):
         )
 
 
+class AugmentedResult(ResultBase):
+    def __init__(self, base, extra):
+        self.x = base.x
+        self.y = base.y
+        self.base = base
+        self.extra = extra
+    
+    @property
+    def tiles(self):
+        yield from self.base.tiles
+        yield from self.extra
+
+
 class SimpleLShape(ResultBase):
     def __init__(self, inner):
         self.x = inner.x + 2
