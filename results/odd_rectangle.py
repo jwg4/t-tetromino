@@ -46,10 +46,10 @@ class CappedCylinder(ResultBase):
     def __init__(self, height, width, lcap_width, lcap, rcap_width, rcap, cyl_width, cyl):
         self.y = height
         self.x = width
-        self.n = (width - lcap_width - rcap_width) / cyl_width
+        self.n = (width - lcap_width - rcap_width) // cyl_width
         self.pieces = (
-            [(lcap, 0), (rcap, width - rcap)] +
-            [(cyl, lcap_width + i * cyl_width) for i in range(0, n)]
+            [(lcap, 0), (rcap, lcap_width + self.n * cyl_width)] +
+            [(cyl, lcap_width + i * cyl_width) for i in range(0, self.n)]
         )
             
     @property
@@ -63,4 +63,4 @@ def strip_of_height_15(x):
     a, b = CAP_IDS_15[x % 16]
     left_cap = LEFT_CAPS_15[a]
     right_cap = RIGHT_CAPS_15[b]
-    return CappedCylinder(15, a, left_cap, b, right_cap, 16, CYLINDER_15)
+    return CappedCylinder(15, x, a, left_cap, b, right_cap, 16, CYLINDER_15)
