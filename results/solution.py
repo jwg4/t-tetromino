@@ -37,6 +37,18 @@ def get_solution(x, y):
                 ]
             )
         )
+    elif x == 2 * y - 4 and y % 2 == 1:
+        return AugmentedResult(
+            ConcatenatedResult(
+                ConcatenatedResult.AlongXAxis(
+                    make_odd_square(y - 2),
+                    make_odd_square(y - 2)
+                ),
+                Strip(x)
+            ),
+            []
+        )
+                
     elif x == 4 and y == 3:
         return EnumeratedResult(4, 3, 
             [[(0, 0), (1, 0), (1, 1), (2, 0)], [(3, 0), (2, 1), (3, 1), (3, 2)]]

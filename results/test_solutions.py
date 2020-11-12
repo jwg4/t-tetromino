@@ -130,6 +130,15 @@ def test_all_doubled_odd_squares(k):
     assert solution.count == 2
     
 
+@settings(deadline=None)
+@given(integers(min_value=1, max_value=REAL_MAX_VALUE))
+def test_all_doubled_odd_squares_augmented_by_2(k):
+    solution = get_solution(2 * k + 1, 4 * k - 2)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == 2
+    
+
 @mark.skip("Everyone has a plan until they get punched in the face.")
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE), integers(min_value=0, max_value=REAL_MAX_VALUE))
 def test_all_augmented_doubled_odd_squares(k, m):
