@@ -17,7 +17,7 @@ def test_all_solutions(x, y):
     assert solution.count <= 6
 
 
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE), integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_even_solutions(j, k):
     solution = get_solution(2 * j, 2 * k)
@@ -26,7 +26,7 @@ def test_all_even_solutions(j, k):
     assert solution.count <= 4
 
 
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=1, max_value=MAX_VALUE), integers(min_value=1, max_value=MAX_VALUE))
 def test_all_odd_solutions(x, y):
     assume(x % 2 == 1)
@@ -89,6 +89,7 @@ def test_all_same_odd(x, y):
     assert solution.count == 5
 
 
+@settings(max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_strips_of_width_2(x):
     solution = get_solution(x, 2)
@@ -97,7 +98,7 @@ def test_all_strips_of_width_2(x):
     assert solution.count <= 4
 
 
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_squares(size):
     solution = get_solution(size, size)
@@ -105,6 +106,7 @@ def test_all_squares(size):
     assert solution.count <= 5
 
 
+@settings(max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_even_squares(k):
     solution = get_solution(2 * k, 2 * k)
@@ -112,7 +114,7 @@ def test_all_even_squares(k):
     assert solution.count <= 4
 
 
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE), integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_perfect_solutions(x, y):
     solution = get_solution(4 * x, 4 * y)
@@ -121,7 +123,7 @@ def test_all_perfect_solutions(x, y):
     assert solution.count == 0
     
     
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_doubled_odd_squares(k):
     solution = get_solution(2 * k + 1, 4 * k + 2)
@@ -130,7 +132,7 @@ def test_all_doubled_odd_squares(k):
     assert solution.count == 2
     
 
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=2, max_value=REAL_MAX_VALUE))
 def test_all_doubled_odd_squares_lengthened_by_2(k):
     solution = get_solution(2 * k - 1, 4 * k)
@@ -139,7 +141,7 @@ def test_all_doubled_odd_squares_lengthened_by_2(k):
     assert solution.count == 4
     
 
-@settings(deadline=None)
+@settings(deadline=None, max_examples=50)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_doubled_odd_squares_augmented_by_2(k):
     solution = get_solution(2 * k + 1, 4 * k - 2)
