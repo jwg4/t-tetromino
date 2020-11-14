@@ -131,6 +131,15 @@ def test_all_doubled_odd_squares(k):
     
 
 @settings(deadline=None)
+@given(integers(min_value=2, max_value=REAL_MAX_VALUE))
+def test_all_doubled_odd_squares_lengthened_by_2(k):
+    solution = get_solution(2 * k - 1, 4 * k)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == 4
+    
+
+@settings(deadline=None)
 @given(integers(min_value=1, max_value=REAL_MAX_VALUE))
 def test_all_doubled_odd_squares_augmented_by_2(k):
     solution = get_solution(2 * k + 1, 4 * k - 2)
