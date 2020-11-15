@@ -55,10 +55,10 @@ def get_solution(x, y):
         return AugmentedResult(
             ConcatenatedResult.AlongXAxis(
                 ConcatenatedResult.AlongXAxis(
-                    make_odd_square(y),
-                    make_odd_square(y)
+                    reflect(make_odd_square(y), False),
+                    reflect(make_odd_square(y), False)
                 ),
-                reflect(transpose(Strip(y)), False)
+                transpose(Strip(y))
             ),
             [
                 [(y-2, y-1), (y-1, y-1), (y-1, y-2), (y, y-1)],
