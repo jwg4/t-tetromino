@@ -58,7 +58,7 @@ def get_solution(x, y):
                     reflect(make_odd_square(y), False),
                     reflect(make_odd_square(y), False)
                 ),
-                transpose(Strip(y))
+                rotate(transpose(Strip(y)))
             ),
             [
                 [(y-2, y-1), (y-1, y-1), (y-1, y-2), (y, y-1)],
