@@ -1,3 +1,6 @@
 [submodule "Dantz"]
 	path = Dantz
 	url = https://github.com/jwg4/Dantz.git
+[submodule "docker/exact_cover_np"]
+	path = docker/exact_cover_np
+	url = git@github.com:jwg4/exact_cover_np.git
