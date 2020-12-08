@@ -1,3 +1,5 @@
+import logging
+
 from collections import defaultdict
 
 
@@ -8,20 +10,28 @@ class ShapeDict(object):
 
     def get_root(self, node):
         p = node
+        seen = set([node])
         while self.d[p] != p:
             p = self.d[p]
+            if p in seen:
+                raise Exception("Found circular refs: %s" % (seen, ))
+            else:
+                seen.add(p)
         return p
 
     def add_new(self, x):
+        logging.debug("add_new(%s)" % (x, ))
         self.d[x] = x
         self.dd[x].add(x)
 
     def add_connected(self, leaf, branch):
+        logging.debug("add_connected(%s, %s)" % (leaf, branch))
         self.d[leaf] = branch
         root = self.get_root(leaf)
         self.dd[root].add(leaf)
 
     def add_connection(self, a, b):
+        logging.debug("add_connected(%s, %s)" % (a, b))
         old_root = self.get_root(a)
         self.d[old_root] = b
         new_root = self.get_root(a)

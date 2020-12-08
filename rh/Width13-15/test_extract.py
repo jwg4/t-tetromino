@@ -1,3 +1,5 @@
+import logging
+
 from pytest import mark
 
 from extract import extract_pattern_by_number
@@ -17,8 +19,8 @@ def test_get_correct_pattern():
     assert pattern == expected
 
 
-#@mark.skip("Not ready for this yet")
-def test_extract_tiles():
+def test_extract_tiles(caplog):
+    caplog.set_level(logging.DEBUG)
     id = 67136011
     source_filename = "examples/9.txt"
 
