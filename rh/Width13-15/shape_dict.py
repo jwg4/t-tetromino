@@ -31,7 +31,7 @@ class ShapeDict(object):
         self.dd[root].add(leaf)
 
     def add_connection(self, a, b):
-        logging.debug("add_connected(%s, %s)" % (a, b))
+        logging.debug("add_connection(%s, %s)" % (a, b))
         old_root = self.get_root(a)
         self.d[old_root] = b
         new_root = self.get_root(a)
