@@ -1,14 +1,15 @@
 from shape_dict import ShapeDict
 
 
-def gen_extract_pattern_by_number(f, id):
+def gen_extract_pattern_by_number(f, id_, height):
     l = f.readline()
     while l:
         if l.startswith("Found Cylinder Boundary" ):
             words = l.split(" ")
             b_id = int(words[3])
+            b_height = int(words[6])
 
-            if b_id == id:
+            if b_id == id_ and b_height == height:
                 while True:
                     l = f.readline()
                     if l[0] in ["+", "|"]:
@@ -18,14 +19,14 @@ def gen_extract_pattern_by_number(f, id):
         l = f.readline()
     
 
-def extract_pattern_by_number(f, id):
-    return "".join(gen_extract_pattern_by_number(f, id))
+def extract_pattern_by_number(f, id_, height):
+    return "".join(gen_extract_pattern_by_number(f, id_, height))
 
 
-def extract_tiles_by_number(f, id):
+def extract_tiles_by_number(f, id_, height):
     d = ShapeDict()
     y = 0
-    lines = list(gen_extract_pattern_by_number(f, id))[:-1]
+    lines = list(gen_extract_pattern_by_number(f, id_, height))[:-1]
     for line in lines:
         if line.startswith("+"):
             for i in range(0, len(line) // 3):
