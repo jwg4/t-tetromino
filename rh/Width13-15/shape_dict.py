@@ -33,7 +33,8 @@ class ShapeDict(object):
     def add_connection(self, a, b):
         logging.debug("add_connection(%s, %s)" % (a, b))
         old_root = self.get_root(a)
-        self.d[old_root] = b
+        b_root = self.get_root(b)
+        self.d[old_root] = b_root
         new_root = self.get_root(a)
         self.dd[new_root].update(self.dd[old_root])
 
