@@ -27,5 +27,4 @@ def test_extract_tiles(caplog):
     with open(source_filename) as source_f:
         tiles = list(extract_tiles_by_number(source_f, id))
 
-    assert len(tiles) == 20 
-    
+    assert len(tiles) == 21
