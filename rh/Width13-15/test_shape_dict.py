@@ -126,3 +126,65 @@ def test_complex_graph():
     sut.add_connection((5, 7), (4, 7))
     sut.add_connection((6, 7), (5, 7))
     assert list(sut.components) is not None
+
+
+def test_complex_graph_component():
+    sut = ShapeDict()
+    sut.add_new((2, 6))
+    sut.add_new((4, 6))
+    sut.add_new((5, 6))
+    sut.add_new((6, 6))
+    sut.add_new((7, 6))
+    sut.add_new((8, 6))
+    sut.add_connection((5, 6), (4, 6))
+    sut.add_connection((6, 6), (5, 6))
+    sut.add_connection((7, 6), (6, 6))
+    sut.add_connection((8, 6), (7, 6))
+    sut.add_connected((2, 7), (2, 6))
+    sut.add_new((3, 7))
+    sut.add_connected((4, 7), (4, 6))
+    sut.add_connected((5, 7), (5, 6))
+    sut.add_connected((6, 7), (6, 6))
+    sut.add_connected((7, 7), (7, 6))
+    sut.add_connected((8, 7), (8, 6))
+    sut.add_connection((3, 7), (2, 7))
+    sut.add_connection((4, 7), (3, 7))
+    sut.add_connection((5, 7), (4, 7))
+    sut.add_connection((6, 7), (5, 7))
+    assert list(sut.components) is not None
+
+
+def test_mu_shaped_graph():
+    sut = ShapeDict()
+    sut.add_new((2, 6))
+    sut.add_new((4, 6))
+    sut.add_new((5, 6))
+    sut.add_new((6, 6))
+    sut.add_connection((5, 6), (4, 6))
+    sut.add_connection((6, 6), (5, 6))
+    sut.add_connected((2, 7), (2, 6))
+    sut.add_new((3, 7))
+    sut.add_connected((4, 7), (4, 6))
+    sut.add_connected((5, 7), (5, 6))
+    sut.add_connected((6, 7), (6, 6))
+    sut.add_connection((3, 7), (2, 7))
+    sut.add_connection((4, 7), (3, 7))
+    sut.add_connection((5, 7), (4, 7))
+    sut.add_connection((6, 7), (5, 7))
+    assert list(sut.components) is not None
+
+
+def test_u_shaped_graph():
+    sut = ShapeDict()
+    sut.add_new((2, 6))
+    sut.add_new((4, 6))
+    sut.add_new((5, 6))
+    sut.add_connection((5, 6), (4, 6))
+    sut.add_connected((2, 7), (2, 6))
+    sut.add_new((3, 7))
+    sut.add_connected((4, 7), (4, 6))
+    sut.add_connected((5, 7), (5, 6))
+    sut.add_connection((3, 7), (2, 7))
+    sut.add_connection((4, 7), (3, 7))
+    sut.add_connection((5, 7), (4, 7))
+    assert list(sut.components) is not None
