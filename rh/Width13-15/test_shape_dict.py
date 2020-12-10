@@ -188,3 +188,13 @@ def test_u_shaped_graph():
     sut.add_connection((4, 7), (3, 7))
     sut.add_connection((5, 7), (4, 7))
     assert list(sut.components) is not None
+
+
+def test_square_graph():
+    sut = ShapeDict()
+    sut.add_new("tl")
+    sut.add_new("tr")
+    sut.add_connection("tl", "tr")
+    sut.add_connected("br", "tr")
+    sut.add_connected("bl", "tl")
+    sut.add_connection("bl", "br")
