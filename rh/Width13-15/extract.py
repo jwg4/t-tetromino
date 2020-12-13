@@ -20,16 +20,33 @@ def gen_extract_pattern_by_number(f, id_, height):
                     else:
                         break
         l = f.readline()
+
+
+def gen_extract_pattern_from_boundary_file(f, height, bottom):
+    prefix = "Solved Bottom" if bottom else "Solved Top"
+    l = f.readline()
+    while l:
+        if l.startswith(prefix):
+            words = l.split(" ")
+            b_height = int(words[4])
+
+            if b_height == height:
+                while True:
+                    l = f.readline()
+                    if l[0] in ["+", "|"]:
+                        yield l
+                    else:
+                        break
+        l = f.readline()
     
 
 def extract_pattern_by_number(f, id_, height):
     return "".join(gen_extract_pattern_by_number(f, id_, height))
 
 
-def extract_tiles_by_number(f, id_, height):
+def extract_tiles(lines):
     d = ShapeDict()
     y = 0
-    lines = list(gen_extract_pattern_by_number(f, id_, height))[:-1]
     for line in lines:
         if line.startswith("+"):
             for i in range(0, len(line) // 3):
@@ -49,6 +66,16 @@ def extract_tiles_by_number(f, id_, height):
         l = list(c)
         if len(l) == 4:
             yield l
+
+
+def extract_tiles_from_boundary_file(f, height, bottom):
+    lines = list(gen_extract_pattern_from_boundary_file(f, height, bottom))[:-1]
+    return extract_tiles(lines)
+    
+
+def extract_tiles_by_number(f, id_, height):
+    lines = list(gen_extract_pattern_by_number(f, id_, height))[:-1]
+    return extract_tiles(lines)
 
 
 def dump_tiles_by_number(f, id_, height):

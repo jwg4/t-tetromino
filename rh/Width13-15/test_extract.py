@@ -4,6 +4,7 @@ from pytest import mark
 
 from extract import extract_pattern_by_number
 from extract import extract_tiles_by_number
+from extract import extract_tiles_from_boundary_file
 
 
 def test_get_correct_pattern():
@@ -57,3 +58,13 @@ def test_extract_tiles(caplog):
         tiles = list(extract_tiles_by_number(source_f, id_, 7))
 
     assert len(tiles) == 21
+
+
+def test_extract_tiles_boundary_file():
+    source_filename = "examples/6333419-halfBdry_rev.txt"
+
+    with open(source_filename) as source_f:
+        tiles = list(extract_tiles_from_boundary_file(source_f, 5, True))
+
+    assert len(tiles) == 15
+
