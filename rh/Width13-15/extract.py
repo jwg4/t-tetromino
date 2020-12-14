@@ -70,6 +70,13 @@ def extract_tiles(lines):
 def extract_tiles_from_boundary_file(f, height, bottom):
     lines = list(gen_extract_pattern_from_boundary_file(f, height, bottom))[:-1]
     return extract_tiles(lines)
+
+
+def dump_tiles_from_boundary_file(f, height, bottom):
+    l = list(extract_tiles_from_boundary_file(f, height, bottom))
+    ls = [sorted(tile) for tile in l]
+    sls = sorted(ls)
+    return repr(sls)
     
 
 def extract_tiles_by_number(f, id_, height):
