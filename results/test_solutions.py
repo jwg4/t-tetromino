@@ -49,7 +49,6 @@ def test_all_3_mod_4_by_even(x, y):
     assert solution.count == (4 if (y % 4 == 0) else 2)
 
 
-@mark.skip("Wait for data from Robert Hochberg.")
 @given(integers(min_value=37, max_value=REAL_MAX_VALUE))
 def test_all_height_15(x):
     solution = get_solution(x, 15)

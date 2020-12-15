@@ -1,25 +1,23 @@
 from basic import ResultBase
+from cyl_15_constants import *
 
 CYLINDER_15 = [
 ]
 
 LEFT_CAPS_15 = {
-    12: [
-        [(0, 0), (0, 1), (1, 1), (0, 2)],
-        [(0, 4), (1, 3), (1, 4), (1, 5)],
-    ],
-    17: [],
-    21: [],
-    25: [],
-    13: []
+    12: CYL_15_BOTTOM_12,
+    17: CYL_15_BOTTOM_17,
+    21: CYL_15_BOTTOM_21,
+    25: CYL_15_BOTTOM_25,
+    13: CYL_15_BOTTOM_11
 }
 
 RIGHT_CAPS_15 = {
-    3: [],
-    10: [],
-    7: [],
-    12: [],
-    25: []
+    3: CYL_15_TOP_3,
+    10: CYL_15_TOP_10,
+    7: CYL_15_TOP_7,
+    12: CYL_15_TOP_12,
+    25: CYL_15_TOP_25
 }
 
 CAP_IDS_15 = [
