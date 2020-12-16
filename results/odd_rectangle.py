@@ -52,7 +52,7 @@ class CappedCylinder(ResultBase):
             
     @property
     def tiles(self):
-        for piece, offset in pieces:
+        for piece, offset in self.pieces:
             for tile in piece:
                 yield [(x + offset, y) for x, y in tile]
 
