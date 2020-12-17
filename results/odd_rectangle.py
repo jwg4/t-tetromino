@@ -1,5 +1,6 @@
 from basic import ResultBase
-from cyl_15_constants import *
+from cyl_15_bottom_constants import *
+from cyl_15_top_constants import *
 
 CYLINDER_15 = [
 ]
@@ -9,7 +10,7 @@ LEFT_CAPS_15 = {
     17: CYL_15_BOTTOM_17,
     21: CYL_15_BOTTOM_21,
     25: CYL_15_BOTTOM_25,
-    13: CYL_15_BOTTOM_11
+    13: CYL_15_BOTTOM_13
 }
 
 RIGHT_CAPS_15 = {
