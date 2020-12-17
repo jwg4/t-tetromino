@@ -23,4 +23,5 @@ if __name__ == '__main__':
 
     for height, bottom in CYLS:
         with open(filename) as source_f:
-            print(dump_tiles_from_boundary_file(source_f, height, bottom))
+            tiles = dump_tiles_from_boundary_file(source_f, height, bottom)
+            print("CYL_15_%s_%d = %s" % ("BOTTOM" if bottom else "TOP", height, tiles))
