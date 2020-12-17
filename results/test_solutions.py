@@ -1,4 +1,4 @@
-from hypothesis import given, settings, assume
+from hypothesis import given, settings, assume, example
 from hypothesis.strategies import integers
 from pytest import mark
 
@@ -50,6 +50,7 @@ def test_all_3_mod_4_by_even(x, y):
 
 
 @given(integers(min_value=37, max_value=REAL_MAX_VALUE))
+@example(37, 15)
 def test_all_height_15(x):
     solution = get_solution(x, 15)
     assert solution is not None
