@@ -1,6 +1,6 @@
 import random
 
-from odd_rectangle import LEFT_CAPS_15
+from odd_rectangle import LEFT_CAPS_15, RIGHT_CAPS_15
 
 
 LETTERS = list("0123456789qwertyuiopasdfghjklzxcvbnm?")
@@ -18,15 +18,23 @@ def display(shape):
     i = 1
     for tile in shape:
         for x, y in tile:
-            print(x, y)
             l[x][y] = LETTERS[i % LETTER_COUNT]
         i = i + 1
     
     return l
 
 
+def format(shape):
+    d = display(shape)
+    return "\n".join("".join(l) for l in d)
+
+
 if __name__ == '__main__':
     cap = LEFT_CAPS_15[12]
-    d = display(cap)
-    f = "\n".join("".join(l) for l in d)
+    f = format(cap)
     print(f)
+
+    cap = RIGHT_CAPS_15[25]
+    f = format(cap)
+    print(f)
+    
