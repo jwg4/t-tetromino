@@ -142,7 +142,7 @@ def test_all_doubled_odd_squares_lengthened_by_2(k):
     
 
 @settings(deadline=None, max_examples=50)
-@given(integers(min_value=1, max_value=REAL_MAX_VALUE))
+@given(integers(min_value=4, max_value=REAL_MAX_VALUE))
 def test_all_doubled_odd_squares_augmented_by_2(k):
     solution = get_solution(2 * k + 1, 4 * k - 2)
     assert solution is not None
