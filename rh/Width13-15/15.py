@@ -13,9 +13,9 @@ if __name__ == '__main__':
         (13, True), 
         (3, False), 
         (10, False), 
-        (5, False), 
+        (7, False), 
         (12, False), 
-        (31, False), 
+        (25, False), 
     ]
     filename = "Width15/6333419-halfBdry_rev.txt"
 
