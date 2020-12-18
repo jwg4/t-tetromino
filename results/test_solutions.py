@@ -139,6 +139,15 @@ def test_all_doubled_odd_squares_lengthened_by_2(k):
     assert solution is not None
     assert solution.check()
     assert solution.count == 4
+
+
+@settings(deadline=None, max_examples=50)
+@given(integers(min_value=2, max_value=REAL_MAX_VALUE))
+def test_all_3_to_4_rectangles(k):
+    solution = get_solution(3 * k, 4 * k)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == 4
     
 
 @mark.skip("Everyone has a plan until they get punched in the face.")
