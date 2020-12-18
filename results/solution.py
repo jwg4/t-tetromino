@@ -55,6 +55,26 @@ def get_solution(x, y):
         return EnumeratedResult(4, 3, 
             [[(0, 0), (1, 0), (1, 1), (2, 0)], [(3, 0), (2, 1), (3, 1), (3, 2)]]
         )
+    elif 3 * x == 4 * y:
+        k = x // 4
+        return AugmentedResult(
+            ConcatenatedResult(
+                reflect(make_odd_square(3 * k), False),
+                ConcatenatedResult.AlongXAxis(
+                    ConcatenatedResult.AlongXAxis(
+                        reflect(make_odd_square(k), True),
+                        reflect(make_odd_square(k), True)
+                    ),
+                    reflect(make_odd_square(k), True)
+                )
+            ),
+            [
+                [(0, 3*k-1), (0, 3*k), (1, 3*k), (0, 3*k+1)],
+                [(k-1, 3*k), (k, 3*k), (k, 3*k+1), (k+1, 3*k)],
+                [(2*k-1, 3*k), (2*k, 3*k), (2*k, 3*k+1), (2*k+1, 3*k)],
+                [(3*k-1, 3*k-2), (3*k - 2, 3*k-1), (3*k-1, 3*k-1), (3*k-1, 3*k)]
+            ]
+        )
     elif x == 5 and y == 3:
         return EnumeratedResult(5, 3, 
             [
