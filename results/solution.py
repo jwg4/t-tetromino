@@ -37,20 +37,6 @@ def get_solution(x, y):
                 ]
             )
         )
-    elif x == 2 * y - 4 and y % 2 == 1:
-        return AugmentedResult(
-            ConcatenatedResult(
-                ConcatenatedResult.AlongXAxis(
-                    make_odd_square(y - 2),
-                    make_odd_square(y - 2)
-                ),
-                Strip(x)
-            ),
-            [
-                [(y-3, y-4), (y-4, y-3), (y-3, y-3), (y-2, y-3)],
-                [(x-1, y-4), (x-2, y-3), (x-1, y-3), (x-1, y-2)],
-            ]
-        )       
     elif x == 2 * y + 2 and y % 2 == 1:
         return AugmentedResult(
             ConcatenatedResult.AlongXAxis(
