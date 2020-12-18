@@ -176,6 +176,16 @@ def test_all_3_to_4_rectangles(k):
     assert solution is not None
     assert solution.check()
     assert solution.count == 4
+
+
+@settings(deadline=None, max_examples=50)
+@given(integers(min_value=2, max_value=REAL_MAX_VALUE))
+def test_all_2_to_5_rectangles(k):
+    assume(x % 4 != 0)
+    solution = get_solution(2 * k, 5 * k)
+    assert solution is not None
+    assert solution.check()
+    assert solution.count == 4
     
 
 @mark.skip("Everyone has a plan until they get punched in the face.")
