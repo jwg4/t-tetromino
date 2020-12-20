@@ -56,6 +56,7 @@ def get_solution(x, y):
             [[(0, 0), (1, 0), (1, 1), (2, 0)], [(3, 0), (2, 1), (3, 1), (3, 2)]]
         )
     elif 3 * x == 4 * y:
+        # These cases are already covered?
         k = x // 4
         return AugmentedResult(
             ConcatenatedResult(
