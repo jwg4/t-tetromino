@@ -51,6 +51,7 @@ def test_all_3_mod_4_by_even(x, y):
 
 @given(integers(min_value=37, max_value=REAL_MAX_VALUE))
 @example(37)
+@example(39)
 def test_all_height_15(x):
     solution = get_solution(x, 15)
     assert solution is not None
@@ -139,7 +140,7 @@ def test_all_odd_squares_lengthened_by_2(k):
     assert solution is not None
     assert solution.check()
     assert solution.count == 3
-    
+
 
 @settings(deadline=None, max_examples=50)
 @given(integers(min_value=2, max_value=REAL_MAX_VALUE))
