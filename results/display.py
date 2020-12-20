@@ -1,6 +1,7 @@
 import random
 
 from odd_rectangle import LEFT_CAPS_15, RIGHT_CAPS_15
+from temp import CYLINDER_15
 
 
 LETTERS = list("0123456789qwertyuiopasdfghjklzxcvbnm?")
@@ -32,6 +33,10 @@ def format(shape):
 if __name__ == '__main__':
     cap = LEFT_CAPS_15[12]
     f = format(cap)
+    print(f)
+
+    cyl = CYLINDER_15
+    f = format(cyl)
     print(f)
 
     cap = RIGHT_CAPS_15[25]
