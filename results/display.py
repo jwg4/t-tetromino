@@ -1,7 +1,7 @@
 import random
 
 from odd_rectangle import LEFT_CAPS_15, RIGHT_CAPS_15
-from temp import CYLINDER_15
+from odd_rectangle import CYLINDER_15
 
 
 LETTERS = list("0123456789qwertyuiopasdfghjklzxcvbnm?")
