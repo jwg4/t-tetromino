@@ -40,13 +40,13 @@ CAP_IDS_15 = [
 
 
 class CappedCylinder(ResultBase):
-    def __init__(self, height, width, lcap_width, lcap, rcap_width, rcap, cyl_width, cyl, overlap):
+    def __init__(self, height, width, lcap_width, lcap, rcap_width, rcap, cyl_width, cyl):
         self.y = height
         self.x = width
-        self.n = (width + overlap - lcap_width - rcap_width) // cyl_width
+        self.n = (width - lcap_width - rcap_width) // cyl_width
         self.pieces = (
-            [(lcap, 0), (rcap, lcap_width + self.n * cyl_width - overlap)] +
-            [(cyl, lcap_width + i * cyl_width - overlap) for i in range(0, self.n)]
+            [(lcap, 0), (rcap, lcap_width + self.n * cyl_width)] +
+            [(cyl, lcap_width + i * cyl_width) for i in range(0, self.n)]
         )
             
     @property
@@ -57,9 +57,8 @@ class CappedCylinder(ResultBase):
 
 
 def strip_of_height_15(x):
-    overlap = 2
-    width = 16
-    a, b = CAP_IDS_15[(x+overlap) % cyl_width]
+    cyl_width = 16
+    a, b = CAP_IDS_15[x % cyl_width]
     left_cap = LEFT_CAPS_15[a]
     right_cap = RIGHT_CAPS_15[b]
-    return CappedCylinder(15, x, a, left_cap, b, right_cap, cyl_width, CYLINDER_15, overlap)
+    return CappedCylinder(15, x, a, left_cap, b, right_cap, cyl_width, CYLINDER_15)
