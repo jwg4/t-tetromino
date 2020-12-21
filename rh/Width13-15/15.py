@@ -10,7 +10,7 @@ if __name__ == '__main__':
         (19, True), 
         (23, True), 
         (27, True), 
-        (13, True), 
+        (15, True), 
         (3, False), 
         (10, False), 
         (7, False), 
