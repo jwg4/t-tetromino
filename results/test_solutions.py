@@ -133,6 +133,7 @@ def test_all_doubled_odd_squares(k):
     assert solution.count == 2
     
 
+@mark.skip("Strategy not ready yet")
 @settings(deadline=None, max_examples=50)
 @given(integers(min_value=2, max_value=REAL_MAX_VALUE))
 def test_all_odd_squares_lengthened_by_2(k):
@@ -142,6 +143,7 @@ def test_all_odd_squares_lengthened_by_2(k):
     assert solution.count == 3
 
 
+@mark.skip("Strategy not ready yet")
 @settings(deadline=None, max_examples=50)
 @given(integers(min_value=2, max_value=REAL_MAX_VALUE))
 def test_all_odd_squares_lengthened_by_4(k):
@@ -151,6 +153,7 @@ def test_all_odd_squares_lengthened_by_4(k):
     assert solution.count == 5
     
 
+@mark.skip("Strategy not ready yet")
 @settings(deadline=None, max_examples=50)
 @given(integers(min_value=2, max_value=REAL_MAX_VALUE))
 def test_all_odd_squares_lengthened_by_6(k):
