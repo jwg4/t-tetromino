@@ -56,7 +56,7 @@ def test_all_height_15(x):
     solution = get_solution(x, 15)
     assert solution is not None
     assert solution.check()
-    assert solution.count == [4, 3, 6, 5][x % 4]
+    assert solution.count == [4, 3, 2, 5][x % 4]
 
 
 @mark.skip("Stage 2")
