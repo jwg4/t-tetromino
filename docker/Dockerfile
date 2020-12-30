@@ -1,6 +1,7 @@
 FROM gcc:latest
 
-COPY main.py /
 
+WORKDIR /tmp/working
+COPY main.py .
 CMD [ "python", "./main.py" ]
 
