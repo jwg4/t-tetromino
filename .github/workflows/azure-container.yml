@@ -16,11 +16,11 @@ jobs:
       id: acr
       uses: ams0/acr-task-github-action@v1
       with:
-        service_principal: ${{ secrets.service_principal }}
-        service_principal_password: ${{ secrets.service_principal_password }}
-        tenant: ${{ secrets.tenants }}
-        registry: ${{ secrets.registry }}
-        repository: ${{ secrets.repository }}
+        service_principal: ${{ secrets.ACR_SP_NAME }}
+        service_principal_password: ${{ secrets.ACR_SP_PASSWORD }}
+        tenant: ${{ secrets.ACR_TENANT }}
+        registry: ${{ secrets.ACR_REGISTRY }}
+        repository: ${{ secrets.ACR_REPOSITORY }}
         image: t-tetromino-minimal
         folder: docker
         tag: minimal:$(date +%s)
