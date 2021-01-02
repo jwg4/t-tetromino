@@ -22,5 +22,4 @@ jobs:
         registry: ${{ secrets.ACR_REGISTRY }}
         repository: ${{ secrets.ACR_REPOSITORY }}
         image: t-tetromino-minimal
-        folder: docker
-        tag: minimal:$(date +%s)
+        folder: docker_config
