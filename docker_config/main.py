@@ -8,5 +8,7 @@ if __name__ == '__main__':
     timestamp = datetime.utcnow()
     rint = randint(1, 1000000)
 
+    output_string = "Timestamp: %s, Random int: %d" % (timestamp, rint)
+
     with open("output.txt", "w") as f:
-        f.write("Timestamp: %s, Random int: %d" % (timestamp, rint))
+        f.write(output_string)
