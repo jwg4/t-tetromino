@@ -12,3 +12,4 @@ if __name__ == '__main__':
 
     with open("output.txt", "w") as f:
         f.write(output_string)
+    print(output_string)
