@@ -21,6 +21,6 @@ jobs:
         tenant: ${{ secrets.ACR_TENANT }}
         registry: ${{ secrets.ACR_REGISTRY }}
         repository: ${{ secrets.ACR_REPOSITORY }}
-        image: t-tetromino-minimal
+        image: minimal
         folder: docker_config
         branch: minimal_docker_run
