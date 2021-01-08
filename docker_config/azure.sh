@@ -22,7 +22,7 @@ az container create \
 --registry-login-server $ACR_LOGIN_SERVER \
 --registry-username $ACR_USERNAME \
 --registry-password $ACR_PASSWORD \
---restart-policy Never
+--restart-policy Never \
 --azure-file-volume-account-name $ACI_PERS_STORAGE_ACCOUNT_NAME \
 --azure-file-volume-account-key $STORAGE_KEY \
 --azure-file-volume-share-name $ACI_PERS_SHARE_NAME \
