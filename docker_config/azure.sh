@@ -23,9 +23,9 @@ az container create \
 --registry-username $ACR_USERNAME \
 --registry-password $ACR_PASSWORD \
 --restart-policy Never \
---azure-file-volume-account-name $ACI_PERS_STORAGE_ACCOUNT_NAME \
+--azure-file-volume-account-name $ACI_STORAGE_ACCOUNT_NAME \
 --azure-file-volume-account-key $STORAGE_KEY \
---azure-file-volume-share-name $ACI_PERS_SHARE_NAME \
+--azure-file-volume-share-name $ACI_SHARE_NAME \
 --azure-file-volume-mount-path /aci/output/
 
 az container show --resource-group $RES_GROUP --name $CONTAINER_NAME --out table
