@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM python:3.7
 
 
 WORKDIR /tmp/working
