@@ -5,6 +5,7 @@ on:
   push:
     branches: 
       - minimal_docker_run
+      - docker_search
 
 jobs:
   build:
