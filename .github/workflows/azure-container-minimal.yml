@@ -1,10 +1,10 @@
 
-name: Docker image on ACR
+name: Minimal Docker image on ACR
 
 on:
   push:
     branches: 
-      - docker_search
+      - minimal_docker_run
 
 jobs:
   build:
@@ -21,6 +21,6 @@ jobs:
         tenant: ${{ secrets.ACR_TENANT }}
         registry: ${{ secrets.ACR_REGISTRY }}
         repository: ${{ secrets.ACR_REPOSITORY }}
-        image: basic_search
+        image: minimal
         folder: docker_config
-        branch: docker_search
+        branch: minimal_docker_run
