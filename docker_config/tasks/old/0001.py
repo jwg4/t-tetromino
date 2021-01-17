@@ -13,7 +13,7 @@ def gen_13_right_cap(n):
 def make_13_right_cap(n):
     return list(gen_13_right_cap(n))
 
-ID = "0002"
-MCOUNT = 1
-BOARD = make_13_right_cap(12)
+ID = "0001"
+MCOUNT = 4
+BOARD = make_13_right_cap(3)
 
