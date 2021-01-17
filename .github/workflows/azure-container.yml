@@ -5,6 +5,7 @@ on:
   push:
     branches: 
       - minimal_docker_run
+      - docker_search
 
 jobs:
   build:
@@ -14,7 +15,7 @@ jobs:
     steps:
     - name: ACR build
       id: acr
-      uses: ams0/acr-task-github-action@v2
+      uses: FrodeHus/acr-task-github-action@v2
       with:
         service_principal: ${{ secrets.ACR_SP_NAME }}
         service_principal_password: ${{ secrets.ACR_SP_PASSWORD }}
