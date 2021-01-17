@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: ACR build
       id: acr
-      uses: FrodeHus/acr-task-github-action@v2
+      uses: ams0/acr-task-github-action@v2
       with:
         service_principal: ${{ secrets.ACR_SP_NAME }}
         service_principal_password: ${{ secrets.ACR_SP_PASSWORD }}
