@@ -1,18 +1,32 @@
 import os
 
 from datetime import datetime
-from random import randint
 
-FOLDER = "/aci/output"
+from polyomino.board import Rectangle
+from polyomino.constant import MONOMINO, TETROMINOS
+from polyomino.tileset import many
+
+
+def full_output(solution):
+    yield "Timestamp: %s" % (datetime.utcnow())
+
+    yield repr(solution.tiling)
+
+    yield solution.display()
+
+
+def make_board():
+    return Rectangle(3, 5)
 
 
 if __name__ == '__main__':
-    timestamp = datetime.utcnow()
-    rint = randint(1, 1000000)
+    board = make_board()
+    tileset = many(TETROMINOS['T']).and_repeated_exactly(3, MONOMINO)
+    problem = board.tile_with_set(tileset)
+    solution = problem.solve()
+    output_string = "\n".join(full_output(solution))
 
-    output_string = "Timestamp: %s, Random int: %d" % (timestamp, rint)
+    FOLDER = os.environ['DEST_FOLDER']
     destination = os.path.join(FOLDER, "output.txt")
-
     with open(destination, "w") as f:
         f.write(output_string)
-    print(output_string)
