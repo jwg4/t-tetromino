@@ -12,7 +12,10 @@ if __name__ == '__main__':
     FOLDER = "docker_config/tasks"
     data = {
         "include": [
-            {"taskfile": filename}
+            {
+                "taskfile": filename,
+                "name": filename[:-3]
+            }
             for filename in get_files(FOLDER)
         ]
     }
