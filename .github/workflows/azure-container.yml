@@ -24,19 +24,18 @@ jobs:
     strategy:
       matrix: ${{fromJson(needs.detect_files.outputs.matrix)}}
     steps:
-    - uses: actions/checkout@v2
+    
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Copy task file
       id: copy_t
-      run: cp docker_config/tasks/${{ matrix.taskfile }} docker_config/spec.py
-    - name: ACR build
-      id: acr
-      uses: ams0/acr-task-github-action@v2
-      with:
-        service_principal: ${{ secrets.ACR_SP_NAME }}
-        service_principal_password: ${{ secrets.ACR_SP_PASSWORD }}
-        tenant: ${{ secrets.ACR_TENANT }}
-        registry: ${{ secrets.ACR_REGISTRY }}
-        repository: ${{ secrets.ACR_REPOSITORY }}
-        image: basic_search
-        folder: docker_config
-        tag: ${{ matrix.name }}
+      run: cp $GTIHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GTIHUB_WORKSPACE/docker_config/spec.py
+
+    - name: build image
+      run: az acr build -r ${{ secrets.ACR_REGISTRY } -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} docker_config/
