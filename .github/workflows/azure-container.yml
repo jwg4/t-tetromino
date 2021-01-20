@@ -35,4 +35,4 @@ jobs:
     - name: build image
       run: |
           az login --service-principal -u ${{ secrets.ACR_SP_NAME }} -p ${{ secrets.ACR_SP_PASSWORD }} --tenant ${{ secrets.ACR_TENANT }}
-          az acr build -r ${{ secrets.ACR_REGISTRY }} -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} $GITHUB_WORKSPACE/docker_config/
+          az acr build -r ${{ secrets.ACR_REGISTRY }} -f $GITHUB_WORKSPACE/docker_config/Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} $GITHUB_WORKSPACE/docker_config/
