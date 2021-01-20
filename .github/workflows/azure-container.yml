@@ -38,4 +38,4 @@ jobs:
       run: cp $GTIHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GTIHUB_WORKSPACE/docker_config/spec.py
 
     - name: build image
-      run: az acr build -r ${{ secrets.ACR_REGISTRY } -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} docker_config/
+      run: az acr build -r ${{ secrets.ACR_REGISTRY }} -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} docker_config/
