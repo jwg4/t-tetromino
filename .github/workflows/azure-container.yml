@@ -30,7 +30,7 @@ jobs:
 
     - name: Copy task file
       id: copy_t
-      run: cp $GITHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GTIHUB_WORKSPACE/docker_config/spec.py
+      run: cp $GITHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GITHUB_WORKSPACE/docker_config/spec.py
 
     - name: build image
       run: |
