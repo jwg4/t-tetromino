@@ -5,10 +5,10 @@ ACR_NAME=ttdocker
 ACI_STORAGE_ACCOUNT_NAME=ttsearchstorage
 ACR_REPO=tt_repository
 
-ACI_SHARE_NAME=minimal-output
-TAG=27d583f1
-IMAGE_NAME=minimal
-CONTAINER_NAME=minimalcontainer
+ACI_SHARE_NAME=search-output
+TAG=0008
+IMAGE_NAME=basic_search
+CONTAINER_NAME=searchcontainer-$TAG
 
 ACR_USERNAME=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-usr --query value -o tsv)
 ACR_PASSWORD=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-pwd --query value -o tsv)
