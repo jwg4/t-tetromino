@@ -30,9 +30,9 @@ jobs:
 
     - name: Copy task file
       id: copy_t
-      run: cp $GTIHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GTIHUB_WORKSPACE/docker_config/spec.py
+      run: cp $GITHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GTIHUB_WORKSPACE/docker_config/spec.py
 
     - name: build image
       run: |
           az login --service-principal -u ${{ secrets.ACR_SP_NAME }} -p ${{ secrets.ACR_SP_PASSWORD }} --tenant ${{ secrets.ACR_TENANT }}
-          az acr build -r ${{ secrets.ACR_REGISTRY }} -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} docker_config/
+          az acr build -r ${{ secrets.ACR_REGISTRY }} -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} $GITHUB_WORKSPACE/docker_config/
