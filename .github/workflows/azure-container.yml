@@ -13,11 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
         matrix: ${{ steps.set-matrix.outputs.matrix }}
+        tag: ${{ steps.set-name.outputs.tag }}
     steps:
     - uses: actions/checkout@v2
     - id: set-matrix
       name: Write files to matrix
       run: python -m helpers.list_tasks
+    - id: set-name
+      name: Get tag prefix for images
+      run: python -m helpers.tag_name
   build_images:
     if: contains( github.event.head_commit.message, '[build')
     name: Build Docker images
@@ -37,4 +41,4 @@ jobs:
     - name: build image
       run: |
           az login --service-principal -u ${{ secrets.ACR_SP_NAME }} -p ${{ secrets.ACR_SP_PASSWORD }} --tenant ${{ secrets.ACR_TENANT }}
-          az acr build -r ${{ secrets.ACR_REGISTRY }} -f $GITHUB_WORKSPACE/docker_config/Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} $GITHUB_WORKSPACE/docker_config/
+          az acr build -r ${{ secrets.ACR_REGISTRY }} -f $GITHUB_WORKSPACE/docker_config/Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ needs.detect_files.outputs.tag }}_${{ matrix.name }} $GITHUB_WORKSPACE/docker_config/
