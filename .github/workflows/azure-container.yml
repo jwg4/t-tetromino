@@ -5,6 +5,7 @@ on:
   push:
     branches: 
       - docker_search
+      - master
 
 jobs:
   detect_files:
