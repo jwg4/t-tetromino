@@ -25,11 +25,6 @@ jobs:
       matrix: ${{fromJson(needs.detect_files.outputs.matrix)}}
     steps:
     
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
     - name: Checkout
       uses: actions/checkout@v2
 
@@ -38,4 +33,6 @@ jobs:
       run: cp $GTIHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GTIHUB_WORKSPACE/docker_config/spec.py
 
     - name: build image
-      run: az acr build -r ${{ secrets.ACR_REGISTRY }} -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} docker_config/
+      run: |
+          az login --service-principal -u ${{ secrets.ACR_SP_NAME }} -p ${{ secrets.ACR_SP_PASSWORD }} --tenant ${{ secrets.ACR_TENANT }}
+          az acr build -r ${{ secrets.ACR_REGISTRY }} -f Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ matrix.name }} docker_config/
