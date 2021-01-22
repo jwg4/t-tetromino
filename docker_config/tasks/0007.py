@@ -14,6 +14,7 @@ def make_13_left_cap(n):
     return list(gen_13_left_cap(n))
 
 ID = "0007"
+NAME = "13 LEFT CAP 34"
 MCOUNT = 1
 BOARD = make_13_left_cap(34)
 
