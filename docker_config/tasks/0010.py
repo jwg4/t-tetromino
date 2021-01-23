@@ -15,6 +15,7 @@ def make_13_right_cap(n):
     return list(gen_13_right_cap(n))
 
 ID = "0010"
+NAME = "right_cap_13_height_12_corner"
 MCOUNT = 0
 BOARD = make_13_right_cap(12)
 
