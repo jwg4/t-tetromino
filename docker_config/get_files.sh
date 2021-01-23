@@ -10,5 +10,9 @@ az storage file list --share-name $ACI_SHARE_NAME --account-name $ACI_STORAGE_AC
     else
         echo "Downloading $filename"
         az storage file download --share-name $ACI_SHARE_NAME --account-name $ACI_STORAGE_ACCOUNT_NAME --account-key=$STORAGE_KEY --path "$filename" --dest "results/$filename" --output none
+        ID=$(echo $filename | sed -e 's/^output_//' -e 's/.txt$//')
+        if [ -f "tasks/holding/${ID}.py" ]; then
+            mv "tasks/holding/${ID}.py" tasks/done
+        fi
     fi
 done
