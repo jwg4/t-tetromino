@@ -7,7 +7,7 @@ def gen_13_right_cap(n):
     for i in range(0, 13):
         h = RIGHT_CAP_13_HEIGHTS[i]
         for j in range(0, n + h - 1):
-            if i * j != 0:
+            if i != 0 and j != 0:
                 yield (i, j)
 
 
