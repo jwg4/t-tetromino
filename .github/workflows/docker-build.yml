@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Copy a file
-      run: cp docker_config/tasks/old/0004.py docker_config/spec.py
+      run: cp docker_config/tasks/sample/0004.py docker_config/spec.py
     - name: Build the Docker image
       run: docker build --tag t-tetromino/minimal:$(date +%s) docker_config/
