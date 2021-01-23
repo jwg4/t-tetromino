@@ -24,6 +24,9 @@ def full_output(solution, board, start_time):
     else:
         yield "# NO SOLUTION!"
         yield "SHAPE = %s" % (repr(board.squares), )
+        yield "SHAPE_DISPLAY = '''"
+        yield board.display()
+        yield "'''"
         
 
 
