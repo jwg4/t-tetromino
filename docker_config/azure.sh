@@ -25,4 +25,8 @@ az container create \
 --azure-file-volume-share-name $ACI_SHARE_NAME \
 --azure-file-volume-mount-path /aci/output/
 
+if [ -f "tasks/${ID}.py" ]; then
+    mv "tasks/${ID}.py" tasks/holding
+fi
+
 az container show --resource-group $RES_GROUP --name $CONTAINER_NAME --out table
