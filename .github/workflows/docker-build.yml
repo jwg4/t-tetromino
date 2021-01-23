@@ -1,11 +1,7 @@
 
 name: Create docker image
 
-on:
-  push:
-    branches: 
-      - minimal_docker_run
-      - docker_search
+on: push
 
 jobs:
   build:
@@ -15,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Copy a file
-      run: cp docker_config/tasks/sample/0004.py docker_config/spec.py
+      run: cp search/docker_config/tasks/sample/0004.py search/docker_config/spec.py
     - name: Build the Docker image
-      run: docker build --tag t-tetromino/minimal:$(date +%s) docker_config/
+      run: docker build --tag t-tetromino/minimal:$(date +%s) search/docker_config/

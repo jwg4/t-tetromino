@@ -1,11 +1,7 @@
 
 name: Docker image on ACR
 
-on:
-  push:
-    branches: 
-      - docker_search
-      - master
+on: push
 
 jobs:
   detect_files:
@@ -17,6 +13,8 @@ jobs:
         tag: ${{ steps.set-name.outputs.tag }}
     steps:
     - uses: actions/checkout@v2
+    - name: move to search folder
+      run: cd search/
     - id: set-matrix
       name: Write files to matrix
       run: python3 -m helpers.list_tasks
@@ -37,9 +35,9 @@ jobs:
 
     - name: Copy task file
       id: copy_t
-      run: cp $GITHUB_WORKSPACE/docker_config/tasks/${{ matrix.taskfile }} $GITHUB_WORKSPACE/docker_config/spec.py
+      run: cp $GITHUB_WORKSPACE/search/docker_config/tasks/${{ matrix.taskfile }} $GITHUB_WORKSPACE/search/docker_config/spec.py
 
     - name: build image
       run: |
           az login --service-principal -u ${{ secrets.ACR_SP_NAME }} -p ${{ secrets.ACR_SP_PASSWORD }} --tenant ${{ secrets.ACR_TENANT }}
-          az acr build -r ${{ secrets.ACR_REGISTRY }} -f $GITHUB_WORKSPACE/docker_config/Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ needs.detect_files.outputs.tag }}_${{ matrix.name }} $GITHUB_WORKSPACE/docker_config/
+          az acr build -r ${{ secrets.ACR_REGISTRY }} -f $GITHUB_WORKSPACE/search/docker_config/Dockerfile -t ${{ secrets.ACR_REPOSITORY }}/basic_search:${{ needs.detect_files.outputs.tag }}_${{ matrix.name }} $GITHUB_WORKSPACE/search/docker_config/
