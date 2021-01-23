@@ -1,9 +1,7 @@
 
 name: Docker image on ACR
 
-on:
-  push:
-    branches: *
+on: push
 
 jobs:
   detect_files:

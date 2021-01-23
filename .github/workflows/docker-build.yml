@@ -1,9 +1,7 @@
 
 name: Create docker image
 
-on:
-  push:
-    branches: *
+on: push
 
 jobs:
   build:
