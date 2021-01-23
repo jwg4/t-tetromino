@@ -1,0 +1,106 @@
++--+--+--+--+--+--+--+--+--+--+--+--+--+
+|  |        |  |        |  |        |  |
++  +--+  +--+  +--+  +--+  +--+  +--+  +
+|     |  |  |     |  |        |  |     |
++  +--+--+  +  +--+--+--+--+--+--+--+  +
+|  |  |     |  |  |  |  |        |  |  |
++--+  +--+  +--+  +--+  +--+  +--+  +--+
+|        |  |        |     |  |  |     |
++--+--+--+--+--+--+--+  +--+--+  +  +--+
+|        |  |        |  |  |     |  |  |
++--+  +--+  +--+  +--+--+  +--+  +--+  +
+|  |  |        |  |  |        |  |     |
++  +--+--+--+--+--+  +--+--+--+--+--+  +
+|     |        |        |        |  |  |
++  +--+--+  +--+--+--+--+--+  +--+  +--+
+|  |  |  |  |  |        |  |  |  |     |
++--+  +  +--+  +--+  +--+  +--+  +  +--+
+|     |     |     |  |     |     |  |  |
++--+  +  +--+  +--+--+--+  +--+  +--+  +
+|  |  |  |  |  |        |  |  |  |     |
++  +--+--+  +--+--+  +--+--+  +--+--+  +
+|     |        |  |  |  |        |  |  |
++  +--+--+--+--+  +--+  +--+--+--+  +--+
+|  |  |        |     |     |  |        |
++--+  +--+  +--+  +--+  +--+  +--+--+--+
+|        |  |  |  |  |  |     |        |
++--+--+--+--+  +--+  +--+--+  +--+  +--+
+|  |        |     |     |  |  |  |  |  |
++  +--+  +--+  +--+  +--+  +--+  +--+  +
+|     |  |  |  |  |  |     |     |     |
++  +--+--+  +--+  +--+--+  +--+  +--+  +
+|  |  |        |     |  |  |  |  |  |  |
++--+  +--+--+--+  +--+  +--+  +--+  +--+
+|     |        |  |        |     |     |
++--+  +--+  +--+--+--+--+--+  +--+  +--+
+|  |  |  |  |              |  |  |  |  |
++  +--+  +--+  +  +  +  +  +--+  +--+  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++--+--+--+--+--+--+--+--+--+--+--+--+--+
+Solved Bottom to height 1  with 9 monominos
+Solved Bottom to height 2  with 6 monominos
+Solved Bottom to height 3  with 3 monominos
+Solved Bottom to height 4  with 4 monominos
+Solved Bottom to height 5  with 5 monominos
+Solved Bottom to height 6  with 6 monominos
+Solved Bottom to height 7  with 3 monominos
+Solved Bottom to height 8  with 4 monominos
+Solved Bottom to height 9  with 5 monominos
+Solved Bottom to height 10  with 6 monominos
+Solved Bottom to height 11  with 3 monominos
+Solved Bottom to height 12  with 4 monominos
+Solved Bottom to height 13  with 5 monominos
+Solved Bottom to height 14  with 6 monominos
+Solved Bottom to height 15  with 3 monominos
+Solved Bottom to height 16  with 4 monominos
+Solved Bottom to height 17  with 5 monominos
+Solved Bottom to height 18  with 2 monominos
+Solved Bottom to height 19  with 3 monominos
+Solved Bottom to height 20  with 4 monominos
+Solved Bottom to height 21  with 5 monominos
+Solved Bottom to height 22  with 2 monominos
+Solved Bottom to height 23  with 3 monominos
+Solved Bottom to height 24  with 4 monominos
+Solved Bottom to height 25  with 5 monominos
+Solved Bottom to height 26  with 2 monominos
+Solved Bottom to height 27  with 3 monominos
+Solved Bottom to height 28  with 4 monominos
+Solved Bottom to height 29  with 1 monominos
+Solved Bottom to height 30  with 2 monominos
+Solved Bottom to height 31  with 3 monominos
+Solved Bottom to height 32  with 4 monominos
+Solved Top to height 1  with 4 monominos
+Solved Top to height 2  with 9 monominos
+Solved Top to height 3  with 6 monominos
+Solved Top to height 4  with 7 monominos
+Solved Top to height 5  with 4 monominos
+Solved Top to height 6  with 5 monominos
+Solved Top to height 7  with 2 monominos
+Solved Top to height 8  with 7 monominos
+Solved Top to height 9  with 4 monominos
+Solved Top to height 10  with 5 monominos
+Solved Top to height 11  with 2 monominos
+Solved Top to height 12  with 3 monominos
+Solved Top to height 13  with 4 monominos
+Solved Top to height 14  with 1 monominos
+Solved Top to height 15  with 2 monominos
+Solved Top to height 16  with 3 monominos
+Solved Top to height 17  with 4 monominos
+Solved Top to height 18  with 1 monominos
+Solved Top to height 19  with 2 monominos
+Solved Top to height 20  with 3 monominos
+Solved Top to height 21  with 4 monominos
+Solved Top to height 22  with 5 monominos
+Solved Top to height 23  with 2 monominos
+Solved Top to height 24  with 3 monominos
+Solved Top to height 25  with 4 monominos
+Solved Top to height 26  with 5 monominos
+Solved Top to height 27  with 2 monominos
+Solved Top to height 28  with 3 monominos
+Solved Top to height 29  with 4 monominos
+Solved Top to height 30  with 1 monominos
+Solved Top to height 31  with 2 monominos
+Solved Top to height 32  with 3 monominos
+

@@ -1,0 +1,218 @@
++--+--+--+--+--+--+--+--+--+--+--+--+--+
+|  |        |  |        |  |        |  |
++  +--+  +--+  +--+  +--+  +--+  +--+  +
+|     |  |  |     |  |  |     |  |     |
++  +--+--+  +  +--+--+  +  +--+--+--+  +
+|  |  |     |  |  |     |  |  |  |  |  |
++--+  +--+  +--+  +--+  +--+  +--+  +--+
+|        |  |        |  |  |     |     |
++--+--+--+--+--+--+--+--+  +  +--+  +--+
+|  |        |  |  |  |     |  |  |  |  |
++  +--+  +--+  +  +--+--+  +--+  +--+  +
+|     |  |     |     |  |  |     |     |
++  +--+--+--+  +  +--+  +--+--+  +--+  +
+|  |  |  |  |  |  |        |  |  |  |  |
++--+  +--+  +--+--+--+--+--+  +--+  +--+
+|     |     |                          |
++--+  +--+  +  +  +  +  +  +  +  +  +  +
+|  |  |  |  |                          |
++  +--+  +--+  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++  +  +  +  +  +  +  +  +  +  +  +  +  +
+|                                      |
++--+--+--+--+--+--+--+--+--+--+--+--+--+
+Solved Bottom to height 3 with 6 monominos
+Solved Bottom to height 4 with 7 monominos
+Solved Bottom to height 5 with 4 monominos
+Solved Bottom to height 6 with 5 monominos
+Solved Bottom to height 7 with 2 monominos
+Solved Bottom to height 8 with 7 monominos
+Solved Bottom to height 9 with 4 monominos
+Solved Bottom to height 10 with 5 monominos
+Solved Bottom to height 11 with 2 monominos
+Solved Bottom to height 12 with 3 monominos
+Solved Bottom to height 13 with 4 monominos
+Solved Bottom to height 14 with 1 monominos
+Solved Bottom to height 15 with 2 monominos
+Solved Bottom to height 16 with 3 monominos
+Solved Bottom to height 17 with 4 monominos
+Solved Bottom to height 18 with 1 monominos
+Solved Bottom to height 19 with 2 monominos
+Solved Bottom to height 20 with 3 monominos
+Solved Bottom to height 21 with 4 monominos
+Solved Bottom to height 22 with 5 monominos
+Solved Bottom to height 23 with 2 monominos
+Solved Bottom to height 24 with 3 monominos
+Solved Bottom to height 25 with 4 monominos
+Solved Bottom to height 26 with 5 monominos
+Solved Bottom to height 27 with 2 monominos
+Solved Bottom to height 28 with 3 monominos
+Solved Bottom to height 29 with 4 monominos
+Solved Bottom to height 30 with 1 monominos
+Solved Bottom to height 31 with 2 monominos
+Solved Bottom to height 32 with 3 monominos
+Solved Bottom to height 33 with 4 monominos
+Solved Bottom to height 34 with 1 monominos
+Solved Bottom to height 35 with 2 monominos
+Solved Bottom to height 36 with 3 monominos
+Solved Bottom to height 37 with 4 monominos
+Solved Bottom to height 38 with 1 monominos
+Solved Bottom to height 39 with 2 monominos
+Solved Bottom to height 40 with 3 monominos
+Solved Bottom to height 41 with 4 monominos
+Solved Bottom to height 42 with 1 monominos
+Solved Bottom to height 43 with 2 monominos
+Solved Bottom to height 44 with 3 monominos
+Solved Bottom to height 45 with 4 monominos
+Solved Bottom to height 46 with 1 monominos
+Solved Bottom to height 47 with 2 monominos
+Solved Bottom to height 48 with 3 monominos
+Solved Bottom to height 49 with 4 monominos
+Solved Bottom to height 50 with 1 monominos
+Solved Top to height 3 with 9 monominos
+Solved Top to height 4 with 6 monominos
+Solved Top to height 5 with 3 monominos
+Solved Top to height 6 with 4 monominos
+Solved Top to height 7 with 5 monominos
+Solved Top to height 8 with 6 monominos
+Solved Top to height 9 with 3 monominos
+Solved Top to height 10 with 4 monominos
+Solved Top to height 11 with 5 monominos
+Solved Top to height 12 with 6 monominos
+Solved Top to height 13 with 3 monominos
+Solved Top to height 14 with 4 monominos
+Solved Top to height 15 with 5 monominos
+Solved Top to height 16 with 6 monominos
+Solved Top to height 17 with 3 monominos
+Solved Top to height 18 with 4 monominos
+Solved Top to height 19 with 5 monominos
+Solved Top to height 20 with 2 monominos
+Solved Top to height 21 with 3 monominos
+Solved Top to height 22 with 4 monominos
+Solved Top to height 23 with 5 monominos
+Solved Top to height 24 with 2 monominos
+Solved Top to height 25 with 3 monominos
+Solved Top to height 26 with 4 monominos
+Solved Top to height 27 with 5 monominos
+Solved Top to height 28 with 2 monominos
+Solved Top to height 29 with 3 monominos
+Solved Top to height 30 with 4 monominos
+Solved Top to height 31 with 1 monominos
+Solved Top to height 32 with 2 monominos
+Solved Top to height 33 with 3 monominos
+Solved Top to height 34 with 4 monominos
+Solved Top to height 35 with 1 monominos
+Solved Top to height 36 with 2 monominos
+Solved Top to height 37 with 3 monominos
+Solved Top to height 38 with 4 monominos
+Solved Top to height 39 with 1 monominos
+Solved Top to height 40 with 2 monominos
+Solved Top to height 41 with 3 monominos
+Solved Top to height 42 with 4 monominos
+Solved Top to height 43 with 1 monominos
+Solved Top to height 44 with 2 monominos
+Solved Top to height 45 with 3 monominos
+Solved Top to height 46 with 4 monominos
+Solved Top to height 47 with 1 monominos
+Solved Top to height 48 with 2 monominos
+Solved Top to height 49 with 3 monominos
+Solved Top to height 50 with 4 monominos
+Height 0	Min = 20:	
+Height 16	Min = 4:	12-4 
+Height 32	Min = 4:	5-27 9-23 12-20 13-19 16-16 28-4 
+Height 48	Min = 4:	5-43 9-39 10-38 12-36 13-35 14-34 16-32 17-31 18-30 21-27 25-23 28-20 29-19 32-16 36-12 40-8 44-4 
+
+Height 1	Min = 20:	
+Height 17	Min = 5:	5-12 9-8 12-5 13-4 
+Height 33	Min = 5:	3-30 5-28 9-24 10-23 12-21 13-20 14-19 16-17 17-16 21-12 25-8 28-5 29-4 
+Height 49	Min = 5:	3-46 5-44 7-42 9-40 10-39 11-38 12-37 13-36 14-35 15-34 16-33 17-32 18-31 19-30 21-28 22-27 25-24 26-23 28-21 29-20 30-19 32-17 33-16 36-13 37-12 40-9 41-8 44-5 45-4 
+
+Height 2	Min = 20:	
+Height 18	Min = 6:	5-13 9-9 10-8 12-6 13-5 14-4 
+Height 34	Min = 6:	3-31 4-30 5-29 7-27 9-25 10-24 11-23 12-22 13-21 14-20 15-19 16-18 17-17 18-16 21-13 22-12 25-9 26-8 28-6 29-5 30-4 
+Height 50	Min = 2:	12-38 16-34 
+
+Height 3	Min = 15:	1-2 
+Height 19	Min = 7:	3-16 5-14 7-12 9-10 10-9 11-8 12-7 13-6 14-5 15-4 16-3 
+Height 35	Min = 3:	5-30 12-23 16-19 
+Height 51	Min = 3:	5-46 9-42 12-39 13-38 16-35 17-34 21-30 28-23 32-19 
+
+Height 4	Min = 12:	1-3 
+Height 20	Min = 4:	12-8 16-4 
+Height 36	Min = 4:	5-31 9-27 12-24 13-23 16-20 17-19 28-8 32-4 
+Height 52	Min = 4:	5-47 9-43 10-42 12-40 13-39 14-38 16-36 17-35 18-34 21-31 22-30 25-27 28-24 29-23 32-20 33-19 36-16 40-12 44-8 48-4 
+
+Height 5	Min = 9:	1-4 
+Height 21	Min = 5:	5-16 9-12 12-9 13-8 16-5 17-4 
+Height 37	Min = 5:	3-34 5-32 7-30 9-28 10-27 12-25 13-24 14-23 16-21 17-20 18-19 21-16 25-12 28-9 29-8 32-5 33-4 
+Height 53	Min = 5:	5-48 7-46 9-44 10-43 11-42 12-41 13-40 14-39 15-38 16-37 17-36 18-35 19-34 21-32 22-31 23-30 25-28 26-27 28-25 29-24 30-23 32-21 33-20 34-19 36-17 37-16 40-13 41-12 44-9 45-8 48-5 
+
+Height 6	Min = 10:	1-5 2-4 3-3 
+Height 22	Min = 6:	3-19 5-17 9-13 10-12 12-10 13-9 14-8 16-6 17-5 18-4 
+Height 38	Min = 6:	3-35 4-34 5-33 7-31 8-30 9-29 10-28 11-27 12-26 13-25 14-24 15-23 16-22 17-21 18-20 19-19 21-17 22-16 25-13 26-12 28-10 29-9 30-8 32-6 33-5 34-4 
+Height 54	Min = 2:	12-42 16-38 
+
+Height 7	Min = 7:	3-4 
+Height 23	Min = 7:	3-20 4-19 5-18 7-16 9-14 10-13 11-12 12-11 13-10 14-9 15-8 16-7 17-6 18-5 19-4 
+Height 39	Min = 3:	5-34 9-30 12-27 16-23 
+Height 55	Min = 3:	9-46 12-43 13-42 16-39 17-38 21-34 25-30 28-27 32-23 36-19 
+
+Height 8	Min = 8:	3-5 4-4 5-3 
+Height 24	Min = 4:	5-19 12-12 16-8 
+Height 40	Min = 4:	5-35 9-31 10-30 12-28 13-27 16-24 17-23 21-19 28-12 32-8 36-4 
+Height 56	Min = 4:	9-47 10-46 12-44 13-43 14-42 16-40 17-39 18-38 21-35 22-34 25-31 26-30 28-28 29-27 32-24 33-23 36-20 37-19 40-16 44-12 48-8 
+
+Height 9	Min = 5:	5-4 
+Height 25	Min = 5:	5-20 9-16 12-13 13-12 16-9 17-8 21-4 
+Height 41	Min = 5:	3-38 5-36 7-34 9-32 10-31 11-30 12-29 13-28 14-27 16-25 17-24 18-23 21-20 22-19 25-16 28-13 29-12 32-9 33-8 36-5 37-4 
+Height 57	Min = 5:	9-48 10-47 11-46 12-45 13-44 14-43 15-42 16-41 17-40 18-39 19-38 21-36 22-35 23-34 25-32 26-31 27-30 28-29 29-28 30-27 32-25 33-24 34-23 36-21 37-20 38-19 40-17 41-16 44-13 45-12 48-9 
+
+Height 10	Min = 6:	5-5 
+Height 26	Min = 6:	3-23 5-21 7-19 9-17 10-16 12-14 13-13 14-12 16-10 17-9 18-8 21-5 22-4 
+Height 42	Min = 2:	12-30 
+Height 58	Min = 2:	12-46 16-42 28-30 
+
+Height 11	Min = 7:	3-8 5-6 7-4 
+Height 27	Min = 7:	3-24 4-23 5-22 7-20 8-19 9-18 10-17 11-16 12-15 13-14 14-13 15-12 16-11 17-10 18-9 19-8 21-6 22-5 23-4 
+Height 43	Min = 3:	5-38 9-34 12-31 13-30 16-27 
+Height 59	Min = 3:	12-47 13-46 16-43 17-42 21-38 25-34 28-31 29-30 32-27 36-23 40-19 
+
+Height 12	Min = 8:	3-9 4-8 5-7 7-5 8-4 9-3 
+Height 28	Min = 4:	5-23 9-19 12-16 16-12 
+Height 44	Min = 4:	5-39 9-35 10-34 12-32 13-31 14-30 16-28 17-27 21-23 25-19 28-16 32-12 36-8 40-4 
+Height 60	Min = 4:	12-48 13-47 14-46 16-44 17-43 18-42 21-39 22-38 25-35 26-34 28-32 29-31 30-30 32-28 33-27 36-24 37-23 40-20 41-19 44-16 48-12 
+
+Height 13	Min = 5:	5-8 9-4 
+Height 29	Min = 5:	5-24 9-20 10-19 12-17 13-16 16-13 17-12 21-8 25-4 
+Height 45	Min = 5:	3-42 5-40 7-38 9-36 10-35 11-34 12-33 13-32 14-31 15-30 16-29 17-28 18-27 21-24 22-23 25-20 26-19 28-17 29-16 32-13 33-12 36-9 37-8 40-5 41-4 
+Height 61	Min = 5:	12-49 13-48 14-47 15-46 16-45 17-44 18-43 19-42 21-40 22-39 23-38 25-36 26-35 27-34 28-33 29-32 30-31 31-30 32-29 33-28 34-27 36-25 37-24 38-23 40-21 41-20 42-19 44-17 45-16 48-13 
+
+Height 14	Min = 6:	5-9 9-5 10-4 
+Height 30	Min = 6:	3-27 5-25 7-23 9-21 10-20 11-19 12-18 13-17 14-16 16-14 17-13 18-12 21-9 22-8 25-5 26-4 
+Height 46	Min = 2:	12-34 16-30 
+Height 62	Min = 2:	16-46 28-34 32-30 
+
+Height 15	Min = 7:	3-12 5-10 7-8 9-6 10-5 11-4 12-3 
+Height 31	Min = 3:	12-19 
+Height 47	Min = 3:	5-42 9-38 12-35 13-34 16-31 17-30 28-19 
+Height 63	Min = 3:	16-47 17-46 21-42 25-38 28-35 29-34 32-31 33-30 36-27 40-23 44-192 
+
+
