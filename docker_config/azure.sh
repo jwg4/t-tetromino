@@ -1,12 +1,8 @@
-ACR_LOGIN_SERVER=ttdocker.azurecr.io
-RES_GROUP=t-tetromino
-AKV_NAME=ttkeyvalut
-ACR_NAME=ttdocker
-ACI_STORAGE_ACCOUNT_NAME=ttsearchstorage
-ACR_REPO=tt_repository
+. details.sh
 
-ACI_SHARE_NAME=search-output
-TAG=vanilla_0005
+ID=0015
+SERIES=vanilla
+TAG=${SERIES}_${ID}
 CLEAN_TAG=$(echo $TAG | tr "_" "-")
 IMAGE_NAME=basic_search
 CONTAINER_NAME=searchcontainer-$CLEAN_TAG

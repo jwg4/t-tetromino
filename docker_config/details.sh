@@ -1,0 +1,7 @@
+ACR_LOGIN_SERVER=ttdocker.azurecr.io
+RES_GROUP=t-tetromino
+AKV_NAME=ttkeyvalut
+ACR_NAME=ttdocker
+ACI_STORAGE_ACCOUNT_NAME=ttsearchstorage
+ACR_REPO=tt_repository
+ACI_SHARE_NAME=search-output

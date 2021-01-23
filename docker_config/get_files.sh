@@ -1,6 +1,4 @@
-RES_GROUP=t-tetromino
-ACI_STORAGE_ACCOUNT_NAME=ttsearchstorage
-ACI_SHARE_NAME=search-output
+. details.sh
 
 STORAGE_KEY=$(az storage account keys list --resource-group $RES_GROUP --account-name $ACI_STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
 
