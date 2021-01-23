@@ -1,14 +1,11 @@
-ACR_LOGIN_SERVER=ttdocker.azurecr.io
-RES_GROUP=t-tetromino
-AKV_NAME=ttkeyvalut
-ACR_NAME=ttdocker
-ACI_STORAGE_ACCOUNT_NAME=ttsearchstorage
-ACR_REPO=tt_repository
+. details.sh
 
-ACI_SHARE_NAME=search-output
-TAG=0008
+ID=0015
+SERIES=vanilla
+TAG=${SERIES}_${ID}
+CLEAN_TAG=$(echo $TAG | tr "_" "-")
 IMAGE_NAME=basic_search
-CONTAINER_NAME=searchcontainer-$TAG
+CONTAINER_NAME=searchcontainer-$CLEAN_TAG
 
 ACR_USERNAME=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-usr --query value -o tsv)
 ACR_PASSWORD=$(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-pwd --query value -o tsv)
@@ -27,5 +24,9 @@ az container create \
 --azure-file-volume-account-key $STORAGE_KEY \
 --azure-file-volume-share-name $ACI_SHARE_NAME \
 --azure-file-volume-mount-path /aci/output/
+
+if [ -f "tasks/${ID}.py" ]; then
+    mv "tasks/${ID}.py" tasks/holding
+fi
 
 az container show --resource-group $RES_GROUP --name $CONTAINER_NAME --out table

@@ -7,13 +7,15 @@ def gen_13_right_cap(n):
     for i in range(0, 13):
         h = RIGHT_CAP_13_HEIGHTS[i]
         for j in range(0, n + h - 1):
-            yield (i, j)
+            if i != 0 or j != 1:
+                yield (i, j)
 
 
 def make_13_right_cap(n):
     return list(gen_13_right_cap(n))
 
-ID = "0005"
-MCOUNT = 3
+ID = "0014"
+NAME = "right_cap_13_height_10_notch"
+MCOUNT = 2
 BOARD = make_13_right_cap(10)
 

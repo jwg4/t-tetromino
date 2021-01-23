@@ -13,7 +13,8 @@ def gen_13_left_cap(n):
 def make_13_left_cap(n):
     return list(gen_13_left_cap(n))
 
-ID = "0003"
+ID = "0006"
+NAME = "13 LEFT CAP 30"
 MCOUNT = 1
-BOARD = make_13_left_cap(42)
+BOARD = make_13_left_cap(30)
 
