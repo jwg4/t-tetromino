@@ -1,3 +1,4 @@
+import logging
 import os
 
 from shape_dict import ShapeDict
@@ -47,6 +48,7 @@ def extract_tiles(lines):
     d = ShapeDict()
     y = 0
     for line in lines:
+        logging.debug("Processing line: %s" % (line, ))
         if line.startswith("+"):
             for i in range(0, len(line) // 3):
                 if line[i * 3 + 1] == " ":

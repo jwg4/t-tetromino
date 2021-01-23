@@ -10,12 +10,12 @@ if __name__ == '__main__':
         (19, True), 
         (23, True), 
         (27, True), 
-        (13, True), 
+        (15, True), 
         (3, False), 
         (10, False), 
-        (5, False), 
+        (7, False), 
         (12, False), 
-        (31, False), 
+        (25, False), 
     ]
     filename = "Width15/6333419-halfBdry_rev.txt"
 
@@ -23,4 +23,5 @@ if __name__ == '__main__':
 
     for height, bottom in CYLS:
         with open(filename) as source_f:
-            print(dump_tiles_from_boundary_file(source_f, height, bottom))
+            tiles = dump_tiles_from_boundary_file(source_f, height, bottom)
+            print("CYL_15_%s_%d = %s" % ("BOTTOM" if bottom else "TOP", height, tiles))
