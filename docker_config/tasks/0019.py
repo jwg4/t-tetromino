@@ -11,11 +11,11 @@ def gen_13_right_cap_with_notch(n, remove):
                 yield (i, j)
 
 
-def make_13_right_cap(n, remove):
-    return list(gen_13_right_cap(n, remove))
+def make_13_right_cap_with_notch(n, remove):
+    return list(gen_13_right_cap_with_notch(n, remove))
 
 ID = "0019"
 NAME = "right_cap_13_height_12_notch_5"
 MCOUNT = 0
-BOARD = make_13_right_cap(12, (0, 5))
+BOARD = make_13_right_cap_with_notch(12, (0, 5))
 
