@@ -13,14 +13,16 @@ jobs:
         tag: ${{ steps.set-name.outputs.tag }}
     steps:
     - uses: actions/checkout@v2
-    - name: move to search folder
-      run: cd search/
     - id: set-matrix
       name: Write files to matrix
-      run: python3 -m helpers.list_tasks
+      run: |
+        cd search/
+        python3 -m helpers.list_tasks
     - id: set-name
       name: Get tag prefix for images
-      run: python3 -m helpers.tag_name
+      run: |
+        cd search/
+        python3 -m helpers.tag_name
   build_images:
     if: contains( github.event.head_commit.message, '[build')
     name: Build Docker images
