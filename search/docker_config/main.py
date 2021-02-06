@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
     board = make_board()
     tileset = many(TETROMINOS['T']).and_repeated_exactly(MCOUNT, MONOMINO)
-    problem = board.tile_with_set(tileset)
+    problem = board.tile_with_set(tileset).with_heuristics()
     solution = problem.solve()
     output_string = "\n".join(full_output(solution, board, start_time))
 
