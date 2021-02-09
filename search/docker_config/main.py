@@ -37,7 +37,7 @@ def make_board():
 
 if __name__ == '__main__':
     FOLDER = os.environ['DEST_FOLDER']
-    logfile = "logging_%s.log" % (ID, )
+    logfile = "logging_%s.txt" % (ID, )
     logging.basicConfig(filename=logfile, level=logging.DEBUG)
     logging.getLogger().addHandler(logging.StreamHandler())
     logger = logging.getLogger(__name__)
