@@ -1,3 +1,4 @@
+import logging
 import os
 
 from datetime import datetime
@@ -35,8 +36,14 @@ def make_board():
 
 
 if __name__ == '__main__':
+    FOLDER = os.environ['DEST_FOLDER']
+    logfile = "logging_%s.log" % (ID, )
+    logging.basicConfig(filename=logfile, level=logging.DEBUG)
+    logging.getLogger().addHandler(logging.StreamHandler())
+    logger = logging.getLogger(__name__)
+
     start_time = datetime.utcnow()
-    print("Started job %s (%s) at %s" % (ID, NAME, start_time))
+    logger.info("Started job %s (%s) at %s" % (ID, NAME, start_time))
 
     board = make_board()
     tileset = many(TETROMINOS['T']).and_repeated_exactly(MCOUNT, MONOMINO)
@@ -44,8 +51,9 @@ if __name__ == '__main__':
     solution = problem.solve()
     output_string = "\n".join(full_output(solution, board, start_time))
 
-    FOLDER = os.environ['DEST_FOLDER']
     filename =  "output_%s.txt" % (ID, )
     destination = os.path.join(FOLDER, filename)
     with open(destination, "w") as f:
         f.write(output_string)
+
+    logging.info("Finished job %s (%s) at %s" % (ID, NAME, datetime.utcnow()))
