@@ -16,4 +16,4 @@ def make_13_right_cap(n):
 ID = "0004"
 MCOUNT = 2
 BOARD = make_13_right_cap(5)
-
+NAME = "Sample search task"
