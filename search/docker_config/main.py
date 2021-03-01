@@ -41,6 +41,7 @@ if __name__ == '__main__':
     logging.basicConfig(filename=logfile, level=logging.DEBUG)
     logging.getLogger().addHandler(logging.StreamHandler())
     logger = logging.getLogger(__name__)
+    logger.info("Logging configured")
 
     start_time = datetime.utcnow()
     logger.info("Started job %s (%s) at %s" % (ID, NAME, start_time))
