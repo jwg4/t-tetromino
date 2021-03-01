@@ -40,7 +40,7 @@ def make_logging(folder, id):
     logpath = os.path.join(folder, logfile)
     logging.basicConfig(filename=logpath, level=logging.DEBUG)
     logging.getLogger().addHandler(logging.StreamHandler())
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger("search")
     logger.info("Logging configured")
     return logger
 
@@ -63,4 +63,4 @@ if __name__ == '__main__':
     with open(destination, "w") as f:
         f.write(output_string)
 
-    logging.info("Finished job %s (%s) at %s" % (ID, NAME, datetime.utcnow()))
+    logger.info("Finished job %s (%s) at %s" % (ID, NAME, datetime.utcnow()))
