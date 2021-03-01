@@ -35,13 +35,19 @@ def make_board():
     return Irregular(BOARD)
 
 
-if __name__ == '__main__':
-    FOLDER = os.environ['DEST_FOLDER']
-    logfile = "logging_%s.txt" % (ID, )
-    logging.basicConfig(filename=logfile, level=logging.DEBUG)
+def make_logging(folder, id):
+    logfile = "logging_%s.txt" % (id, )
+    logpath = os.path.join(folder, logfile)
+    logging.basicConfig(filename=logpath, level=logging.DEBUG)
     logging.getLogger().addHandler(logging.StreamHandler())
     logger = logging.getLogger(__name__)
     logger.info("Logging configured")
+    return logger
+
+
+if __name__ == '__main__':
+    FOLDER = os.environ['DEST_FOLDER']
+    logger = make_logging(FOLDER, ID)
 
     start_time = datetime.utcnow()
     logger.info("Started job %s (%s) at %s" % (ID, NAME, start_time))
