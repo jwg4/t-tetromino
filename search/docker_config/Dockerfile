@@ -1,4 +1,4 @@
-FROM docker-python-poetry:3.7-rc
+FROM etiennenapoleone/docker-python-poetry:3.7-rc
 
 
 WORKDIR /tmp/working
