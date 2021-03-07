@@ -1,10 +1,11 @@
-FROM python:3.7
+FROM docker-python-poetry:3.7-rc
 
 
 WORKDIR /tmp/working
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY poetry.lock .
+COPY pyproject.toml .
+RUN poetry install --no-virtualenv --no-dev
 
 COPY main.py .
 COPY spec.py .
