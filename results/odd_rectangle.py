@@ -2,6 +2,14 @@ from basic import ResultBase
 from cyl_15_constant import CYLINDER_15
 from cyl_15_bottom_constants import *
 from cyl_15_top_constants import *
+from cyl_15_extra import TILING as CYL_15_BOTTOM_21
+
+from cylinder_13.cylinder import TILING as CYLINDER_13
+from cylinder_13.left_30 import TILING as CYL_13_BOTTOM_30
+from cylinder_13.right_10 import TILING as CYL_13_TOP_10
+from cylinder_13.right_12 import TILING as CYL_13_TOP_12
+from cylinder_13.right_3 import TILING as CYL_13_TOP_3
+from cylinder_13.right_5 import TILING as CYL_13_TOP_5
 
 LEFT_CAPS_15 = {
     12: CYL_15_BOTTOM_12,
@@ -38,6 +46,20 @@ CAP_IDS_15 = [
     (12, 3)   # 15
 ]
 
+LEFT_CAPS_13 = [
+    (34, CYL_13_BOTTOM_34),
+    (38, CYL_13_BOTTOM_38),
+    (42, CYL_13_BOTTOM_42),
+    (30, CYL_13_BOTTOM_30),
+]
+
+RIGHT_CAPS_13 = [
+    (12, CYL_13_TOP_12),
+    (7, CYL_13_TOP_7),
+    (10, CYL_13_TOP_10),
+    (3, CYL_13_TOP_3),
+]
+
 
 class CappedCylinder(ResultBase):
     def __init__(self, height, width, lcap_width, lcap, rcap_width, rcap, cyl_width, cyl):
@@ -62,3 +84,12 @@ def strip_of_height_15(x):
     left_cap = LEFT_CAPS_15[a]
     right_cap = RIGHT_CAPS_15[b]
     return CappedCylinder(15, x, a, left_cap, b, right_cap, cyl_width, CYLINDER_15)
+
+
+def strip_of_height_13(x):
+    cyl_width = 16
+    bb = (x - 2) % 4
+    b, right_cap = RIGHT_CAPS_15[bb]
+    aa = ((x - 2 - b) // 4) % 4
+    a, left_cap = LEFT_CAPS_15[aa]
+    return CappedCylinder(13, x, a, left_cap, b, right_cap, cyl_width, CYLINDER_13)
