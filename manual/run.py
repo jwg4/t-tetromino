@@ -1,14 +1,19 @@
 from polyomino.board import Irregular
 from polyomino.constant import TETROMINOS
 
-from make_grid import make_notched_right_cap
+from make_grid import make_13_right_cap_12
 
 
 if __name__ == '__main__':
-    grid = make_notched_right_cap(5, True)
-
     t = TETROMINOS['T']
-    board = Irregular(grid)
+    grid = make_13_right_cap_12()
 
-    problem = board.tile_with_many(t)
+    for square in grid:
+        reduced = [ g for g in grid if g != square ]
+        board = Irregular(reduced)
+
+        problem = board.tile_with_many(t)
+        solution = problem.solve()
+        if solution:        
+            print(square)
 
