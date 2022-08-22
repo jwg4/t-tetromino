@@ -1,12 +1,13 @@
 from polyomino.board import Irregular
 from polyomino.constant import TETROMINOS
 
-from make_grid import make_13_right_cap_12
+from make_grid import gen_13_right_cap
 
 
 if __name__ == '__main__':
+    LENGTH = 24
     t = TETROMINOS['T']
-    grid = make_13_right_cap_12()
+    grid = list(gen_13_right_cap(LENGTH))
 
     for square in grid:
         reduced = [ g for g in grid if g != square ]
