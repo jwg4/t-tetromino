@@ -4,11 +4,20 @@ LEFT_CAP_13_HEIGHTS = [
 ]
 
 
-def gen_13_right_cap(n):
+def gen_13_cap(n, right=True):
+    dir = -1 if right else 1
     for i in range(0, 13):
         h = LEFT_CAP_13_HEIGHTS[i]
-        for j in range(0, n - h):
+        for j in range(0, n + dir * h):
             yield (i, j)
+
+
+def gen_13_right_cap(n):
+    return gen_13_cap(n, True)
+
+
+def gen_13_left_cap(n):
+    return gen_13_cap(n, False)
 
 
 def make_13_right_cap_12():
