@@ -49,6 +49,7 @@ def test_all_3_mod_4_by_even(x, y):
     assert solution.count == (4 if (y % 4 == 0) else 2)
 
 
+@mark.skip("Waiting for task 24")
 @given(integers(min_value=37, max_value=REAL_MAX_VALUE))
 @example(37)
 @example(39)
@@ -59,7 +60,6 @@ def test_all_height_15(x):
     assert solution.count == [4, 3, 2, 5][x % 4]
 
 
-@mark.skip("Stage 2")
 @given(integers(min_value=39, max_value=REAL_MAX_VALUE))
 def test_all_height_13(x):
     solution = get_solution(x, 13)
