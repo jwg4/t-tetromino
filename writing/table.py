@@ -38,11 +38,11 @@ def format_value(value):
 
 
 def start_lines(data):
-    col_num = len(data[0])
+    col_num = len(data[0]) - 1
     format_str = "|".join(["r"] + ["c"] * (col_num))
     yield r"\begin{tabular}{%s}" % (format_str, )
 
-    values = [ str(k) for k in sorted(data[0].keys()) if k != 'name']
+    values = [ str(k) for k in sorted([ k for k in data[0].keys() if k != 'name'])]
     value_str = " & ".join([""] + values) + r" \\"
     yield value_str 
 
