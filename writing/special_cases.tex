@@ -24,6 +24,30 @@ We summarize the remaining cases for which the optimal tilings are not known.
 \end{abstract}
 
 \section{Odd by odd rectangles}
+
+\begin{lemma}\label{3_times_1}
+    Every rectangle with dimensions $4l + 1 \times 4m + 3$ can be tiled with exactly 3 monominoes, and 3 are always needed.
+    \end{lemma}
+    Of course it is not possible to tile this rectangle with fewer than 3 monominoes.
+    
+    Suppose that $K = 4k + 1$ and $L = 4l + 3$, where $K$ and $L$ are positive integers, at least 13. (The condition mod 4 means that $L$ will be at least 15).
+    
+    First we find $0 < k' \leq k$ and $0 < l' \leq l$, such that we can construct a tiling of the $4k' + 1 \times 4l' + 4$ rectangle with only 3 monominos. We need $k - k'$ to be equal to $l - l'$.
+    
+    In other words, we are looking for $0 < K' \leq K$ and $0 < L' \leq L$ such that $K - K'$ and $L - L'$ are both the same nonnegative multiple of 4.
+    
+    Suppose that $K < L + 10$. This means that $K \leq L + 6$. Choose $K' = 13$ and $L' = L - K + 13 \geq 7$. Theorem 7 of \cite{hochberg} gives us a tiling of this rectangle using exactly 3 monominos.
+    
+    Suppose that this is not true, ie. that $K \geq L + 10$. Then take $L' = 15$. This means that $K'$ will be $K - L + 15 \geq 25$. Again, since $K' > 5$, Theorem 7 of \cite{hochberg} gives a tiling for this rectangle which uses exactly 3 monominos.
+    
+    Then we extend such tilings to the rectangle $4k + 1 \times 4l + 3$. Figure \ref{extending} shows how a single step worksi, adding 4 to both dimensions of the rectangle, without requiring any additional monominos. We apply this step $k - k' = l - l'$ times to obtain a tiling using only 3 monominos.
+    
+    \begin{figure}
+    \input{extending_image}
+    \caption{A tiling of a rectangle of dimensions $4l + 1 \times 4m + 3$ can be extended to a tiling of the rectangle $4l + 5 \times 4m + 7$, without any additional monominos.}
+    \label{extending}
+    \end{figure}
+
 \section{$5n times 2n$ rectangles}
 \section{Remaining cases to be resolved}
 
@@ -80,28 +104,6 @@ Again, Walkup has shown that tilings without any monominos are not possible. Usi
 Fuck knows about rectangles $odd \times even$.
 \end{lemma}
 
-\begin{lemma}\label{3_times_1}
-Every rectangle with dimensions $4l + 1 \times 4m + 3$ can be tiled with exactly 3 monominos, and 3 are always needed.
-\end{lemma}
-Of course it is not possible to tile this rectangle with fewer than 3 monominos.
-
-Suppose that $K = 4k + 1$ and $L = 4l + 3$, where $K$ and $L$ are positive integers, at least 13. (The condition mod 4 means that $L$ will be at least 15).
-
-First we find $0 < k' \leq k$ and $0 < l' \leq l$, such that we can construct a tiling of the $4k' + 1 \times 4l' + 4$ rectangle with only 3 monominos. We need $k - k'$ to be equal to $l - l'$.
-
-In other words, we are looking for $0 < K' \leq K$ and $0 < L' \leq L$ such that $K - K'$ and $L - L'$ are both the same nonnegative multiple of 4.
-
-Suppose that $K < L + 10$. This means that $K \leq L + 6$. Choose $K' = 13$ and $L' = L - K + 13 \geq 7$. Theorem 7 of \cite{hochberg} gives us a tiling of this rectangle using exactly 3 monominos.
-
-Suppose that this is not true, ie. that $K \geq L + 10$. Then take $L' = 15$. This means that $K'$ will be $K - L + 15 \geq 25$. Again, since $K' > 5$, Theorem 7 of \cite{hochberg} gives a tiling for this rectangle which uses exactly 3 monominos.
-
-Then we extend such tilings to the rectangle $4k + 1 \times 4l + 3$. Figure \ref{extending} shows how a single step worksi, adding 4 to both dimensions of the rectangle, without requiring any additional monominos. We apply this step $k - k' = l - l'$ times to obtain a tiling using only 3 monominos.
-
-\begin{figure}
-\input{extending_image}
-\caption{A tiling of a rectangle of dimensions $4l + 1 \times 4m + 3$ can be extended to a tiling of the rectangle $4l + 5 \times 4m + 7$, without any additional monominos.}
-\label{extending}
-\end{figure}
 
 
 \bibliography{polyomino}{}
