@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{T-tetromino tiling improvements for some classes of rectangles}
+\author{Jack Grahl}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Hochberg showed in \cite{hochberg} that no more than 9 monominos are ever needed to tile a rectangle with T-tetrominos and monominos, and conjectured that no more than 5 monominos are needed for any rectangle.
+The author previously showed that this conjecture holds for all squares.
+In the present work, we show tilings with the best possible number of monominos for some classes of rectangles, including all rectangles with both side lengths odd.
+We summarize the remaining cases for which the optimal tilings are not known.
+\end{abstract}
+
+\section{Odd by odd rectangles}
+\section{$5n times 2n$ rectangles}
+\section{Remaining cases to be resolved}
+
+\section{Tiling every rectangle}
+\theorem{Every rectangle of side length at least 12 can be tiled with T-tetrominos and either 0, 2, 3, 4, 5 or 6 monominos.}
+Clearly the number of monominos depends only on the number of grid squares modulo 4, in the case where this is odd.
+
+We summarize this data in table \ref{rectangle_data}.
+
+\begin{table}
+\input{rectangle_table}
+\caption{Minimal required numbers of monominoes.}
+\end{table}
+
+In the terminology used by Hochberg, the \emph{gap cap} of the T-tetromino is no more than 6 (and it is known that it can be no less than 5).
+
+This theorem is an immediate consequence of the following sequences of lemmata, most of which are either part of the folklore or given previously.
+
+\begin{lemma}
+Every rectangle of dimensions $4l \times 4m$ can be tiled without monominos.
+\end{lemma}
+This was stated by Walkup in \cite{walkup}, who simply pointed out that it is an obvious consequence of the fact that the square of side 4 can be tiled, which is itself easy to check.
+
+\begin{lemma}
+Every rectangle of dimensions $4l + 2 \times 4m + 2$ can be tiled with 4 monominos, and 4 are always needed.
+\end{lemma}
+The $2x2$ square can trivially not contain any T-tetromino.
+
+\begin{figure}
+\input{strips_image}
+\caption{Tilings of strips of width 2 and length $4n + 1$, $4n+2$ and $4n+3$, with 2, 4 and 2 monominos respectively.}
+\label{strips}
+\end{figure}
+
+Rectangles of this form, with exactly one side of length 2, can be tiled using the second construction in figure \ref{strips}. It is clear that the only other tilings are variations of this where some tiles are shifted along by 1 square, or reflections of these.
+
+If both side lengths are at least $6$, Walkup's Theorem 1 (\cite{walkup}) shows that it is not possible to tile the square without monominos.
+Clearly at least 4 are needed.
+As Hochberg points out in Theorem 8 of \cite{hochberg}, a tiling with only tetrominos of a rectangle whose sides are both multiples of 4, can be extended to a tiling of a rectangle which is bigger by 2 in each direction, using only 4 monominos.
+The L-shaped strip which is added to the former looks (for example) like Figure \ref{lshaped}.
+
+\begin{figure}
+\input{lshaped_image}
+\caption{The L-shaped strip which extends any square of side $4n$ to a square of side $4n+2$, using exactly 4 monominos. The dotted tetrominos can be repeated as many times as necessary to give a strip with internal length $4n$ and external length $4n + 2$.}
+\label{lshaped}
+\end{figure}
+
+\begin{lemma}
+Every rectangle of dimensions $4l \times 4m + 2$ can be tiled with 4 monominos, and 4 are always needed.
+\end{lemma}
+Again, Walkup has shown that tilings without any monominos are not possible. Using the tiling of a strip of width 2 and length $4l$ given in figure \ref{strips}, we can extend a tiling of a $4l \times 4m$ rectangle which uses only T-tetrominos to a tiling of this rectangle which uses exactly 4 monominos.
+
+\begin{lemma}
+Fuck knows about rectangles $odd \times even$.
+\end{lemma}
+
+\begin{lemma}\label{3_times_1}
+Every rectangle with dimensions $4l + 1 \times 4m + 3$ can be tiled with exactly 3 monominos, and 3 are always needed.
+\end{lemma}
+Of course it is not possible to tile this rectangle with fewer than 3 monominos.
+
+Suppose that $K = 4k + 1$ and $L = 4l + 3$, where $K$ and $L$ are positive integers, at least 13. (The condition mod 4 means that $L$ will be at least 15).
+
+First we find $0 < k' \leq k$ and $0 < l' \leq l$, such that we can construct a tiling of the $4k' + 1 \times 4l' + 4$ rectangle with only 3 monominos. We need $k - k'$ to be equal to $l - l'$.
+
+In other words, we are looking for $0 < K' \leq K$ and $0 < L' \leq L$ such that $K - K'$ and $L - L'$ are both the same nonnegative multiple of 4.
+
+Suppose that $K < L + 10$. This means that $K \leq L + 6$. Choose $K' = 13$ and $L' = L - K + 13 \geq 7$. Theorem 7 of \cite{hochberg} gives us a tiling of this rectangle using exactly 3 monominos.
+
+Suppose that this is not true, ie. that $K \geq L + 10$. Then take $L' = 15$. This means that $K'$ will be $K - L + 15 \geq 25$. Again, since $K' > 5$, Theorem 7 of \cite{hochberg} gives a tiling for this rectangle which uses exactly 3 monominos.
+
+Then we extend such tilings to the rectangle $4k + 1 \times 4l + 3$. Figure \ref{extending} shows how a single step worksi, adding 4 to both dimensions of the rectangle, without requiring any additional monominos. We apply this step $k - k' = l - l'$ times to obtain a tiling using only 3 monominos.
+
+\begin{figure}
+\input{extending_image}
+\caption{A tiling of a rectangle of dimensions $4l + 1 \times 4m + 3$ can be extended to a tiling of the rectangle $4l + 5 \times 4m + 7$, without any additional monominos.}
+\label{extending}
+\end{figure}
+
+
+\bibliography{polyomino}{}
+\bibliographystyle{plain}
+\end{document}
