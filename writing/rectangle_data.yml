@@ -25,7 +25,10 @@
     min: 5
     max: 5
     note: minimum from Zhan, construction from lemma \ref{3_times_1_strip}
-  2: 6 (Hochberg)
+  2: 
+    min: 2
+    max: 6
+    note: construction from Hochberg
   3: 
     min: 3
     max: 3
@@ -35,19 +38,31 @@
     min: 4
     max: 4
     note: minimum from Walkup, construction is 'single strip'
-  1: 6 (Hochberg)
+  1: 
+    min: 2
+    max: 6
+    note: construction from Hochberg
   2:
     min: 4
     max: 4
     note: minimum from Walkup, construction is 'L-shaped strip'
-  3: 6 (Hochberg)
+  3: 
+    min: 2
+    max: 6
+    note: construction from Hochberg
 - name: 3
-  0: 4 (Hochberg)
+  0: 
+    min: 4
+    max: 4
+    note: minimum from Walkup, construction from Hochberg
   1: 
     min: 3
     max: 3
     note: Lemma \ref{3_times_1}
-  2: 6 (Hochberg)
+  2: 
+    min: 2
+    max: 6
+    note: construction from Hochberg
   3: 
     min: 5
     max: 5
