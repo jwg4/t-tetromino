@@ -6,7 +6,7 @@ import yaml
 
 def read_data(filename):
     with open(filename, "r") as f:
-        data = yaml.load(f)
+        data = yaml.safe_load(f)
     return data
 
 
@@ -54,8 +54,8 @@ if __name__ == '__main__':
 
     data = read_data(filename)
     for line in start_lines(data):
-        print line
+        print(line)
     for line in data_lines(data):
-        print line
-    print "\end{tabular}"
+        print(line)
+    print("\end{tabular}")
     
