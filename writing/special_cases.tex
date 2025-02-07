@@ -2,6 +2,8 @@
 
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{parskip}
 \usetikzlibrary{patterns}
 
 \theoremstyle{plain}
@@ -20,7 +22,7 @@
 Hochberg showed in \cite{hochberg} that no more than 9 monominos are ever needed to tile a rectangle with T-tetrominos and monominos, and conjectured that no more than 5 monominos are needed for any rectangle.
 The author previously showed that this conjecture holds for all squares.
 In the present work, we show tilings with the best possible number of monominos for some classes of rectangles, including all rectangles with both side lengths odd.
-We summarize the remaining cases for which the optimal tilings are not known.
+
 \end{abstract}
 
 \section{Odd by odd rectangles}
@@ -40,7 +42,7 @@ We summarize the remaining cases for which the optimal tilings are not known.
     
     Suppose that this is not true, ie. that $K \geq L + 10$. Then take $L' = 15$. This means that $K'$ will be $K - L + 15 \geq 25$. Again, since $K' > 5$, Theorem 7 of \cite{hochberg} gives a tiling for this rectangle which uses exactly 3 monominos.
     
-    Then we extend such tilings to the rectangle $4k + 1 \times 4l + 3$. Figure \ref{extending} shows how a single step worksi, adding 4 to both dimensions of the rectangle, without requiring any additional monominos. We apply this step $k - k' = l - l'$ times to obtain a tiling using only 3 monominos.
+    Then we extend such tilings to the rectangle $4k + 1 \times 4l + 3$. Figure \ref{extending} shows how a single step works, adding 4 to both dimensions of the rectangle, without requiring any additional monominos. We apply this step $k - k' = l - l'$ times to obtain a tiling using only 3 monominos.
     
     \begin{figure}
     \input{extending_image}
@@ -53,32 +55,61 @@ We summarize the remaining cases for which the optimal tilings are not known.
 \end{lemma}
 
 A strip of width $2$ and of length $2n+1$ can trivially be tiled with $2n$ tetrominos and $2$ monominos.
+See Figure \ref{strips} for a simple visual demonstration of this.
 This tiling can be used to extend a tiling of the form given in \ref{3_times_1}, adding a $2$ to one or other dimension, and $2$ monominoes.
+
+\begin{figure}
+\input{strips_image}
+\caption{Tilings of strips of width 2 and length $4n + 1$ or and $4n+3$, with 2 monominos.}
+\label{strips}
+\end{figure}
 
 That rectangles of this form cannot be tiled with less than $5$ monominoes, is the main result of \cite{zhan}.
 
 
-\section{$5n times 2n$ rectangles}
 \section{Remaining cases to be resolved}
+Hochberg divided all rectangles into classes based on their side lengths modulo $4$, and showed the best known construction for each class.
+He identified five classes where the best known construction was not known to be optimal:
+\begin{itemize}
+	\item $4k + 1 \times 4m + 3$: Hochberg showed a construction with $7$ monominoes, concluding that the optimal number is either $3$ or $7$. Lemma \ref{3_times_1} shows that $3$ is always possible, resolving this case.  
+	\item $4k + 1 \times 4m + 1$: Zhan proved that $1$ is not possible. Hochberg showed a construction with $9$, concluding that the optimal number is either $5$ or $9$. Lemma \ref{3_times_1_strip} shows that $5$ is always possible, resolving this case.  
+	\item $4k + 3 \times 4m + 3$: Zhan proved that $1$ is not possible. Hochberg showed a construction with $9$, concluding that the optimal number is either $5$ or $9$. Lemma \ref{3_times_1_strip} shows that $5$ is always possible, resolving this case.  
+	\item $4k + 2 \times 4m + 1$: Hochberg showed a construction with $6$, concluding that either 2 or 6 is optimal. We show constructions with only $2$ monominoes for some special cases in the next section.
+	\item $4k + 2 \times 4m + 3$: Hochberg showed a construction with $6$, concluding that either 2 or 6 is optimal. We show constructions with only $2$ monominoes for some special cases in the next section.
+\end{itemize}
 
-\begin{table}
+The resolution of the first 3 cases here tells us that, in the terminology used by Hochberg, the \emph{gap cap} of the T-tetromino is either 5 or 6.
+To finally confirm its exact value, we need to establish one of the following complementary possibilities, which treat the latter two cases above:
+
+\begin{enumerate}[label=\textnormal{\Roman*}]
+	\item \label{gap_cap_5} For some $N \in \mathbb{N}$, there is a way of tiling all rectangles with side lengths $4p + 2$ and $2q + 1$, with both side lengths greater than $N$, using only $2$ monominoes.
+	\item \label{gap_cap_6} There is a family of rectangles with side lengths $4p + 2$ and $2q + 1$, containing rectangles with both sides arbitrarily large, such that none can be tiled using less than $6$ monominoes.
+\end{enumerate}
+
+Note that a proof of \ref{gap_cap_6} can not just establish that $6$ monominoes are necessary for any infinite family of rectangles.
+It must contain rectangles, with arbitrarily large numbers for both dimensions.
+The possibility of a family of counterexamples where one of two dimensions is bounded is explicitly excluded by the definition of the gap cap.
+
+Hochberg's conjecture that the gap cap is $5$ is equivalent (given the other results above) to \ref{gap_cap_5}.
+In the next section, we give constructions using only $2$ monominoes for certain families of rectangles.
+This provides `evidence' for the conjecture, however there is no clear way to extend these constructions to other rectangle sizes.
+
+For clarity we summarize the best known results by modulo classes in \ref{rect_tab}.
+
+\begin{table}\label{rect_tab}
     \input{rectangle_table}
     \caption{Minimal required numbers of monominoes.}
     \end{table}
+
+\section{Odd by even rectangles}
+
+\subsection{$2n \times n$ rectangles}
+
+\subsection{$5n \times 2n$ rectangles}
     
 
 \section{Tiling every rectangle}
 \theorem{Every rectangle of side length at least 12 can be tiled with T-tetrominos and either 0, 2, 3, 4, 5 or 6 monominos.}
-Clearly the number of monominos depends only on the number of grid squares modulo 4, in the case where this is odd.
-
-We summarize this data in table \ref{rectangle_data}.
-
-\begin{table}
-\input{rectangle_table}
-\caption{Minimal required numbers of monominoes.}
-\end{table}
-
-In the terminology used by Hochberg, the \emph{gap cap} of the T-tetromino is no more than 6 (and it is known that it can be no less than 5).
 
 This theorem is an immediate consequence of the following sequences of lemmata, most of which are either part of the folklore or given previously.
 
@@ -92,11 +123,6 @@ Every rectangle of dimensions $4l + 2 \times 4m + 2$ can be tiled with 4 monomin
 \end{lemma}
 The $2x2$ square can trivially not contain any T-tetromino.
 
-\begin{figure}
-\input{strips_image}
-\caption{Tilings of strips of width 2 and length $4n + 1$, $4n+2$ and $4n+3$, with 2, 4 and 2 monominos respectively.}
-\label{strips}
-\end{figure}
 
 Rectangles of this form, with exactly one side of length 2, can be tiled using the second construction in figure \ref{strips}. It is clear that the only other tilings are variations of this where some tiles are shifted along by 1 square, or reflections of these.
 
