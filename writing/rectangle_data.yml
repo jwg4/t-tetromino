@@ -7,28 +7,28 @@
   1: 
     min: 4
     max: 4
-    note: minimum from Walkup, construction from Hochberg
+    note: minimum from \cite{walkup}, example from \cite{hochberg}
   2: 
     min: 4
     max: 4
-    note: minimum from Walkup, construction is 'single strip'
+    note: minimum from \cite{walkup}, example is `single strip'
   3: 
     min: 4
     max: 4
-    note: minimum from Walkup, construction from Hochberg
+    note: minimum from \cite{walkup}, example from \cite{hochberg}
 - name: 1
   0:
     min: 4
     max: 4
-    note: minimum from Walkup, construction from Hochberg
+    note: minimum from \cite{walkup}, example from \cite{hochberg}
   1: 
     min: 5
     max: 5
-    note: minimum from Zhan, construction from lemma \ref{3_times_1_strip}
+    note: minimum from \cite{zhan}, example from Lemma \ref{3_times_1_strip}
   2: 
     min: 2
     max: 6
-    note: construction from Hochberg
+    note: example from \cite{hochberg}
   3: 
     min: 3
     max: 3
@@ -37,24 +37,24 @@
   0:
     min: 4
     max: 4
-    note: minimum from Walkup, construction is 'single strip'
+    note: minimum from \cite{walkup}, example is `single strip'
   1: 
     min: 2
     max: 6
-    note: construction from Hochberg
+    note: example from \cite{hochberg}
   2:
     min: 4
     max: 4
-    note: minimum from Walkup, construction is 'L-shaped strip'
+    note: minimum from \cite{walkup}, example is `L-shaped strip'
   3: 
     min: 2
     max: 6
-    note: construction from Hochberg
+    note: example from \cite{hochberg}
 - name: 3
   0: 
     min: 4
     max: 4
-    note: minimum from Walkup, construction from Hochberg
+    note: minimum from \cite{walkup}, example from \cite{hochberg}
   1: 
     min: 3
     max: 3
@@ -62,8 +62,8 @@
   2: 
     min: 2
     max: 6
-    note: construction from Hochberg
+    note: example from \cite{hochberg}
   3: 
     min: 5
     max: 5
-    note: minimum from Zhan, construction from lemma \ref{3_times_1_strip}
+    note: minimum from \cite{zhan}, example from Lemma \ref{3_times_1_strip}
