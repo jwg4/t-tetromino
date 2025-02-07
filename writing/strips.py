@@ -15,13 +15,12 @@ def draw_strip(height, length):
         
 if __name__ == '__main__':
     preamble()
-    strip1 = list(draw_strip(6, 4))
-    strip2 = list(draw_strip(3, 4))
+    strip1 = list(draw_strip(3, 4))
     strip3 = list(draw_strip(0, 5))
-    tetrominos = strip1 + strip2 + strip3
+    tetrominos = strip1 + strip3
     for x, y, t, extras in tetrominos:
         draw_tetromino(x, y, t, extras)
-    squares = [(0, 0), (10, 0), (0, 3), (8, 4), (9, 3), (9, 4), (0, 6), (8, 7)] 
+    squares = [(0, 0), (10, 0), (0, 3), (8, 4)] 
     for x, y in squares:
         draw_square(x, y, extras=['pattern = north east lines'])
     postamble()
