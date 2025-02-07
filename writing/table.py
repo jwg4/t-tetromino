@@ -19,22 +19,20 @@ def data_lines(data):
         yield "\hline"
         
 
-def format_value(value):
-    if not value:
-        return "?"
+def format_value(info):
+    mn = info["min"]
+    mx = info["max"]
 
-    try:
-        int(value)
-        return str(value)
-    except:
-        pass
-
-    regex = "(\d) \((.*)\)"
-    m = re.match(regex, value)
-    if m:
-        return r"\parbox[t]{3cm}{%d \\ %s}" % (int(m.group(1)), m.group(2))
+    if mn == mx:
+        number = "%d" % (mn, )
+    elif mn + 4 == mx:
+        number = "%d or %d" % (mn, mx)
     else:
-        return "???"
+        raise NotImplementedError
+    
+    comment = info["note"]
+
+    return r"\parbox[t]{3cm}{%s \\ %s}" % (number, comment)
 
 
 def start_lines(data):
