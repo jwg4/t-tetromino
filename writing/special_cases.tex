@@ -103,50 +103,45 @@ For clarity we summarize the best known results by modulo classes in Table \ref{
 
 \section{Odd by even rectangles}
 
+We would like to show a construction which works for any rectangle $m times n$, where $m$ is an odd number and $n$ is a number of the form $4k + 2$, using t-tetrominoes and 2 monominoes.
+We don't have such a construction, but we have a construction like this for a couple of families of rectangles.
+
 \subsection{$2n \times n$ rectangles}
 
-\subsection{$5n \times 2n$ rectangles}
-    
-
-\section{Tiling every rectangle}
-\theorem{Every rectangle of side length at least 12 can be tiled with T-tetrominos and either 0, 2, 3, 4, 5 or 6 monominos.}
-
-This theorem is an immediate consequence of the following sequences of lemmata, most of which are either part of the folklore or given previously.
-
-\begin{lemma}
-Every rectangle of dimensions $4l \times 4m$ can be tiled without monominos.
+\begin{lemma}\label{2_times_1}
+Suppose that $n = 2k+1$ is an odd number. Then a rectangle $n \times 2n$ can be tiled with 2 monominoes.  
 \end{lemma}
-This was stated by Walkup in \cite{walkup}, who simply pointed out that it is an obvious consequence of the fact that the square of side 4 can be tiled, which is itself easy to check.
 
-\begin{lemma}
-Every rectangle of dimensions $4l + 2 \times 4m + 2$ can be tiled with 4 monominos, and 4 are always needed.
-\end{lemma}
-The $2x2$ square can trivially not contain any T-tetromino.
-
-
-Rectangles of this form, with exactly one side of length 2, can be tiled using the second construction in figure \ref{strips}. It is clear that the only other tilings are variations of this where some tiles are shifted along by 1 square, or reflections of these.
-
-If both side lengths are at least $6$, Walkup's Theorem 1 (\cite{walkup}) shows that it is not possible to tile the square without monominos.
-Clearly at least 4 are needed.
-As Hochberg points out in Theorem 8 of \cite{hochberg}, a tiling with only tetrominos of a rectangle whose sides are both multiples of 4, can be extended to a tiling of a rectangle which is bigger by 2 in each direction, using only 4 monominos.
-The L-shaped strip which is added to the former looks (for example) like Figure \ref{lshaped}.
+We use the fact, from \cite{grahl_sq}, that for any odd number $n$, we can tile the 'nibbled square', the $n \times n$ square with 3 cells removed at one corner, and one cell removed from an adjacent corner, with a single monomino.
+Figure \ref{nibbled} shows what this shape looks like.
 
 \begin{figure}
-\input{lshaped_image}
-\caption{The L-shaped strip which extends any square of side $4n$ to a square of side $4n+2$, using exactly 4 monominos. The dotted tetrominos can be repeated as many times as necessary to give a strip with internal length $4n$ and external length $4n + 2$.}
-\label{lshaped}
+\input{nibbled_square}
+\caption{The `nibbled square of size $n$', which is missing the lattice squares at $(0, 0), (1, 0), (0, 1)$ and at $(0, n-1)$}
+\label{nibbled}
 \end{figure}
 
-\begin{lemma}
-Every rectangle of dimensions $4l \times 4m + 2$ can be tiled with 4 monominos, and 4 are always needed.
+Figure \ref{n_times_2n} shows that we can put together two copies of the nibbled square of size $n$, one reflected, plus two additional t-tetrominos, to tile the $2n \times n$ rectangle.
+Since each nibbled square is tiled with t-tetrominoes and a single monomino, the $2n \times n$ rectangle is tiled with only $2$ monominoes.
+
+\begin{figure}
+\input{n_times_2n_image}
+\caption{Tiling a rectangle $n \times 2n$, where $n$ is an odd number.}
+\label{n_times_2n}
+\end{figure}
+
+
+\subsection{$5n \times 2n$ rectangles}
+
+\begin{lemma}\label{5_times_2}  
+Suppose that $n = 2k+1$ is an odd number. Then a rectangle $5n \times 2n$ can be tiled with 2 monominoes.  
 \end{lemma}
-Again, Walkup has shown that tilings without any monominos are not possible. Using the tiling of a strip of width 2 and length $4l$ given in figure \ref{strips}, we can extend a tiling of a $4l \times 4m$ rectangle which uses only T-tetrominos to a tiling of this rectangle which uses exactly 4 monominos.
 
-\begin{lemma}
-Fuck knows about rectangles $odd \times even$.
-\end{lemma}
-
-
+\begin{figure}
+\input{2n_times_5n_image}
+\caption{Tiling a rectangle $2n \times 5n$, where $n$ is an odd number.}
+\label{2n_times_5n}
+\end{figure}
 
 \bibliography{polyomino}{}
 \bibliographystyle{plain}
