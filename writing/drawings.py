@@ -43,19 +43,19 @@ def rotate(l, t):
 def print_path(points, extras=[]):
     path = ' -- '.join([ '(%f, %f)' % p for p in points ])
     extra_code = ', '.join([''] + extras) if extras else ''
-    print r'''
+    print(r'''
 \draw [rounded corners, ultra thick %s] %s;
-''' % (extra_code, path)
+''' % (extra_code, path))
 
 def preamble():
-    print r'''
+    print(r'''
 \begin{tikzpicture}[scale=0.5]
-'''
+''')
 
 def postamble():
-    print r'''
+    print(r'''
 \end{tikzpicture}
-'''
+''')
 
 def draw_tetromino(x, y, t, extras=[]):
     rotated = rotate(TETROMINO_OFFSETS, t)
