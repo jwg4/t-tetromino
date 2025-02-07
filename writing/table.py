@@ -26,7 +26,7 @@ def format_value(info):
     if mn == mx:
         number = "%d" % (mn, )
     elif mn + 4 == mx:
-        number = "%d or %d" % (mn, mx)
+        number = r"\textbf{%d or %d}" % (mn, mx)
     else:
         raise NotImplementedError
     
