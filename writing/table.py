@@ -12,11 +12,11 @@ def read_data(filename):
 
 def data_lines(data):
     for d in data:
-        header = str(d.pop('name'))
+        header = format_head(d.pop('name'))
         values = [ format_value(d[k]) for k in sorted(d.keys()) ]
         value_str = " & ".join([header] + values) + r" \\"
         yield value_str
-        yield "\hline"
+        yield r"\hline"
         
 
 def format_value(info):
@@ -35,16 +35,23 @@ def format_value(info):
     return r"\parbox[t]{3cm}{%s \\ %s}" % (number, comment)
 
 
+def format_head(n):
+    if n == 0:
+        return "$4k$"
+    else:
+        return "$4k + %d$" % (n, )
+        
+
 def start_lines(data):
     col_num = len(data[0]) - 1
-    format_str = "|".join(["r"] + ["c"] * (col_num))
+    format_str = "|".join(["r"] + ["c"] * (col_num) + [""])
     yield r"\begin{tabular}{%s}" % (format_str, )
 
-    values = [ str(k) for k in sorted([ k for k in data[0].keys() if k != 'name'])]
+    values = [ format_head(k) for k in sorted([ k for k in data[0].keys() if k != 'name'])]
     value_str = " & ".join([""] + values) + r" \\"
     yield value_str 
 
-    yield "\hline"
+    yield r"\hline"
 
 
 if __name__ == '__main__':
@@ -55,5 +62,5 @@ if __name__ == '__main__':
         print(line)
     for line in data_lines(data):
         print(line)
-    print("\end{tabular}")
+    print(r"\end{tabular}")
     
